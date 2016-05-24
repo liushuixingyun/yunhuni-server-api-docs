@@ -5,4 +5,4 @@
 
 用于用户应用服务程序与 `云呼你`_ 系统的对接。
 
-.. _a 云呼你: http://yunhuni.com/
+.. _云呼你: http://yunhuni.com/
