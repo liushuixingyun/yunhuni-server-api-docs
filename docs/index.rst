@@ -12,13 +12,16 @@
 .. toctree::
    :maxdepth: 2
 
+   REST API <rest_api/index.rst>
+   术语表 <glossary.rst>
+
 
 
 索引
 ==================
 
 * :ref:`genindex`
-* :ref:`modindex`
+.. * :ref:`modindex`
 * :ref:`search`
 
 .. _云呼你: http://yunhuni.com/

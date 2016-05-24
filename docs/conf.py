@@ -366,3 +366,22 @@ epub_exclude_files = ['search.html']
 
 # If false, no index is generated.
 #epub_use_index = True
+
+# -- Extention configuration ------------------------------------------------
+
+# sphinxcontrib.httpdomain — Documenting RESTful HTTP APIs Additional Configuration
+extensions.append('sphinxcontrib.httpdomain')
+from sphinx.domains.std import StandardDomain
+http_index_shortname = 'REST API'
+http_index_ignore_prefixes = ['/v1']
+http_index_localname = u"REST API 路由表"
+def setup(app):
+    StandardDomain.initial_data['labels']['routingtable'] = (
+        'http-routingtable',
+        'routingtable',
+        u'REST API 路由表'
+    )
+    StandardDomain.initial_data['anonlabels']['routingtable'] = (
+        'http-routingtable',
+        ''
+    )
