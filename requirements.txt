@@ -1,0 +1,4 @@
+Sphinx
+recommonmark
+sphinxcontrib-httpdomain
+sphinx-autobuild
