@@ -3,20 +3,22 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to yunhuni server api's documentation!
-==============================================
+`云呼你`_ 服务端API文档
+#######################
 
-Contents:
+目录
+==================
 
 .. toctree::
    :maxdepth: 2
 
 
 
-Indices and tables
+索引
 ==================
 
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
 
+.. _云呼你: http://yunhuni.com/

@@ -15,6 +15,13 @@
 import sys
 import os
 
+# -- ReadTheDocs configuration ------------------------------------------------
+
+# When RTD builds your project,
+# it sets the READTHEDOCS environment variable to the string True.
+# So within your Sphinx conf.py file, you can vary the behavior based on this
+READTHEDOCS = os.environ.get('READTHEDOCS', None) == 'True'
+
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
@@ -51,8 +58,8 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'yunhuni server api'
-copyright = u'2016, liu xue yan'
-author = u'liu xue yan'
+copyright = u'2016, 广州流水行云科技有限公司'
+author = u'刘雪彦'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -113,7 +120,7 @@ todo_include_todos = True
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-html_theme = 'alabaster'
+#html_theme = 'alabaster'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
