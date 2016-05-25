@@ -21,7 +21,6 @@
 ==================
 
 * :ref:`genindex`
-.. * :ref:`modindex`
 * :ref:`search`
 
 .. _云呼你: http://yunhuni.com/

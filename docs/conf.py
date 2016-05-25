@@ -36,9 +36,9 @@ READTHEDOCS = os.environ.get('READTHEDOCS', None) == 'True'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    'sphinx.ext.todo',
-    'sphinx.ext.mathjax',
-    'sphinx.ext.ifconfig',
+    # 'sphinx.ext.todo',
+    # 'sphinx.ext.mathjax',
+    # 'sphinx.ext.ifconfig',
     # 'sphinx.ext.githubpages',
 ]
 
@@ -373,7 +373,7 @@ epub_exclude_files = ['search.html']
 extensions.append('sphinxcontrib.httpdomain')
 from sphinx.domains.std import StandardDomain
 http_index_shortname = 'REST API'
-http_index_ignore_prefixes = ['/v1']
+http_index_ignore_prefixes = ['/v1/account/(account_sid)', '/v1']
 http_index_localname = u"REST API 路由表"
 def setup(app):
     StandardDomain.initial_data['labels']['routingtable'] = (

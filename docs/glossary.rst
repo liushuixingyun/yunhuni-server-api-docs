@@ -3,7 +3,10 @@
 
 .. glossary::
 
-  REST
-    https://en.wikipedia.org/wiki/Representational_state_transfer
+    云呼你
+        http://yunhuni.com/  
+
+    REST
+        https://en.wikipedia.org/wiki/Representational_state_transfer
 
   
