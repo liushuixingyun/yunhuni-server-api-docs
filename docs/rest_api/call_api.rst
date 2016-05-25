@@ -29,3 +29,9 @@ userData       String       用户自定义数据
 ***************
 
 .. http:get:: /v1/accounts/(str:account_sid)/calls/(str:call_sid)
+
+以账号 `account_sid` 的身份获取呼叫(`call_sid`)的信息。
+
+.. code-block:: http
+
+    GET
