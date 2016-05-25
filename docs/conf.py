@@ -237,7 +237,7 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
     (master_doc, 'yunhuniserverapi.tex', u'yunhuni server api Documentation',
-     u'liu xue yan', 'manual'),
+     u'刘雪彦', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
