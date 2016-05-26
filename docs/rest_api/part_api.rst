@@ -27,7 +27,7 @@ exitTime                DateTime
 获取与会方列表
 ****************
 
-.. http:get:: /v1/account/(account_sid)/conf/(conf_sid)/call
+.. http:get:: /v1/account/(account_sid)/conf/(conf_sid)/part
 
     获取SID为 `conf_sid` 的会议所属的与会方列表
     
@@ -39,10 +39,10 @@ exitTime                DateTime
 获取单个与会方信息
 *******************
 
-.. http:get:: /v1/account/(account_sid)/conf/(conf_sid)/call/(call_sid)
+.. http:get:: /v1/account/(account_sid)/conf/(conf_sid)/part/(call_sid)
 
     获取SID为 `conf_sid` 的会议中，SID为 `call_sid` 的呼叫的与会方的信息
-    
+
     :param str account_sid: 账号SID
     :param str conf_sid: 会议SID
     :param str call_sid: 与会方的呼叫SID
@@ -52,10 +52,10 @@ exitTime                DateTime
 踢除与会方
 ************
 
-.. http:get:: /v1/account/(account_sid)/conf/(conf_sid)/call/(call_sid)/dispose
+.. http:get:: /v1/account/(account_sid)/conf/(conf_sid)/part/(call_sid)/dispose
 
     获取SID为 `conf_sid` 的会议中，SID为 `call_sid` 的呼叫的与会方的信息
-    
+
     :param str account_sid: 账号SID
     :param str conf_sid: 会议SID
     :param str call_sid: 与会方的呼叫SID
