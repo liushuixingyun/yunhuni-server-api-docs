@@ -1,0 +1,7 @@
+cmd: "..\\env\\Scripts\\activate.bat && make html"
+name: "SphinxDoc Make HTML"
+targets:
+  "SphinxDoc Make Clean":
+      cmd: "..\\env\\Scripts\\activate.bat && make clean"
+  "SphinxDoc Auto Build":
+      cmd: "..\\env\\Scripts\\activate.bat && sphinx-autobuild -b html .\\ .\\_build\\html"

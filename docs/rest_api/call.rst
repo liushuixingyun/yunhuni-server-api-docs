@@ -26,7 +26,7 @@ status                  String         呼叫状态，有：
                                        * ``failed``
                                        * ``busy``
                                        * ``no-answer``
-                                       
+
 direction               String         呼叫方向
 
                                        * ``inbound``
@@ -52,7 +52,7 @@ onStatus                String         呼叫状态变化事件通知URL
 
 .. http:get:: /v1/account/(account_sid)/call/(call_sid)
 
-    以账号 `account_sid` 的身份获取呼叫(`call_sid`)的信息。
+    获取隶属于账号 `account_sid` 的呼叫(`call_sid`)的信息。
 
     :param str account_sid: 账号SID
     :param str call_sid: 呼叫SID
@@ -75,7 +75,7 @@ onStatus                String         呼叫状态变化事件通知URL
 
     HTTP/1.1 200 OK
     Content-Type: application/xml
-    
+
     <response>
         <call>
             <sid>167ae21e1cbe11e6ac5f68f7288d9a79</sid>
@@ -97,7 +97,7 @@ onStatus                String         呼叫状态变化事件通知URL
 
 .. http:get:: /v1/account/(account_sid)/call
 
-    以账号 `account_sid` 的身份获取该账号下属的呼叫列表。
+    获取账号 `account_sid` 名下的呼叫列表。
 
     :param str account_sid: 账号SID
 
@@ -106,7 +106,7 @@ onStatus                String         呼叫状态变化事件通知URL
 
 .. http:post:: /v1/account/(account_sid)/call
 
-    以账号 `account_sid` 的身份发起呼叫（呼出）， :term:`云呼你` 返回新建呼叫的相关信息。
+    发起呼叫（呼出）， :term:`云呼你` 返回新建呼叫的相关信息。
 
     :param str account_sid: 账号SID
     :<header Accept: `application/xml`
@@ -134,10 +134,10 @@ onStatus                        String               呼叫状态变化事件通
 挂断呼叫
 **********
 
-.. http:post:: /v1/account/(account_sid)/call/(call_sid)/dispose
+.. http:post:: /v1/account/(account_sid)/call/(call_sid)/hangup
 
     挂断 SID 为 `call_sid` 的呼叫。该呼叫必须处于活动状态。
-    
+
     :param str account_sid: 账号SID
     :param str call_sid: 呼叫SID
     :<header Accept: `application/xml`
