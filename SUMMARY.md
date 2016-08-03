@@ -2,7 +2,6 @@
 
 ## 开始之前
 * [自述](README.md)
-* [目录](SUMMARY.md)
 
 ## 入门准备
 * [格式](docs/intro/format.md)
