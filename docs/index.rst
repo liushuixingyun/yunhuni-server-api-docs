@@ -12,8 +12,9 @@
 .. toctree::
    :maxdepth: 2
 
-   REST API <rest_api/index.rst>
-   术语表 <glossary.rst>
+   REST API <rest_api/index>
+   IVR API <ivr_api/index>
+   术语表 <glossary>
 
 
 

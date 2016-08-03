@@ -7,7 +7,7 @@
 **********
 
 ======================= ============== ====================================================
-属性                    数据类型       描述
+属性                    数据类型        描述
 ======================= ============== ====================================================
 sid                     String         会议的唯一 ID，是一个32字符的UUID
 accountSid              String         建立该会议的账号ID
@@ -41,7 +41,7 @@ onDisposed
 .. http:get:: /v1/account/(account_sid)/conf/(conf_sid)
 
     获取SID为 `conf_sid` 的会议的属性
-    
+
     :param str account_sid: 账号SID
     :param str conf_sid: 会议SID
     :<header Accept: `application/xml`
@@ -51,12 +51,12 @@ onDisposed
 *************
 
 .. http:post:: /v1/account/(account_sid)/conf
-    
+
     :param str account_sid: 账号SID
     :<header Accept: `application/xml`
     :<header Content-Type: `application/xml`
     :>header Content-Type: `application/xml`
-    
+
 新建会议时，用户应用需要在 `HTTP Content` 的 `XML` 数据中填写参数。
 可用参数有：
 
@@ -68,8 +68,8 @@ onDisposed
 解散会议
 *************
 
-.. http:post:: /v1/account/(account_sid)/conf/(conf_sid)/dispose
-    
+.. http:post:: /v1/account/(account_sid)/conf/(conf_sid)/dismiss
+
     :param str account_sid: 账号SID
     :<header Accept: `application/xml`
     :<header Content-Type: `application/xml`
@@ -90,7 +90,7 @@ onDisposed
 请求参数有：
 
 ======================= ============== ====================================================
-属性                    数据类型       描述
+属性                    数据类型        描述
 ======================= ============== ====================================================
 recordFile              String         录音文件名
 ======================= ============== ====================================================
@@ -127,7 +127,7 @@ recordFile              String         录音文件名
 请求参数有：
 
 ======================= ============== ====================================================
-属性                    数据类型       描述
+属性                     数据类型       描述
 ======================= ============== ====================================================
 playFile                String         放音文件名
 ======================= ============== ====================================================
@@ -148,4 +148,3 @@ playFile                String         放音文件名
 请求参数有：应该没有吧
 
 回复参数有：
-
