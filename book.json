@@ -1,0 +1,14 @@
+{
+    "title": "云呼你 REST API 参考文档",
+    "language": "zh",
+    "gitbook": ">= 3.0",
+    "plugins": [
+      "theme-api",
+      "codetabs"
+    ],
+    "pluginsConfig": {
+        "theme-api": {
+            "theme": "dark"
+        }
+    }
+}
