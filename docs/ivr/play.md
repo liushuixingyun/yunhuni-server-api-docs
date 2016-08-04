@@ -43,3 +43,12 @@ playlist
   <play>byebye.wav</play>
 </playlist>
 ```
+
+## 事件
+
+### 放音结束
+- `URL`: `{prefix}/{callback_url}`
+- 参数：
+  - `type`: `play_end`
+  - `call_id`
+  - `error`

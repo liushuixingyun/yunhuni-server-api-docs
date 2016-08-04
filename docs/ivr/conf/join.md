@@ -31,3 +31,6 @@ eg:
   <play>somebody_joined.wav</play>
 </join_conf>
 ```
+
+## 事件
+见 [会议 REST API](/docs/conf/create.md)

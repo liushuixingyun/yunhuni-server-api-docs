@@ -15,4 +15,17 @@ POST /account/{account_id}/call/notify_call
 - `repeat`                  重复播放次数
 - `max_dial_duration`       最大拨号等待时间（秒）
 - `callback_url`            结果通知地址
-- `userdata`                用户数据
+- `user_data`                用户数据
+
+## 事件
+
+### 结束
+
+- `URL`: `{prefix}/{callback_url}`
+- 参数：
+  - `type`: `hangup`
+  - `answered`: 是否接听
+  - `duration`: 接通时长
+  - `reason`
+  - `error`
+  - `user_data`

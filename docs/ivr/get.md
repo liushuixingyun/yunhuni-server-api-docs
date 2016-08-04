@@ -39,3 +39,13 @@ eg:
   <play>please_input.wav<play>
 </get>
 ```
+
+## 事件
+
+### 收码结束
+- `URL`: `{prefix}/{callback_url}`
+- 参数：
+  - `type`: `get_end`
+  - `call_id`
+  - `keys`
+  - `error`

@@ -19,3 +19,6 @@ create_conf
 
 ## 嵌套
 无
+
+## 事件
+见 [会议 REST API](/docs/conf/create.md)

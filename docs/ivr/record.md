@@ -16,3 +16,13 @@ record
 
 ##嵌套
 无
+
+## 事件
+
+### 录音结束
+- `URL`: `{prefix}/{callback_url}`
+- 参数：
+  - `type`: `record_end`
+  - `call_id`
+  - `record_file`
+  - `error`
