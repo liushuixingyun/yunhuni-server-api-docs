@@ -40,8 +40,4 @@
 
 ### 会议 IVR
 * [建立会议](docs/ivr/conf/create.md)
-* [解散会议](docs/ivr/conf/dispose.md)
-* [加入会议](docs/ivr/conf/enter.md)
-* [退出会议](docs/ivr/conf/exit.md)
-* [会议放音](docs/ivr/conf/play.md)
-* [会议录音](docs/ivr/conf/record.md)
+* [加入会议](docs/ivr/conf/join.md)

@@ -7,6 +7,7 @@ dial
 
 ## 属性
 - `callback_url`            事件通知地址
+- `call_id`                 操作对应的呼叫的ID
 - `from`                    主叫号码
 - `custom_from`             自定义猪脚号码
 - `custom_to`               自定义被叫号码
