@@ -18,6 +18,7 @@
 * [创建会议](docs/conf/create.md)
 * [解散会议](docs/conf/dismiss.md)
 * [邀请加入会议](docs/conf/invite_call.md)
+* [将通话加入到会议](docs/conf/join.md)
 * [从会议退出](docs/conf/quit.md)
 * [会议放音](docs/conf/play.md)
 * [会议录音](docs/conf/record.md)
