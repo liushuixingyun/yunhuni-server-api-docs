@@ -5,12 +5,12 @@
 
 ## 入门准备
 * [格式](docs/intro/format.md)
-* [安全](docs/introsecurity.md)
+* [安全](docs/intro/security.md)
 * [主动调用](docs/intro/rest.md)
 * [消息通知](docs/intro/callback.md)
 
 ## 简单语音 API
-* [双向回拨](docs/easy/duo_call.md)
+* [双向回拨](docs/easy/duo_callback.md)
 * [外呼通知](docs/easy/notify_call.md)
 * [语音验证码](docs/easy/captcha_call.md)
 

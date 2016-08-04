@@ -15,7 +15,9 @@
     "gitbook-cli": "^2.3.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node_modules/.bin/gitbook build",
+    "serve": "node_modules/.bin/gitbook serve"
   },
   "author": "",
   "license": "ISC"
