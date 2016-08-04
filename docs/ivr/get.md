@@ -7,7 +7,6 @@ get
 
 ## 属性
 - `callback_url`            事件通知地址
-- `call_id`                 操作对应的呼叫的ID
 - `valid_keys`              有效 DTMF 码范围字符串
 - `max_keys`                接收 DTMF 码的最大长度
 - `finish_keys`             结束码串
@@ -20,15 +19,23 @@ get
 无
 
 ## 嵌套
+[`playlist`](play.md), [`play`](play.md)
 
-### play
-**NOTE** 此时 `play` 的参数无效
+**NOTE** 此时 [`playlist`](play.md) 或 [`play`](play.md) 的参数无效
 
 eg:
 
 ```xml
 <get valid_keys="0123456789#" finish_keys="#" callback_url="http://userhost/event.php?type=dtmf">
-  <play>please.wav<play>
-  <play>input.wav<play>
+  <playlist>
+    <play>please.wav<play>
+    <play>input.wav<play>
+  <playlist>
+</get>
+```
+
+```xml
+<get valid_keys="0123456789#" finish_keys="#" callback_url="http://userhost/event.php?type=dtmf">
+  <play>please_input.wav<play>
 </get>
 ```

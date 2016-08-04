@@ -7,7 +7,6 @@ create_conf
 
 ## 属性
 - `callback_url`            事件通知地址
-- `call_id`                 操作对应的呼叫的ID
 - `max_duration`            最大存活时间（秒）
 - `max_parts`               最大与会方数
 - `recording`               是否自动启动录音

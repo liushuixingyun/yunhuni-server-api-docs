@@ -7,7 +7,6 @@ record
 
 ## 属性
 - `callback_url`            事件通知地址
-- `call_id`                 操作对应的呼叫的ID
 - `max_duration`            最长录音时限（秒）
 - `beeping`                 是否在录音之前播放“嘀”的一声
 - `finish_keys`             中断码

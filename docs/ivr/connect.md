@@ -9,7 +9,6 @@ connect
 
 ## 属性
 - `callback_url`            事件通知地址
-- `call_id`                 操作对应的呼叫的ID
 - `max_duration`            最大连接时间（秒）
 - `mode`                    连接模式
   - `1`：	连接双方均可互相听到
