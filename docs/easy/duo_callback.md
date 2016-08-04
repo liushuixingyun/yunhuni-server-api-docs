@@ -16,6 +16,10 @@ POST /account/{account_id}/call/duo_callback
 - `max_dial_duration`       最大拨号等待时间（秒）
 - `max_call_duration`       最大接通时间（秒）
 - `recording`               是否录音
+- `record_cond`             录音启动条件：
+  - `0`: 双向接通后录音
+  - `1`：开始呼叫第一方时启动录音
+  - `2`: 开始呼叫第二方时启动录音
 - `countdown_time`          倒计时时间点
 - `countdown_voice`         倒计时播放语音文件
 - `callback_url`            结果通知地址
