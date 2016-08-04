@@ -25,6 +25,7 @@
 * [会议成员录放音模式](docs/conf/voice_mode.md)
 
 ## IVR API
+* [IVR 外呼](docs/adv/callout.md)
 
 ### 呼叫 IVR
 * [放音](docs/ivr/play.md)
