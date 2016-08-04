@@ -10,3 +10,6 @@ TODO: ...
 ## HEADER
 
 * `X-Yunhuni-AppId`: APP ID
+
+## CONTENT
+`text/xml`, `application/json`

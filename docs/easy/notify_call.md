@@ -2,7 +2,7 @@
 
 ## URL
 ```
-/SubAccounts/{SubAccountId}/Calls/NotifyCall
+POST /account/{account_id}/call/notify_call
 ```
 
 ## 参数
