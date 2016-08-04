@@ -6,8 +6,7 @@ none
 ```
 
 ## 属性
-- `callback_url`            事件通知地址
-- `call_id`                 操作对应的呼叫的ID
+无
 
 ## 内容
 无
