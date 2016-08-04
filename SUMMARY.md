@@ -14,6 +14,9 @@
 * [外呼通知](docs/easy/notify_call.md)
 * [语音验证码](docs/easy/captcha_call.md)
 
+# REST API for IVR
+* [IVR 外呼](docs/adv/callout.md)
+
 ## 语音会议 API
 * [创建会议](docs/conf/create.md)
 * [解散会议](docs/conf/dismiss.md)
@@ -25,7 +28,6 @@
 * [会议成员录放音模式](docs/conf/voice_mode.md)
 
 ## IVR API
-* [IVR 外呼](docs/adv/callout.md)
 
 ### 呼叫 IVR
 * [放音](docs/ivr/play.md)

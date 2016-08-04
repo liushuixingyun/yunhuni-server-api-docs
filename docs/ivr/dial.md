@@ -35,3 +35,14 @@ eg:
   </connect>
 </dial>
 ```
+
+## 事件
+
+### 结束
+- `URL`: `{prefix}/{callback_url}`
+- 参数：
+  - `type`: `hangup`
+  - `answered`: 是否接听
+  - `duration`: 接通时长
+  - `reason`
+  - `error`

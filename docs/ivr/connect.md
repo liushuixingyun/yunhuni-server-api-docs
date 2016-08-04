@@ -34,3 +34,20 @@ eg:
   <play repeat=3>warning.wav</play>
 </connect>
 ```
+
+## 事件
+
+### 连接建立
+- `URL`: `{prefix}/{callback_url}`
+- 参数：
+  - `type`: `connect_begin`
+  - `call_id`
+
+### 连接结束
+- `URL`: `{prefix}/{callback_url}`
+- 参数：
+  - `type`: `connect_end`
+  - `call_id`
+  - `connected`: 是否连接上了？
+  - `error`
+  - `duration`: 时长

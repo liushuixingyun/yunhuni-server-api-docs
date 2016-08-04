@@ -19,4 +19,19 @@ POST /account/{account_id}/call/duo_callback
 - `countdown_time`          倒计时时间点
 - `countdown_voice`         倒计时播放语音文件
 - `callback_url`            结果通知地址
-- `userdata`                用户数据
+- `user_data`                用户数据
+
+## 事件
+
+### 结束
+
+- `URL`: `{prefix}/{callback_url}`
+- 参数：
+  - `type`: `hangup`
+  - `answered1`: 第一方是否接听
+  - `answered1`: 第二方是否接听
+  - `record_file`: 录音文件
+  - `duration`: 接通时长
+  - `reason`
+  - `error`
+  - `user_data`
