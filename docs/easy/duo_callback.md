@@ -2,7 +2,7 @@
 
 ## URL
 ```
-/SubAccounts/{SubAccountId}/Calls/DuoCallback
+POST /account/{account_id}/call/duo_callback
 ```
 
 ## 参数

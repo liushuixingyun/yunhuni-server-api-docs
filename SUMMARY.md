@@ -15,21 +15,28 @@
 * [语音验证码](docs/easy/captcha_call.md)
 
 ## 语音会议 API
-* [建立会议](docs/conf/create.md)
-* [解散会议](docs/conf/dispose.md)
-* [加入会议](docs/conf/enter.md)
-* [会议邀请](docs/conf/exit.md)
+* [创建会议](docs/conf/create.md)
+* [解散会议](docs/conf/dismiss.md)
+* [邀请加入会议](docs/conf/invite_call.md)
+* [从会议退出](docs/conf/quit.md)
 * [会议放音](docs/conf/play.md)
 * [会议录音](docs/conf/record.md)
+* [会议成员录放音模式](docs/conf/voice_mode.md)
 
 ## IVR API
 
 ### 呼叫 IVR
-* [拨号](docs/ivr/dial.md)
 * [放音](docs/ivr/play.md)
 * [录音](docs/ivr/record.md)
 * [发码](docs/ivr/send_dtmf.md)
 * [收码](docs/ivr/receive_dtmf.md)
+* [拨号](docs/ivr/dial.md)
+* [连接](docs/ivr/connect.md)
+* [挂断](docs/ivr/hangup.md)
+* [拒接](docs/ivr/reject.md)
+* [暂停](docs/ivr/pause.md)
+* [后续IVR](docs/ivr/next.md)
+* [空指令](docs/ivr/none.md)
 
 ### 会议 IVR
 * [建立会议](docs/ivr/conf/create.md)

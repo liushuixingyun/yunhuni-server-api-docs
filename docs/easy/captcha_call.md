@@ -2,7 +2,7 @@
 
 ## URL
 ```
-/SubAccounts/{SubAccountId}/Calls/CaptchaCall
+POST /account/{account_id}/call/captcha_call
 ```
 
 ## 参数
