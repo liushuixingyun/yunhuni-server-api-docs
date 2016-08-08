@@ -22,7 +22,7 @@
 
 # 用户调用接口
 
-- [用户调用接口概述](docs/simple_call/index.md)
+- [简单呼出 API](docs/simple_call/index.md)
 
   - [双向回拨](docs/simple_call/duo_callback.md)
   - [通知外呼](docs/simple_call/notify_call.md)
@@ -58,9 +58,8 @@
 
   - [放音](docs/ivr/play.md)
   - [录音](docs/ivr/record.md)
-  - [发码](docs/ivr/send_dtmf.md)
-  - [收码](docs/ivr/get.md)
   - [发码](docs/ivr/put.md)
+  - [收码](docs/ivr/get.md)
   - [挂断](docs/ivr/hangup.md)
   - [拒接](docs/ivr/reject.md)
   - [暂停](docs/ivr/pause.md)
