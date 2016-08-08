@@ -1,23 +1,27 @@
 # 拨号
 
 ## dial 节点
+
 ```
 dial
 ```
 
 ## 属性
-- `callback_url`            事件通知地址
-- `from`                    主叫号码
-- `custom_from`             自定义猪脚号码
-- `custom_to`               自定义被叫号码
-- `max_call_duration`       最大接通时间（秒）
-- `max_dial_duration`       最大拨号等待时间（秒）
-- `dial_voice_stop_cond`    自定义拨号音停止播放条件。0：振铃停止；1：接听或者挂断停止。
+
+- `callback_url` 事件通知地址
+- `from` 主叫号码
+- `custom_from` 自定义主叫号码
+- `custom_to` 自定义被叫号码
+- `max_call_duration` 最大接通时间（秒）
+- `max_dial_duration` 最大拨号等待时间（秒）
+- `dial_voice_stop_cond` 自定义拨号音停止播放条件。0：振铃停止；1：接听或者挂断停止。
 
 ## 内容
+
 被叫号码
 
 ## 嵌套
+
 `play`, `number`, [connect](connect.md)
 
 **NTOE** 只能嵌套一个 `play` 节点，用于播放拨号提示音，且重复播放等参数无效
@@ -39,8 +43,10 @@ eg:
 ## 事件
 
 ### 结束
+
 - `URL`: `{prefix}/{callback_url}`
 - 参数：
+
   - `type`: `hangup`
   - `answered`: 是否接听
   - `duration`: 接通时长

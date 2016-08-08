@@ -4,11 +4,16 @@
     "gitbook": ">= 3.0",
     "plugins": [
       "theme-api",
-      "codetabs"
+      "codetabs",
+      "hints",
+      "github"
     ],
     "pluginsConfig": {
         "theme-api": {
             "theme": "dark"
+        },
+        "github": {
+            "url": "https://github.com/liushuixingyun/yunhuni-server-api-docs"
         }
     }
 }
