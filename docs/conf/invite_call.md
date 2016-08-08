@@ -1,4 +1,4 @@
-# 邀请加入会议
+# 会议邀请呼叫
 
 ## URL
 
@@ -10,7 +10,7 @@ POST /account/{account_id}/conf/{conf_id}/invite_call
 
 - `from` 主叫号码
 - `to` 被叫号码
-- `custom_from` 自定义猪脚号码
+- `custom_from` 自定义主叫号码
 - `custom_to` 自定义被叫号码
 - `max_duration` 最大会议时间（秒）
 - `max_dial_duration` 最大拨号等待时间（秒）

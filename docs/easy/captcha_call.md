@@ -10,7 +10,7 @@ POST /account/{account_id}/call/captcha_call
 
 - `from` 主叫号码
 - `to` 被叫号码
-- `custom_from` 自定义猪脚号码
+- `custom_from` 自定义主叫号码
 - `custom_to` 自定义被叫号码
 - `max_call_duration` 最大接通时间（秒）
 - `max_dial_duration` 最大拨号等待时间（秒）
