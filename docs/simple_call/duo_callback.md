@@ -8,10 +8,10 @@ POST /account/{account_id}/call/duo_callback
 
 ## 参数
 
-- `from` 主叫号码
-- `to` 被叫号码
-- `custom_from` 自定义主叫号码
-- `custom_to` 自定义被叫号码
+- `from1` 第一方主叫号码
+- `to1` 第一方被叫号码
+- `from2` 第二方主叫号码
+- `to2` 第二方被叫号码
 - `ring_tone` 自定义回铃音
 - `ring_tone_mode` 自定义回铃音播放模式
 
@@ -20,7 +20,9 @@ POST /account/{account_id}/call/duo_callback
   - `2`：拨号时即开始播放，对端接听或者挂机后停止播放
 
 - `max_dial_duration` 最大拨号等待时间（秒）
+
 - `max_call_duration` 最大接通时间（秒）
+
 - `recording` 是否录音
 - `record_mode` 录音模式：
 
@@ -31,21 +33,11 @@ POST /account/{account_id}/call/duo_callback
 - `countdown_time` 倒计时时间点
 
 - `countdown_voice` 倒计时播放语音文件
-- `callback_url` 结果通知地址
+
+- `callback_url` 结果通知 HTTP 地址
+- `callback_method` 结果通知 HTTP 方法, `GET`(默认) or `POST`
 - `user_data` 用户数据
 
 ## 事件
 
-### 结束
-
-- `URL`: `{prefix}/{callback_url}`
-- 参数：
-
-  - `type`: `hangup`
-  - `answered1`: 第一方是否接听
-  - `answered1`: 第二方是否接听
-  - `record_file`: 录音文件
-  - `duration`: 接通时长
-  - `reason`
-  - `error`
-  - `user_data`
+见 [双向回拨事件](../evt/simple_call/duo_callback.md)一节

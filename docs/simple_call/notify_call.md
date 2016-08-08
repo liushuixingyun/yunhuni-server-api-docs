@@ -1,4 +1,4 @@
-# 语音通知
+# 外呼通知
 
 ## URL
 
@@ -10,24 +10,13 @@ POST /account/{account_id}/call/notify_call
 
 - `from` 主叫号码
 - `to` 被叫号码
-- `custom_from` 自定义主叫号码
-- `custom_to` 自定义被叫号码
 - `files` 通知放音文件(列表)
 - `repeat` 重复播放次数
 - `max_dial_duration` 最大拨号等待时间（秒）
 - `callback_url` 结果通知地址
+- `callback_method` 结果通知 HTTP 方法, `GET`(默认) or `POST`
 - `user_data` 用户数据
 
 ## 事件
 
-### 结束
-
-- `URL`: `{prefix}/{callback_url}`
-- 参数：
-
-  - `type`: `hangup`
-  - `answered`: 是否接听
-  - `duration`: 接通时长
-  - `reason`
-  - `error`
-  - `user_data`
+见 [外呼通知事件](../evt/simple_call/notify_call.md)

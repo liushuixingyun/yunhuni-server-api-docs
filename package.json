@@ -7,9 +7,7 @@
     "doc": "docs"
   },
   "dependencies": {
-    "gitbook-cli": "^2.3.0",
-    "gitbook-plugin-codetabs": "^1.0.0",
-    "gitbook-plugin-theme-api": "^1.1.2"
+    "gitbook-cli": "^2.3.0"
   },
   "devDependencies": {
     "gitbook-cli": "^2.3.0"
