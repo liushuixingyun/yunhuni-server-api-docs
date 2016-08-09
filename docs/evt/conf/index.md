@@ -39,14 +39,14 @@
   - `user_data` 用户数据
 
 ## 会议放音结束事件
-- `event`: `conf.play_stopped`
+- `event`: `conf.play_end`
 - `id`
 - `begin_time`: 开始时间
 - `end_time`: 结束时间
 - `user_data` 用户数据
 
 ## 会议录音结束事件
-- `event`: `conf.record_stopped`
+- `event`: `conf.record_end`
 - `id`
 - `begin_time`: 开始时间
 - `end_time`: 结束时间

@@ -46,12 +46,4 @@ eg:
 
 ## 事件
 
-### 收码结束
-
-- `URL`: `{prefix}/{callback_url}`
-- 参数：
-
-  - `type`: `get_end`
-  - `call_id`
-  - `keys`
-  - `error`
+见 [IVR 事件](../evt/ivr/index.md)
