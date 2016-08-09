@@ -23,12 +23,4 @@ record
 
 ## 事件
 
-### 录音结束
-
-- `URL`: `{prefix}/{callback_url}`
-- 参数：
-
-  - `type`: `record_end`
-  - `call_id`
-  - `record_file`
-  - `error`
+见 [IVR 事件](../evt/ivr/index.md)

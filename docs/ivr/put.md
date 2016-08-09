@@ -17,3 +17,7 @@ send_dtmf
 ## 嵌套
 
 无
+
+## 事件
+
+见 [IVR 事件](../evt/ivr/index.md)
