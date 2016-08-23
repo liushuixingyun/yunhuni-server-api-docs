@@ -17,15 +17,10 @@ POST /account/{account_id}/call/ivr_call
 - `callback_url` 结果通知地址
 - `user_data` 用户数据
 
+## 回复
+
+- `call_id`
+
 ## 事件
 
-### 结束
-
-- `URL`: `{prefix}/{callback_url}`
-- 参数：
-
-  - `type`: `hangup`
-  - `answered`: 是否接听
-  - `duration`: 接通时长
-  - `reason`
-  - `user_data`
+结束: 见 [IVR 事件](../evt/ivr/index.md) 的 *呼叫结束事件*

@@ -19,5 +19,9 @@ POST /account/{account_id}/call/captcha_call
 - `callback_method` 结果通知 HTTP 方法, `GET`(默认) or `POST`
 - `user_data` 用户数据
 
+## 回复
+
+- `id`
+
 ## 事件
 见 [语音验证码事件](../evt/simple_call/captcha_call.md)

@@ -5,3 +5,7 @@
 ```
 POST /account/{account_id}/conf/{conf_id}/dismiss
 ```
+
+## 回复
+
+无

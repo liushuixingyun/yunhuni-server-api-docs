@@ -38,6 +38,10 @@ POST /account/{account_id}/call/duo_callback
 - `callback_method` 结果通知 HTTP 方法, `GET`(默认) or `POST`
 - `user_data` 用户数据
 
+## 回复
+
+- `id`
+
 ## 事件
 
 见 [双向回拨事件](../evt/simple_call/duo_callback.md)一节
