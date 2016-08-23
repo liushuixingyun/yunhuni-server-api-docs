@@ -17,3 +17,7 @@ POST /account/{account_id}/conf/{conf_id}/set_voice_mode
   - `2`: 不能听；能够说
   - `3`: 能够听；不能说
   - `4`: 不能听；不能说
+
+## 回复
+
+无
