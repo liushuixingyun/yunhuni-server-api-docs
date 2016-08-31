@@ -13,7 +13,6 @@ POST /account/{account_id}/conf/create
 - `recording` 是否自动启动录音
 - `auto_hangup` 会议结束自动挂断与会方
 - `bgm_file` 背景音文件
-- `callback_method` 结果通知 HTTP 方法, `GET`(默认) or `POST`
 - `user_data` 用户数据
 
 ## 回复
