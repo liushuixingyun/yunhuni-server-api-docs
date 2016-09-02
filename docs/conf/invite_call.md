@@ -10,8 +10,6 @@ POST /account/{account_id}/conf/{conf_id}/invite_call
 
 - `from` 主叫号码
 - `to` 被叫号码
-- `custom_from` 自定义主叫号码
-- `custom_to` 自定义被叫号码
 - `max_duration` 最大会议时间（秒）
 - `max_dial_duration` 最大拨号等待时间（秒）
 - `dial_voice_stop_cond` 自定义拨号音停止播放条件。0：振铃停止；1：接听或者挂断停止。

@@ -2,20 +2,18 @@
 
 ## 会议结束事件
 
-- `URL`: `{prefix}/{callback_url}`
+- `URL`: `{prefix}/yunhuni/event/notify`
 - 参数：
 
   - `event`: `conf.end`
   - `id`
   - `begin_time`: 开始时间
   - `end_time`: 结束时间
-  - `end_by`: `0`: 平台；`1`用户
-  - `record_files`: 录音文件
   - `user_data`
 
 ## 加入会议事件
 
-- `URL`: `{prefix}/{callback_url}`
+- `URL`: `{prefix}/yunhuni/event/notify`
 - 参数：
 
   - `event`: `conf.joined`
@@ -27,7 +25,7 @@
 
 ## 离开会议事件
 
-- `URL`: `{prefix}/{callback_url}`
+- `URL`: `{prefix}/yunhuni/event/notify`
 - 参数：
 
   - `event`: `conf.quit`
@@ -50,5 +48,4 @@
 - `id`
 - `begin_time`: 开始时间
 - `end_time`: 结束时间
-- `record_file`
 - `user_data` 用户数据
