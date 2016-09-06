@@ -3,23 +3,45 @@
 ## URL
 
 ```
-POST /account/{account_id}/call/captcha_call
+POST ${prefix}/account/{account_id}/call/captcha_call
 ```
 
-## 参数
-
+## 请求
 - `from` 主叫号码
 - `to` 被叫号码
 - `max_call_duration` 最大接通时间（秒）
 - `max_dial_duration` 最大拨号等待时间（秒）
-- `files` 验证放音文件(列表)
-- `callback_url` 结果通知 HTTP 地址
-- `callback_method` 结果通知 HTTP 方法, `GET`(默认) or `POST`
-- `user_data` 用户数据
+- `files` 提示放音文件的名称(列表),值为开发者用户中心的放音文件名
+- `user_data` 用户数据,会在语音验证码事件中返回给开发者
 
-## 回复
+#### 示例
+```json
+{
+    "from":"400-12349789",
+    "to":"13692206627",
+    "max_call_duration":1800,
+    "max_dial_duration":60,
+    "files":["file1","file2"],
+	"user_data":"your data"
+}
+```
 
-- `id`
+## 响应
+- `code` 错误码， 000000表示正常
+- `msg` 错误信息
+- `data.callId` 呼叫id
+
+#### 示例
+```json
+{
+  "code": "000000",
+  "msg": "请求成功",
+  "data": {
+    "callId": "89d716b2fc23ebff7a0086482bda8942"
+  }
+}
+```
+
 
 ## 事件
 见 [语音验证码事件](../evt/simple_call/captcha_call.md)

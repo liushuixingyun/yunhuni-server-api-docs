@@ -2,6 +2,7 @@
 
 ## 呼叫结束事件
 
+- `URL`: `${notify_url}`
 - `event`: `ivr.call_end`
 - `call_id`
 - `begin_time`
@@ -13,6 +14,7 @@
 
 ## 放音结束事件
 
+- `URL`: `${notify_url}`
 - `event`: `ivr.play_end`
 - `call_id`
 - `begin_time`: 开始时间
@@ -22,6 +24,7 @@
 
 ## 录音结束事件
 
+- `URL`: `${notify_url}`
 - `event`: `ivr.record_end`
 - `call_id`
 - `begin_time`: 开始时间
@@ -41,6 +44,7 @@
 
 ## 发码结束事件
 
+- `URL`: `${notify_url}`
 - `event`: `ivr.put_end`
 - `call_id`
 - `begin_time`: 开始时间
@@ -49,6 +53,7 @@
 
 ## 拨号结束事件
 
+- `URL`: `${notify_url}`
 - `event`: `ivr.dial_end`
 - `call_id`
 - `begin_time`: 开始时间
@@ -57,12 +62,14 @@
 
 ## 连接建立事件
 
+- `URL`: `${notify_url}`
 - `event`: `ivr.connect_begin`
 - `call_id`
 - `error`: 错误信息，如果有的话。
 
 ## 连接结束事件
 
+- `URL`: `${notify_url}`
 - `event`: `ivr.connect_end`
 - `call_id`
 - `error`: 错误信息，如果有的话。

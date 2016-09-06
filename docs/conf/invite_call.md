@@ -3,10 +3,10 @@
 ## URL
 
 ```
-POST /account/{account_id}/conf/{conf_id}/invite_call
+POST ${prefix}/account/{account_id}/conf/{conf_id}/invite_call
 ```
 
-## 参数
+## 请求
 
 - `from` 主叫号码
 - `to` 被叫号码
@@ -20,7 +20,36 @@ POST /account/{account_id}/conf/{conf_id}/invite_call
   - `2`: 不能听；能够说
   - `3`: 能够听；不能说
   - `4`: 不能听；不能说
+  
+#### 示例
+```json
+{
+	"from":"400-xxxxxxx",
+	"to":"13692206627",
+	"max_duration":1800,
+	"max_dial_duration":60,
+	"dial_voice_stop_cond":0,
+	"play_file":"file1",
+	"voice_mode":1
+}
+```
 
-## 回复
+## 响应
+- `code` 错误码， 000000表示正常
+- `msg` 错误信息
+- `data.callId` 呼叫id
 
-- `call_id`
+#### 示例
+```json
+{
+  "code": "000000",
+  "msg": "请求成功",
+  "data": {
+    "callId": "89d716b2fc23ebff7a0086482bda8942"
+  }
+}
+```
+
+## 事件
+
+见 [语音会议事件](../env/conf/index.md)
