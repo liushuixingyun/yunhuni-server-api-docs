@@ -17,13 +17,14 @@ play
 
 ## 嵌套
 
-无
+next
 
 ## 例子
 
 ```xml
-<play callback_url="http://userhost/callback.php?event=play" finish_keys="#">
+<play finish_keys="#">
   welcome.wav
+  <next>http://yourhost/nextstep</next>
 <play>
 ```
 
@@ -45,12 +46,15 @@ playlist
 
 `play`
 
+`next`
+
 ## 例子
 
 ```xml
-<playlist callback_url="http://userhost/callback.php?event=play" finish_keys="0123456789*#">
+<playlist finish_keys="0123456789*#">
   <play>welcome.wav</play>
   <play>byebye.wav</play>
+  <next>http://yourhost/nextstep</next>
 </playlist>
 ```
 

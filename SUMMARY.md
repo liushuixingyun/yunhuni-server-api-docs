@@ -49,13 +49,15 @@
 
 # IVR 回调接口
 
+- [IVR回调](docs/ivr/start/step1.md)
+- [IVR呼入回调](docs/ivr/start/incoming.md)
 - 呼叫 IVR
   - [放音](docs/ivr/play.md)
   - [录音](docs/ivr/record.md)
   - [发码](docs/ivr/put.md)
   - [收码](docs/ivr/get.md)
   - [挂断](docs/ivr/hangup.md)
-  - [拒接](docs/ivr/reject.md)
+#- [拒接](docs/ivr/reject.md)
   - [暂停](docs/ivr/pause.md)
   - [后续IVR](docs/ivr/next.md)
   - [空指令](docs/ivr/none.md)
