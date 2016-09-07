@@ -2,7 +2,7 @@
 
 ## 会议结束事件
 
-- `URL`: `{prefix}/yunhuni/event/notify`
+- `URL`: `${notify_url}`
 - 参数：
 
   - `event`: `conf.end`
@@ -13,7 +13,7 @@
 
 ## 加入会议事件
 
-- `URL`: `{prefix}/yunhuni/event/notify`
+- `URL`: `${notify_url}`
 - 参数：
 
   - `event`: `conf.joined`
@@ -25,7 +25,7 @@
 
 ## 离开会议事件
 
-- `URL`: `{prefix}/yunhuni/event/notify`
+- `URL`: `${notify_url}`
 - 参数：
 
   - `event`: `conf.quit`
@@ -37,15 +37,19 @@
   - `user_data` 用户数据
 
 ## 会议放音结束事件
-- `event`: `conf.play_end`
-- `id`
-- `begin_time`: 开始时间
-- `end_time`: 结束时间
-- `user_data` 用户数据
+- `URL`: `${notify_url}`
+- 参数：
+	- `event`: `conf.play_end`
+	- `id`
+	- `begin_time`: 开始时间
+	- `end_time`: 结束时间
+	- `user_data` 用户数据
 
 ## 会议录音结束事件
-- `event`: `conf.record_end`
-- `id`
-- `begin_time`: 开始时间
-- `end_time`: 结束时间
-- `user_data` 用户数据
+- `URL`: `${notify_url}`
+- 参数：
+	- `event`: `conf.record_end`
+	- `id`
+	- `begin_time`: 开始时间
+	- `end_time`: 结束时间
+	- `user_data` 用户数据

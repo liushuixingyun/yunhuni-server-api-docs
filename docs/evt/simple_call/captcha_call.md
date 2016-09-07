@@ -2,7 +2,7 @@
 
 ## 结束事件
 
-- `URL`: `{prefix}/yunhuni/event/notify`
+- `URL`: `${notify_url}`
 - 参数：
 
   - `event`: `captcha_call.end`
