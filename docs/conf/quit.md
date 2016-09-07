@@ -3,7 +3,7 @@
 ## URL
 
 ```
-POST ${prefix}/account/{account_id}/conf/{conf_id}/invite_call
+POST ${prefix}/account/{account_id}/conf/{conf_id}/quit
 ```
 
 ## 请求
