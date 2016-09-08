@@ -8,7 +8,11 @@ POST ${prefix}/account/{account_id}/conf/{conf_id}/quit
 
 ## 请求
 
-- `call_id` 会议成员的 `call_id`
+| 参数      | 是否必须 | 说明           |
+| ------- | ---- | ------------ |
+| call_id | 是    | 会议成员的call_id |
+
+
 
 #### 示例
 ```json

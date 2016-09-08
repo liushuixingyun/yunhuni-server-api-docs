@@ -10,6 +10,10 @@ POST ${prefix}/account/{account_id}/conf/{conf_id}/start_record
 
 ### 请求
 
+| 参数           | 是否必须 | 说明        |
+| ------------ | ---- | --------- |
+| max_duration | 否    | 默认时间为会议时长 |
+
 - `max_duration` 录音时长（秒）
 
 #### 示例
@@ -45,7 +49,7 @@ POST ${prefix}/account/{account_id}/conf/{conf_id}/stop_record
 
 ## 请求
 	无
-	
+
 ## 响应
 - `code` 错误码， 000000表示正常
 - `msg` 错误信息

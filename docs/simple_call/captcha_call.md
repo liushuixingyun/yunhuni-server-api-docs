@@ -7,20 +7,27 @@ POST ${prefix}/account/{account_id}/call/captcha_call
 ```
 
 ## 请求
-- `from` 主叫号码
-- `to` 被叫号码
-- `max_call_duration` 最大接通时间（秒）
-- `max_dial_duration` 最大拨号等待时间（秒）
-- `files` 提示放音文件的名称(列表),值为开发者用户中心的放音文件名
-- `user_data` 用户数据,会在语音验证码事件中返回给开发者
+
+| 参数                | 是否必须 | 说明                                  |
+| ----------------- | ---- | ----------------------------------- |
+| from              | 否    | 主叫号码，只能填租用的号码，不填平台会自动选择一个可用的        |
+| to                | 是    | 被叫号码                                |
+| max_dial_duration | 否    | 最大拨号等待时间（秒），默认50秒                   |
+| verify_code       | 否    | 接收有效字符范围，默认0123456789*#ABCD         |
+| max_keys          | 否    | 接收输入的最大长度，一旦达到最大长度，此次接收过程即宣告结束，默认11 |
+| files             | 否    | 提示放音文件的名称(列表),值为开发者用户中心的放音文件名       |
+| user_data         | 否    | 用户数据,最大128个字符                       |
+
+
 
 #### 示例
 ```json
 {
     "from":"400-12349789",
     "to":"13692206627",
-    "max_call_duration":1800,
     "max_dial_duration":60,
+  	"verify_code":"123456789*#A"
+  	"max_keys":18
     "files":["file1","file2"],
 	"user_data":"your data"
 }
