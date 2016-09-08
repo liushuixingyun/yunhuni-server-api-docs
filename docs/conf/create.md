@@ -8,12 +8,16 @@ POST ${prefix}/account/{account_id}/conf/create
 
 ## 请求
 
-- `max_duration` 呼叫最大接通时间（秒）
-- `max_parts` 最大与会方数
-- `recording` 是否自动启动录音
-- `auto_hangup` 会议结束自动挂断与会方
-- `bgm_file` 背景音文件
-- `user_data` 用户数据 会在会议事件通知中返回给开发者
+| 参数           | 是否必须 | 说明                    |
+| ------------ | ---- | --------------------- |
+| max_duration | 是    | 会议的最大允许时间，单位是秒        |
+| max_parts    | 否    | 最大与会方数，默认300          |
+| recording    | 否    | 是否自动启动录音              |
+| auto_hangup  | 否    | 会议结束自动挂断与会方           |
+| bgm_file     | 否    | 会议创建后，自动播放这个声音文件作为背景音 |
+| user_data    | 否    | 用户数据，最多128个字符         |
+
+
 
 #### 示例
 ```json

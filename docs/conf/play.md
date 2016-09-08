@@ -10,12 +10,16 @@ POST ${prefix}/account/{account_id}/conf/{conf_id}/start_play
 
 ### 请求
 
-- `files` 播放文件（列表）
+| 参数    | 是否必须 | 说明                 |
+| ----- | ---- | ------------------ |
+| files | 是    | 播放文件列表，列表元素个数必须大于0 |
+
+
 
 #### 示例
 ```json
 {
-	"call_id":"89d716b2fc23ebff7a0086482bda8942"
+	"files":["filename1","filename2","filename3"]
 }
 ```
 
