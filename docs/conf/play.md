@@ -15,7 +15,7 @@ POST ${prefix}/account/{account_id}/conf/{conf_id}/start_play
 #### 示例
 ```json
 {
-	"call_id":"89d716b2fc23ebff7a0086482bda8942"
+	"files":["filename1","filename2","filename3"]
 }
 ```
 
