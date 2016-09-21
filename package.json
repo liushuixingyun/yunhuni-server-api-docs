@@ -18,5 +18,8 @@
     "serve": "node_modules/.bin/gitbook serve"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "engines": {
+    "gitbook": "*"
+  }
 }

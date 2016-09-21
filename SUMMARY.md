@@ -1,16 +1,16 @@
-# 开始之前
+### 开始之前
 
 - [自述](README.md)
 
 --------------------------------------------------------------------------------
 
-# 目录
+### 目录
 
 - [目录](SUMMARY.md)
 
 --------------------------------------------------------------------------------
 
-# 入门准备
+### 入门准备
 
 - [格式](docs/intro/format.md)
 - [安全](docs/intro/security.md)
@@ -20,7 +20,7 @@
 
 --------------------------------------------------------------------------------
 
-# 用户调用接口
+### 用户调用接口
 
 - [简单呼出 API](docs/simple_call/index.md)
   - [双向回拨](docs/simple_call/duo_callback.md)
@@ -47,7 +47,7 @@
 - [会议事件](docs/evt/conf/index.md)
 - [IVR 事件](docs/evt/ivr/index.md)
 
-# IVR 回调接口
+### IVR 回调接口
 
 - [IVR回调](docs/ivr/start/step1.md)
 - [IVR呼入回调](docs/ivr/start/incoming.md)
@@ -63,12 +63,12 @@
   - [空指令](docs/ivr/none.md)
   - [拨号](docs/ivr/dial.md)
   - [连接](docs/ivr/connect.md)
-- 会议 IVR
-  - [建立会议](docs/ivr/conf/create.md)
-  - [加入会议](docs/ivr/conf/join.md)
+* 会议 IVR
+  * [建立会议](docs/ivr/conf/create.md)
+  * [加入会议](docs/ivr/conf/join.md)
 
 --------------------------------------------------------------------------------
 
-# 附录
+### 附录
 
 - [术语表](GLOSSARY.md)
