@@ -3,9 +3,6 @@
 - [自述](README.md)
 
 ### 入门准备
-
-- [格式](docs/intro/format.md)
-- [安全](docs/intro/security.md)
 - [主动调用](docs/intro/call.md)
 - [事件回调](docs/intro/callback.md)
 - [IVR回调](docs/intro/ivr.md)
