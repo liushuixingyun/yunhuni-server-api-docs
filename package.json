@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "repository": "https://github.com/liushuixingyun/yunhuni-server-api-docs.git",
   "directories": {
     "doc": "docs"
   },

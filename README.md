@@ -1,31 +1,6 @@
-# Yunhuni.com RESTful Web API 参考文档
-这个是 Yunhuni.com RESTful Web API 参考文档 blabla...
+# 云呼你 REST API
+云呼你 RESTful Web API (以下简称 REST API)，是 [yunhuni.com](http://yunhuni.com/) 提供的，由用户应用服务程序调用的开放接口。通过 REST API 调用，用户可以使用 [yunhuni.com](http://yunhuni.com/) 的一系列实时通信功能。
 
-## Contribute
-该文档项目使用 gitbook 制作。
+本文用于描述 [yunhuni.com](http://yunhuni.com/) REST API 的接口形态，参数定义，调用方法，格式约定。
 
-请按照以下步骤构建开发环境：
-
-### 1. 安装 `node` 4.0 以上版本。
-
-### 2. 安装 `npm` 3.0 以上版本。
-
-### 3. 安装 gitbook
-```sh
-npm install gitbook-cli
-```
-
-### 4. 升级到最新的 gitbook
-```sh
-./node_modules/./bin/gitbook update
-```  
-
-### 5. 安装 gitbook 的项目以来
-```sh
-./node_modules/./bin/gitbook install
-```  
-
-### 6. 启动Web开发服务器，查看文档
-```sh
-./node_modules/.bin/gitbook serve
-```
+[yunhuni.com](http://yunhuni.com/) 的开发者可参照该文档进行实时通信应用的开发。
