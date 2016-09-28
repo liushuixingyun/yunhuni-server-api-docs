@@ -15,17 +15,17 @@
 {% block page %}
 <i style="font-size: 18px;" class="octicon octicon-book"></i>
 <a href="/develop/list" target="_parent">开发者中心</a> >>
-<a href="/develop/book/api" target="_parent">API参考手册</a>
+<a href="/develop/book/api" target="_parent">API参考文档</a>
 <br/>
 <br/>
 {{ super() }}
 <hr>
 <div class="btn-group btn-group-justified">
 	{% if page.previous and page.previous.path %}
-	<a class="btn" href="{{ page.previous.path|resolveFile }}"><b>Previous:</b> {{ page.previous.title }}</a>
+	<a class="btn" href="{{ page.previous.path|resolveFile }}"><b>上一页:</b> {{ page.previous.title }}</a>
 	{% endif %}
 	{% if page.next and page.next.path %}
-	<a class="btn" href="{{ page.next.path|resolveFile }}"><b>Next:</b> {{ page.next.title }}</a>
+	<a class="btn" href="{{ page.next.path|resolveFile }}"><b>下一页:</b> {{ page.next.title }}</a>
 	{% endif %}
 </div>
 {% endblock %}
