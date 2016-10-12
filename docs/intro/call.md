@@ -42,59 +42,55 @@ API网关鉴权使用`鉴权账号`和`秘钥`配合完成。
 
 用户需要进行对上传数据做鉴权操作，步骤如下：
 
-1、获取签名数据
-
-```java
-	/**
-     * 获取签名数据
-     * @param method HTTP请求方法，POST GET PUT DELETE
-     * @param payload Post请求时的包体进行MD5签名
-     * @param contentType HTTP请求的内容类型
-     * @param timestamp 时间戳为调用时的时间以yyyyMMddHHmmss格式提供 必须同请求头中的时间戳保持一致
-     * @param appId 应用APP标识
-     * @param uri 请求的API 的地址
-     * @return 返回签名内容
-     */
-    public static String getSign(String method,String payload,String contentType,String timestamp,String appId,String uri){
-        // 是否有post 或者 put  body
-        boolean hasContent = METHOD_HAS_CONTENT.contains(method);
-        //j8bm4n329cHi4lSMdMJG482wfaF0POq4PmzQn7lK8XM
-        String contentMd5 = hasContent ? (new Md5PasswordEncoder()).encodePassword(payload, null) : "";
-        String contentType1 = hasContent ? contentType : "";
-        // 组织签名数据
-        StringBuilder toSign = new StringBuilder();
-        toSign.append(method).append("\n")
-                .append(contentMd5).append("\n")
-                .append(contentType1).append("\n")
-                .append(timestamp).append("\n")
-                .append(appId).append("\n")
-                .append(uri);
-        return toSign.toString();
+{% codetabs name="java", type="java" -%}
+ /**
+ * 获取签名数据
+ * @param method HTTP请求方法，POST GET PUT DELETE
+ * @param payload Post请求时的包体进行MD5签名
+ * @param contentType HTTP请求的内容类型
+ * @param timestamp 时间戳为调用时的时间以yyyyMMddHHmmss格式提供 必须同请求头中的时间戳保持一致
+ * @param appId 应用APP标识
+ * @param uri 请求的API 的地址
+ * @return 返回签名内容
+ */
+public static String getSign(String method,String payload,String contentType,String timestamp,String appId,String uri){
+    // 是否有post 或者 put  body
+    boolean hasContent = METHOD_HAS_CONTENT.contains(method);
+    //j8bm4n329cHi4lSMdMJG482wfaF0POq4PmzQn7lK8XM
+    String contentMd5 = hasContent ? (new Md5PasswordEncoder()).encodePassword(payload, null) : "";
+    String contentType1 = hasContent ? contentType : "";
+    // 组织签名数据
+    StringBuilder toSign = new StringBuilder();
+    toSign.append(method).append("\n")
+            .append(contentMd5).append("\n")
+            .append(contentType1).append("\n")
+            .append(timestamp).append("\n")
+            .append(appId).append("\n")
+            .append(uri);
+    return toSign.toString();
+}
+/**
+ * 使用HmacSHA256签名算法进行签名
+ * @param secret 秘钥
+ * @param data 签名数据
+ * @return 签名后数据
+ */
+public static String calculateHMAC(String secret, String data) {
+    try {
+        SecretKeySpec signingKey = new SecretKeySpec(secret.getBytes(), "HmacSHA256");
+        Mac mac = Mac.getInstance("HmacSHA256");
+        mac.init(signingKey);
+        byte[] rawHmac = mac.doFinal(data.getBytes());
+        String result = new String(Base64.encodeBase64(rawHmac));
+        return result;
+    } catch (GeneralSecurityException e) {
+        throw new IllegalArgumentException();
     }
-```
+}
+{%- language name="php", type="php" -%}
 
-2、使用HmacSHA256签名算法进行签名
 
-```java
-	/**
-     * HmacSHA256签名算法
-     * @param secret 秘钥
-     * @param data 签名数据
-     * @return 签名后数据
-     */
-    public static String calculateHMAC(String secret, String data) {
-        try {
-            SecretKeySpec signingKey = new SecretKeySpec(secret.getBytes(), "HmacSHA256");
-            Mac mac = Mac.getInstance("HmacSHA256");
-            mac.init(signingKey);
-            byte[] rawHmac = mac.doFinal(data.getBytes());
-            String result = new String(Base64.encodeBase64(rawHmac));
-            return result;
-        } catch (GeneralSecurityException e) {
-            throw new IllegalArgumentException();
-        }
-    }
-```
+{%- endcodetabs %}
 
 补充：参与签名内容
 
