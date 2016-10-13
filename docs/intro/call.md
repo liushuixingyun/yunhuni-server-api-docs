@@ -32,11 +32,11 @@ https://api.yunhuni.cn/v1/account/鉴权账号/
 
 ## 鉴权
 
-API网关鉴权使用`鉴权账号`和`秘钥`配合完成。
+API网关鉴权使用`鉴权账号`和`密钥`配合完成。
 
 鉴权账号：用户可以从`管理控制台`首页中的`开发者账号`模块的`鉴权账号`获取。
 
-秘钥：用户可以从`管理控制台`首页中的`开发者账号`模块的`秘钥`获取。
+密钥：用户可以从`管理控制台`首页中的`开发者账号`模块的`密钥`获取。
 
 **注意** ：API调用签名过期时间目前限制为5分钟。
 
@@ -71,7 +71,7 @@ public static String getSign(String method,String payload,String contentType,Str
 }
 /**
  * 使用HmacSHA256签名算法进行签名
- * @param secret 秘钥
+ * @param secret 密钥
  * @param data 签名数据
  * @return 签名后数据
  */
@@ -88,7 +88,38 @@ public static String calculateHMAC(String secret, String data) {
     }
 }
 {%- language name="php", type="php" -%}
+/**
+ * 获取签名数据
+ * @param method HTTP请求方法，POST GET PUT DELETE
+ * @param payload Post请求时的包体进行MD5签名
+ * @param contentType HTTP请求的内容类型
+ * @param timestamp 时间戳为调用时的时间以yyyyMMddHHmmss格式提供 必须同请求头中的时间戳保持一致
+ * @param appId 应用APP标识
+ * @param apiUri 请求的API 的地址
+ * @return 返回签名内容
+ */
+function getSign($method, $payload, $contentType, $timestamp, $appId, $apiUri)
+{
+    //是否 有post 或者 put  body
+    $hasConent = $method ? true : false;
+    $contentMd5 = isset($hasConent) ? md5($payload) : '';
+    $contentType = isset($hasConent) ? $contentType : '';
+    $sign = $method . "\n" . $contentMd5 . "\n" . $contentType . "\n" . $timestamp . "\n" . $appId . "\n" . $apiUri;
+    return $sign;
+}
 
+/**
+ *HmacSHA256签名算法
+ * @param secret 密钥
+ * @param data 签名数据
+ * @return 签名后数据
+ */
+function calculateHMAC($secret, $data)
+{
+    $secret = hash_hmac('sha256', $data, $secret, true);
+    $result = base64_encode($secret);
+    return $result;
+}
 
 {%- endcodetabs %}
 
@@ -106,8 +137,16 @@ public static String calculateHMAC(String secret, String data) {
 ## 响应
 
 ### 成功响应
-
-
+```json
+{
+    "code": "000000",
+    "msg": "请求成功",
+    "data": {
+        "callId": "8af4eaf75775c93e0157792090b60008",
+        "user_data": ""
+    }
+}
+```
 
 ### 失败响应
 
