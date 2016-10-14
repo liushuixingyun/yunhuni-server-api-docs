@@ -8,7 +8,7 @@
 
 ### 接口定义
 - [简单呼出接口](docs/simple_call/index.md)
-  - [双向回拨](docs/simple_call/duo_callback.md)
+  - [语音回拨](docs/simple_call/duo_callback.md)
   - [语音通知](docs/simple_call/notify_call.md)
   - [语音验证码](docs/simple_call/verify_call.md)
 - [IVR 呼出接口](docs/adv_call/index.md)
@@ -21,7 +21,6 @@
     - [收码](docs/ivr/action/get.md)
     - [挂断](docs/ivr/action/hangup.md)
     - [暂停](docs/ivr/action/pause.md)
-    - [空指令](docs/ivr/action/none.md)
     - [拨号](docs/ivr/action/dial.md)
     - [连接](docs/ivr/action/connect.md)
     - [后续](docs/ivr/action/next.md)
@@ -39,8 +38,8 @@
   - [会议成员录放音模式](docs/conf/voice_mode.md)
 - [事件回调接口](docs/evt/index.md)
   - [简单呼叫事件](docs/evt/simple_call/index.md)
-    - [双向回拨事件](docs/evt/simple_call/duo_callback.md)
-    - [外呼通知事件](docs/evt/simple_call/notify_call.md)
+    - [语音回拨事件](docs/evt/simple_call/duo_callback.md)
+    - [语音通知事件](docs/evt/simple_call/notify_call.md)
     - [语音验证码事件](docs/evt/simple_call/verify_call.md)
   - [会议事件](docs/evt/conf/index.md)
   - [IVR 事件](docs/evt/ivr/index.md)
