@@ -10,42 +10,47 @@ connect
 
 ## 属性
 
-- `callback_url` 事件通知地址
-- `max_duration` 最大连接时间（秒）
-- `mode` 连接模式
-
-  - `1`： 连接双方均可互相听到
-  - `2`： 仅连接的第二方可以听到第一方;第一方听不到第二方
-  - `3`： 仅连接的第一方可以听到第二方;第二方听不到第一方
-
-- `recording` 是否录音
-- `volume1` 双通道连接建立后的第一方音量
-- `volume2` 双通道连接建立后的第二方音量
-- `play_time` 本次连接通话进行到这个时间点播放声音
+| 参数                  | 说明                                      |
+| --------------------- |  ---------------------------------------- |
+| `callback_url`        | 事件通知地址                   |
+| `max_duration`        | 最大连接时间（秒）                        |
+| `mode`                | 连接模式 。参见[连接模式列表](#连接模式列表)               |
+| `recording`           | 最大拨号等待时间（秒）                         |
+| `volume1`             | 双通道连接建立后的第一方音量。 |  
+| `volume1`             | 双通道连接建立后的第二方音量。 |  
+| `play_time`           | 本次连接通话进行到这个时间点播放声音。 |
+ 
+### 参数详情
+####连接模式列表
+| 枚举值                  | 说明                                      |
+| --------------------- |  ---------------------------------------- |
+| `1`        | 连接双方均可互相听到                                   |
+| `2`        | 仅连接的第二方可以听到第一方;第一方听不到第二方        |
+| `3`        | 仅连接的第一方可以听到第二方;第二方听不到第一方        |
 
 ## 内容
-
-无
+    无
 
 ## 嵌套
-
 `play`
 
 **NOTE** 重复参数有效
 
-eg:
+## 示例
 
 ```xml
-<connect schedule_play_time="1470293585">
-  <play repeat=3>warning.wav</play>
-</connect>
+<response>
+  <connect schedule_play_time="1470293585">
+    <play repeat=3>warning.wav</play>
+  </connect>
+</response>
 ```
 
 ## 事件
 
 ### 连接建立
 
-- `URL`: `{prefix}/{callback_url}`
+- `URL`: `{prefix}/sa{callback_url}`
 - 参数：
 
   - `type`: `connect_begin`
@@ -54,6 +59,7 @@ eg:
 ### 连接结束
 
 - `URL`: `{prefix}/{callback_url}`
+
 - 参数：
 
   - `type`: `connect_end`
