@@ -9,7 +9,7 @@
 该URL由用户自定义，来源于用户调用的应用的`回调URL`。可`首页`或者`应用详情`页中查看。用户在创建应用或者修改应用信息时填写/修改，填写/修改时需填写完整地址，如：
 
 ```html
-http://101.200.73.13:9999/sapi-web/yunhuni/event/notify
+http://###/sapi-web/yunhuni/event/notify
 ```
 
 本文的 API URL 说明省略基础部分，在代码例子中，用${NOTIFY_URL} 表示此回调URL。
