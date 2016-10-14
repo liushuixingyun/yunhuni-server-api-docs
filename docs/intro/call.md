@@ -5,7 +5,7 @@
 本文中所有 REST API 的 URL 均有以下基础部分：
 
 ```
-https://api.yunhuni.cn/v1/account/鉴权账号/
+https://api.yunhuni.com/v1/account/鉴权账号/
 ```
 
 本文的 API URL 说明省略基础部分，在代码例子中，用 {BASE_URL} 表示URL的公共基础部分。
