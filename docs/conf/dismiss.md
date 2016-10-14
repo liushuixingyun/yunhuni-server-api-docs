@@ -1,4 +1,5 @@
 # 解散会议（尚未开放）
+<!--toc-->
 
 ## 请求
 
@@ -9,7 +10,7 @@ POST {BASE_URL}/conf/{conf_id}/dismiss
 ```
 
 ### 请求参数列表
-无
+    无
 
 ## 响应
 
@@ -21,7 +22,7 @@ POST {BASE_URL}/conf/{conf_id}/dismiss
 
 ## 事件
 
-见 [会议事件](../env/conf/index.md)一节
+见 [语音会议事件](../env/conf/index.md)一节
 
 ## 示例
 

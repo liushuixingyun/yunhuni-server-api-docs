@@ -39,7 +39,7 @@ POST {BASE_URL}/conf/create
 
 ## 事件
 
-见 [会议事件](../evt/conf/index.md)一节
+见 [语音会议事件](../evt/conf/index.md)一节
 
 ## 示例
 

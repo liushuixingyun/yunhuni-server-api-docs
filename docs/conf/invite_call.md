@@ -1,4 +1,5 @@
 # 会议邀请呼叫（尚未开放）
+<!--toc-->
 
 ## 请求
 
@@ -18,7 +19,7 @@ POST {BASE_URL}/conf/{conf_id}/invite_call
 | `max_dial_duration`   | 布尔值     |  选填，默认`false` | 最大拨号等待时间（秒），默认50秒                  |
 | `dial_voice_stop_cond`| 布尔值     |  选填，默认`false` | 自定义拨号音停止播放条件。0：振铃停止；1：接听或者挂断停止。                  |
 | `play_file`           | 文件名字符串     |  选填   | 加入后在会议播放这个文件       |
-| `voice_mode`          | 不超过128字符字符串 |选填，默认`1`  | 加入后的声音模式。参见[声音模式列表](#声音模式列表)                   |
+| `voice_mode`          | 正整数     |选填，默认`1`  | 加入后的声音模式。参见[声音模式列表](#声音模式列表)                   |
 
 ### 参数详解
 
@@ -46,11 +47,11 @@ POST {BASE_URL}/conf/{conf_id}/invite_call
 
 | 属性       | 有效值范围        | 说明       |
 | -------- | ------------ | -------- |
-| `callId` | UUID HEX 字符串 | 此次呼叫的 ID |
+| `callId` | UUID HEX 字符串 | 加入会议成员的call_id |
 
 ## 事件
 
-见 [会议事件](../evt/conf/index.md)一节
+见 [语音会议事件](../evt/conf/index.md)一节
 
 ## 示例
 

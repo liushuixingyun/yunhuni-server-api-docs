@@ -1,69 +1,108 @@
-# 会议录音
+# 会议录音（尚未开放）
 
-## 开始录音
-
-### URL
-
-```
-POST ${prefix}/account/{account_id}/conf/{conf_id}/start_record
-```
-
-### 请求
-
-| 参数           | 是否必须 | 说明        |
-| ------------ | ---- | --------- |
-| max_duration | 否    | 默认时间为会议时长 |
-
-- `max_duration` 录音时长（秒）
-
-#### 示例
-
-```json
-{
-	"max_duration`":600
-}
-```
-
-## 响应
-- `code` 错误码， 000000表示正常
-- `msg` 错误信息
-- `data` 是否成功true or false
-
-#### 示例
-```json
-{
-  "code": "000000",
-  "msg": "请求成功",
-  "data": true
-}
-```
-
-
-## 停止录音
-
-### URL
-
-```
-POST ${prefix}/account/{account_id}/conf/{conf_id}/stop_record
-```
+# 开始录音
 
 ## 请求
-	无
+
+### URL
+
+```
+POST {BASE_URL}/conf/{conf_id}/start_record
+```
+
+### 请求参数列表
+
+| 参数                  | 有效值范围  | 是否必填            | 说明                                     |
+| --------------------- | ----------- | ------------------- | ---------------------------------------- |
+| `max_duration`        | 正整数      |  最大会议时长       | 默认时间为会议时长                       |
 
 ## 响应
-- `code` 错误码， 000000表示正常
-- `msg` 错误信息
-- `data` 是否成功true or false
 
-#### 示例
-```json
+### 响应参数列表
+
+| 参数     | 有效值范围   | 说明                            |
+| ------ | ------- | ----------------------------- |
+| `code` | 数字文本    | 状态码，全0表示正确                    |
+| `msg`  | 文本        | 返回情况说明                        |
+| `data` | 布尔值      | 成功返回`true`；失败返回`false` |
+
+## 事件
+见 [语音会议事件](../env/conf/index.md)
+
+## 示例
+
+请求:
+```http
+POST {BASE_URL}/conf/{conf_id}/start_play HTTP/1.1
+Host: api.yunhuni.com
+Content-Type: application/json
+Accept-Type: application/json
+Content-Length: xxx
+
 {
-  "code": "000000",
-  "msg": "请求成功",
-  "data": true
+    "max_duration`":600
 }
 ```
 
-## 事件
+响应:
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Length: xxx
 
+{
+   "code": "000000",
+    "msg": "请求成功",
+    "data": true
+}
+```
+
+# 停止录音
+
+## 请求
+
+### URL
+
+```
+POST {BASE_URL}/conf/{conf_id}/stop_record
+```
+
+### 请求参数列表
+    无
+
+## 响应
+
+### 响应参数列表
+
+| 参数     | 有效值范围   | 说明                            |
+| ------ | ------- | ----------------------------- |
+| `code` | 数字文本    | 状态码，全0表示正确                    |
+| `msg`  | 文本        | 返回情况说明                        |
+| `data` | 布尔值      | 成功返回`true`；失败返回`false` |
+
+## 事件
 见 [语音会议事件](../env/conf/index.md)
+
+## 示例
+
+请求:
+```http
+POST {BASE_URL}/conf/{conf_id}/start_play HTTP/1.1
+Host: api.yunhuni.com
+```
+
+响应:
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Length: xxx
+
+{
+   "code": "000000",
+    "msg": "请求成功",
+    "data": true
+}
+```
+
+
+
