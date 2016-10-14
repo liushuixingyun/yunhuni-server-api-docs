@@ -1,4 +1,5 @@
 # 主动调用
+<!-- toc -->
 
 ## 基础 URL
 本文中所有 REST API 的 URL 均有以下基础部分：
@@ -149,4 +150,9 @@ function calculateHMAC($secret, $data)
 ```
 
 ### 失败响应
+
+```http
+response result = HTTP Status 401 - Bad credentials
+```
+
 
