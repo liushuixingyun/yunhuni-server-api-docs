@@ -13,7 +13,6 @@ POST ${prefix}/account/{account_id}/conf/{conf_id}/quit
 | call_id | 是    | 会议成员的call_id |
 
 
-
 #### 示例
 ```json
 {

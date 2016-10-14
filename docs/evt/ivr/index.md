@@ -1,77 +1,156 @@
 # IVR 事件
 
+<!-- toc -->
+
 ## 呼叫结束事件
 
-- `URL`: `${notify_url}`
-- `event`: `ivr.call_end`
-- `call_id`
-- `begin_time`
-- `answer_time`
-- `end_time`
-- `end_by`: `usr` | `sys`
-- `reason`
-- `error`
+### 请求URL
+
+```
+POST {NOTIFY_URL}
+```
+
+### 请求参数列表
+
+| 参数                     | 有效值范围                | 说明                                       |
+| ---------------------- | -------------------- | ---------------------------------------- |
+| `event`                | **ivr.call_end**       | 呼叫结束事件标志：ivr.call_end。可根据此字段识别不同事件 |
+| `call_id`              | UUID HEX 字符串          | 呼叫的`ID`                               |
+| `begin_time`           | 时间戳                   | 开始时间                                    |
+| `answer_time`           | 时间戳                  | 应答时间                                    |
+| `end_time`             | 时间戳                   | 结束时间                                    |
+| `end_by`               | 字符串                   | 返回`usr` 或者 `sys`                                 |
+| `reason`               | 字符串                   | 原因     |
+| `error`                | 字符串                   | 错误信息。无错误时，返回`null` 。       |
+
 
 ## 放音结束事件
 
-- `URL`: `${notify_url}`
-- `event`: `ivr.play_end`
-- `call_id`
-- `begin_time`: 开始时间
-- `end_time`: 结束时间
-- `error`: 错误信息，如果有的话
-- `key`: 结束按键，如果有的话
+### 请求URL
+
+```
+POST {NOTIFY_URL}
+```
+
+### 请求参数列表
+
+| 参数                     | 有效值范围                | 说明                                       |
+| ---------------------- | -------------------- | ---------------------------------------- |
+| `event`                | **ivr.play_end**       | 放音结束事件标志：ivr.play_end。可根据此字段识别不同事件 |
+| `call_id`              | UUID HEX 字符串          | 呼叫的`ID`                               |
+| `begin_time`           | 时间戳                   | 开始时间                                    |
+| `end_time`             | 时间戳                   | 结束时间                                    |
+| `error`                | 字符串                   | 错误信息。无错误时，返回`null` 。       |
+| `key`                  | 字符串                   | 结束按键,无结束按键时，返回`null`。       |
+
 
 ## 录音结束事件
 
-- `URL`: `${notify_url}`
-- `event`: `ivr.record_end`
-- `call_id`
-- `begin_time`: 开始时间
-- `end_time`: 结束时间
-- `error`: 错误信息，如果有的话
-- `record_files`: 录音文件
-- `key`: 结束按键，如果有的话
+### 请求URL
+
+```
+POST {NOTIFY_URL}
+```
+
+### 请求参数列表
+
+| 参数                     | 有效值范围                | 说明                                       |
+| ---------------------- | -------------------- | ---------------------------------------- |
+| `event`                | **ivr.record_end**       | 录音结束事件标志：ivr.record_end。可根据此字段识别不同事件 |
+| `call_id`              | UUID HEX 字符串          | 呼叫的`ID`                                |
+| `begin_time`           | 时间戳                   | 开始时间                                  |
+| `end_time`             | 时间戳                   | 结束时间                                  |
+| `error`                | 字符串                   | 错误信息。无错误时，返回`null` 。         |
+| `record_files`         | 字符串                   | 录音文件                                  |
+| `key`                  | 字符串                   | 结束按键,无结束按键时，返回`null`。       |
 
 ## 收码结束事件
 
-- `event`: `ivr.get_end`
-- `call_id`
-- `begin_time`: 开始时间
-- `end_time`: 结束时间
-- `error`: 错误信息，如果有的话
-- `keys`: 收到的按键码
+### 请求URL
+
+```
+POST {NOTIFY_URL}
+```
+
+### 请求参数列表
+
+| 参数                     | 有效值范围                | 说明                                       |
+| ---------------------- | -------------------- | ---------------------------------------- |
+| `event`                | **ivr.get_end**        | 收码结束事件标志：ivr.get_end。可根据此字段识别不同事件 |
+| `call_id`              | UUID HEX 字符串          | 呼叫的`ID`                                |
+| `begin_time`           | 时间戳                   | 开始时间                                  |
+| `end_time`             | 时间戳                   | 结束时间                                  |
+| `error`                | 字符串                   | 错误信息。无错误时，返回`null` 。         |
+| `key`                  | 字符串                   | 结束按键码                                |
 
 ## 发码结束事件
 
-- `URL`: `${notify_url}`
-- `event`: `ivr.put_end`
-- `call_id`
-- `begin_time`: 开始时间
-- `end_time`: 结束时间
-- `error`: 错误信息，如果有的话
+### 请求URL
+
+```
+POST {NOTIFY_URL}
+```
+
+### 请求参数列表
+
+| 参数                     | 有效值范围                | 说明                                       |
+| ---------------------- | -------------------- | ---------------------------------------- |
+| `event`                | **ivr.put_end**        | 发码结束事件标志：ivr.put_end。可根据此字段识别不同事件 |
+| `call_id`              | UUID HEX 字符串          | 呼叫的`ID`                                |
+| `begin_time`           | 时间戳                   | 开始时间                                  |
+| `end_time`             | 时间戳                   | 结束时间                                  |
+| `error`                | 字符串                   | 错误信息。无错误时，返回`null` 。         |
 
 ## 拨号结束事件
 
-- `URL`: `${notify_url}`
-- `event`: `ivr.dial_end`
-- `call_id`
-- `begin_time`: 开始时间
-- `end_time`: 结束时间
-- `error`: 错误信息，如果有的话。没有错误表示被成功接听。
+### 请求URL
+
+```
+POST {NOTIFY_URL}
+```
+
+### 请求参数列表
+
+| 参数                     | 有效值范围                | 说明                                       |
+| ---------------------- | -------------------- | ---------------------------------------- |
+| `event`                | **ivr.dial_end**       | 拨号结束事件标志：ivr.dial_end。可根据此字段识别不同事件 |
+| `call_id`              | UUID HEX 字符串          | 呼叫的`ID`                                |
+| `begin_time`           | 时间戳                   | 开始时间                                  |
+| `end_time`             | 时间戳                   | 结束时间                                  |
+| `error`                | 字符串                   | 错误信息。无错误时，返回`null`, 表示被成功接听。         |
+
 
 ## 连接建立事件
 
-- `URL`: `${notify_url}`
-- `event`: `ivr.connect_begin`
-- `call_id`
-- `error`: 错误信息，如果有的话。
+### 请求URL
+
+```
+POST {NOTIFY_URL}
+```
+
+### 请求参数列表
+
+| 参数                     | 有效值范围                | 说明                                       |
+| ---------------------- | -------------------- | ---------------------------------------- |
+| `event`                | **ivr.connect_begin**       | 连接建立事件标志：ivr.connect_begin。可根据此字段识别不同事件 |
+| `call_id`              | UUID HEX 字符串          | 呼叫的`ID`                                |
+| `error`                | 字符串                   | 错误信息。无错误时，返回`null`。         |
 
 ## 连接结束事件
 
-- `URL`: `${notify_url}`
-- `event`: `ivr.connect_end`
-- `call_id`
-- `error`: 错误信息，如果有的话。
-- `begin_time`: 开始时间
-- `end_time`: 结束时间
+### 请求URL
+
+```
+POST {NOTIFY_URL}
+```
+
+### 请求参数列表
+
+| 参数                     | 有效值范围                | 说明                                       |
+| ---------------------- | -------------------- | ---------------------------------------- |
+| `event`                | **ivr.connect_end**   | 连接结束事件标志：ivr.connect_end。可根据此字段识别不同事件 |
+| `call_id`              | UUID HEX 字符串          | 呼叫的`ID`                                |
+| `begin_time`           | 时间戳                   | 开始时间                                  |
+| `end_time`             | 时间戳                   | 结束时间                                  |
+| `error`                | 字符串                   | 错误信息。无错误时，返回`null`。         |
+

@@ -40,7 +40,7 @@
 - [事件回调接口](docs/evt/index.md)
   - [简单呼叫事件](docs/evt/simple_call/index.md)
     - [语音回拨事件](docs/evt/simple_call/duo_callback.md)
-    - [外呼通知事件](docs/evt/simple_call/notify_call.md)
+    - [语音通知事件](docs/evt/simple_call/notify_call.md)
     - [语音验证码事件](docs/evt/simple_call/verify_call.md)
   - [会议事件](docs/evt/conf/index.md)
   - [IVR 事件](docs/evt/ivr/index.md)
