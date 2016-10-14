@@ -1,4 +1,4 @@
-# 放音
+# 放音（尚未开放）
 
 ## Play 节点
 
@@ -8,24 +8,27 @@ play
 
 ## 属性
 
-- `finish_keys` 中断码
-- `repeat` 重复播放次数
+| 参数                  | 说明                                      |
+| --------------------- |  ---------------------------------------- |
+| `finish_keys`         | 中断码                                    |
+| `repeat`              | 重复播放次数                              |
+
 
 ## 内容
-
-放音文件
+    放音文件
 
 ## 嵌套
+   无
 
-next
-
-## 例子
+## 示例
 
 ```xml
-<play finish_keys="#">
-  welcome.wav
-  <next>http://yourhost/nextstep</next>
-<play>
+<response>
+    <play finish_keys="#">
+      welcome.wav
+    <play>
+    <next>http://yourhost/nextstep</next>
+</response>
 ```
 
 ## PlayList 节点
@@ -36,26 +39,26 @@ playlist
 
 ## 属性
 
-- `callback_url` 事件通知地址
-- `finish_keys` 中断码
-- `repeat` 重复播放次数
-
-**NOTE** 覆盖 `play` 的属性
+| 参数                  | 说明                                      |
+| --------------------- |  ---------------------------------------- |
+| `callback_url`        | 事件通知地址                                    |
+| `finish_keys`         | 中断码                                    |
+| `repeat`              | 重复播放次数                              |
 
 ## 嵌套
-
 `play`
+**NOTE** 覆盖 `play` 的属性
 
-`next`
-
-## 例子
+## 示例
 
 ```xml
-<playlist finish_keys="0123456789*#">
-  <play>welcome.wav</play>
-  <play>byebye.wav</play>
-  <next>http://yourhost/nextstep</next>
-</playlist>
+<response>
+    <playlist finish_keys="0123456789*#">
+      <play>welcome.wav</play>
+      <play>byebye.wav</play>
+    </playlist>
+     <next>http://yourhost/nextstep</next>
+</response>
 ```
 
 ## 事件
