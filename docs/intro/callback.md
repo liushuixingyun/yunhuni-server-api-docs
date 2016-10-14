@@ -16,7 +16,7 @@ http://your-host/your/path?param=event
 
 ## 请求参数
 
-请求参数将封装成一个Map对象，并转换成`JSON`格式的字符串，携带在请求body中，并设置编码为`UTF-8`。以 Java HttpPost 为例：
+以 `java` 语言为例，请求参数将封装成一个Map对象，并转换成`JSON`格式的字符串，携带在请求body中，并设置编码为`UTF-8`，其实现代码的片段是：
 
 {% codetabs name="java", type="java" -%}
 HttpPost.setEntity(new StringEntity(payload, Charset.forName("UTF-8")));
