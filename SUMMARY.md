@@ -21,7 +21,6 @@
     - [收码](docs/ivr/action/get.md)
     - [挂断](docs/ivr/action/hangup.md)
     - [暂停](docs/ivr/action/pause.md)
-    - [空指令](docs/ivr/action/none.md)
     - [拨号](docs/ivr/action/dial.md)
     - [连接](docs/ivr/action/connect.md)
     - [后续](docs/ivr/action/next.md)

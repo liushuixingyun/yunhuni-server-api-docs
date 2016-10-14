@@ -8,11 +8,6 @@
 POST {BASE_URL}/conf/{conf_id}/set_voice_mode
 ```
 
-## URL
-
-```
-POST ${prefix}/account/{account_id}/conf/{conf_id}/set_voice_mode
-```
 ### 请求参数列表
 
 | 参数                    | 有效值范围       | 是否必填                | 说明                                       |

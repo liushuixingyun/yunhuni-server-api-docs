@@ -72,7 +72,7 @@ POST {BASE_URL}/call/duo_callback
 
 见 [语音回拨事件](../evt/simple_call/duo_callback.md)一节
 
-## 举例
+## 示例
 
 请求:
 ```http
