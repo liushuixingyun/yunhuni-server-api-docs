@@ -45,5 +45,4 @@
   - [IVR 事件](docs/evt/ivr/index.md)
 
 ### 附录
-- [如何参与](CONTRIBUTING.md)
 - [术语表](GLOSSARY.md)

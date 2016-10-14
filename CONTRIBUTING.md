@@ -18,7 +18,7 @@ npm install gitbook-cli
 ./node_modules/./bin/gitbook update
 ```  
 
-## 5. 安装 gitbook 的项目以来
+## 5. 安装 gitbook 的项目依赖
 ```sh
 ./node_modules/./bin/gitbook install
 ```  
