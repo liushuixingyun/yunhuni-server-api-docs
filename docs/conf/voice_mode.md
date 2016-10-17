@@ -1,11 +1,13 @@
 # 设置会议成员录放音模式（尚未开放）
+
 <!-- toc -->
+
 ##请求
 
 ### URL
 
 ```
-POST {BASE_URL}/conf/{conf_id}/set_voice_mode
+POST {BASE_URL}/conf/set_voice_mode/{conf_id}
 ```
 
 ### 请求参数列表
@@ -32,7 +34,7 @@ POST {BASE_URL}/conf/{conf_id}/set_voice_mode
 
 请求:
 ```http
-POST {BASE_URL}/conf/{conf_id}/set_voice_mode HTTP/1.1
+POST {BASE_URL}/conf/set_voice_mode/{conf_id} HTTP/1.1
 Host: api.yunhuni.com
 Content-Type: application/json
 Accept-Type: application/json

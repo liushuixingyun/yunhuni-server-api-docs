@@ -1,4 +1,5 @@
 # 解散会议（尚未开放）
+
 <!--toc-->
 
 ## 请求
@@ -6,7 +7,7 @@
 ### URL
 
 ```
-POST {BASE_URL}/conf/{conf_id}/dismiss
+POST {BASE_URL}/conf/dismiss/{conf_id}
 ```
 
 ### 请求参数列表
@@ -28,7 +29,7 @@ POST {BASE_URL}/conf/{conf_id}/dismiss
 
 请求:
 ```http
-POST {BASE_URL}/conf/{conf_id}/dismiss HTTP/1.1
+POST {BASE_URL}/conf/dismiss/{conf_id} HTTP/1.1
 Host: api.yunhuni.com
 Content-Type: application/json
 Accept-Type: application/json

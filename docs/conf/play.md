@@ -8,7 +8,7 @@
 ### URL
 
 ```
-POST {BASE_URL}/conf/{conf_id}/start_play
+POST {BASE_URL}/conf/start_play/{conf_id}
 ```
 
 ### 请求
@@ -36,7 +36,7 @@ POST {BASE_URL}/conf/{conf_id}/start_play
 
 请求:
 ```http
-POST {BASE_URL}/conf/{conf_id}/start_play HTTP/1.1
+POST {BASE_URL}/conf/start_play/{conf_id} HTTP/1.1
 Host: api.yunhuni.com
 Content-Type: application/json
 Accept-Type: application/json

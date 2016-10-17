@@ -1,4 +1,5 @@
 # 将通话加入到会议 （尚未开放）
+
 <!--toc-->
 
 ##请求
@@ -6,7 +7,7 @@
 ### URL
 
 ```
-POST {BASE_URL}/conf/{conf_id}/join
+POST {BASE_URL}/conf/join/{conf_id}
 ```
 
 ### 请求参数列表
@@ -46,7 +47,7 @@ POST {BASE_URL}/conf/{conf_id}/join
 
 请求:
 ```http
-POST {BASE_URL}/conf/{conf_id}/invite_call HTTP/1.1
+POST {BASE_URL}/conf/join/{conf_id} HTTP/1.1
 Host: api.yunhuni.com
 Content-Type: application/json
 Accept-Type: application/json
