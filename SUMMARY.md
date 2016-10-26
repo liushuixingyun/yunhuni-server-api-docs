@@ -47,6 +47,7 @@
 ### 呼叫中心
 - [呼叫中心介绍](docs/callcenter/index.md)
 - [分机管理接口](docs/callcenter/extension.md)
+- [坐席接口](docs/callcenter/agent.md)
 
 ### 附录
 - [术语表](GLOSSARY.md)
