@@ -1,0 +1,26 @@
+{
+    "folders":
+    [
+        {
+            "path": "."
+        }
+    ],
+    "build_systems":
+    [
+        {
+            "name": "gulp",
+            "working_dir": "${project_path}",
+            "shell_cmd": "gulp"
+        },
+        {
+            "name": "build",
+            "working_dir": "${project_path}",
+            "shell_cmd": "npm run build"
+        },
+        {
+            "name": "serve",
+            "working_dir": "${project_path}",
+            "shell_cmd": "npm run serve"
+        }
+    ]
+}

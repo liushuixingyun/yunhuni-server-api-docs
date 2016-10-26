@@ -1,0 +1,497 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"call",
+				"call_info"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": ".gitignore",
+			"settings":
+			{
+				"buffer_size": 1163,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "docs/callcenter/agent.md",
+			"settings":
+			{
+				"buffer_size": 46,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "wra",
+		"selected_items":
+		[
+			[
+				"wra",
+				"Word Wrap: Toggle"
+			],
+			[
+				"xml",
+				"Set Syntax: XML"
+			],
+			[
+				"w",
+				"Word Wrap: Toggle"
+			],
+			[
+				"wrp",
+				"Word Wrap: Toggle"
+			],
+			[
+				"wr",
+				"Word Wrap: Toggle"
+			],
+			[
+				"we",
+				"Word Wrap: Toggle"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"wrap",
+				"Word Wrap: Toggle"
+			],
+			[
+				"rena",
+				"File: Rename"
+			],
+			[
+				"markdown",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Add Repository"
+			],
+			[
+				"list pa",
+				"Package Control: List Packages"
+			],
+			[
+				"Package Control: insta",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"python",
+				"Set Syntax: Python"
+			],
+			[
+				"java",
+				"Set Syntax: Java"
+			],
+			[
+				"remov",
+				"Package Control: Remove Package"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"syntax: she",
+				"Set Syntax: Shell Script (Bash)"
+			]
+		],
+		"width": 560.0
+	},
+	"console":
+	{
+		"height": 186.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			" import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			" import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) "
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/D/Works/yunhuni.com/repos/yunhuni-server-api-docs",
+		"/D/Works/yunhuni.com/repos/yunhuni-server-api-docs/docs",
+		"/D/Works/yunhuni.com/repos/yunhuni-server-api-docs/docs/callcenter"
+	],
+	"file_history":
+	[
+		"/D/Works/yunhuni.com/安全号码/新建文本文档.txt",
+		"/D/Works/yunhuni.com/callcenter/软电话使用场景描述.md",
+		"/D/Works/yunhuni.com/通信线路对接/陈总的线路/账户表.md",
+		"/D/OpenSource/pjproject/pjproject-2.5.5/doc/pjsip-book/account.rst",
+		"/D/Works/yunhuni.com/callcenter/enqueue sample.xml",
+		"/D/Works/yunhuni.com/callcenter/cc-design-docs/docs/interaction/index.md",
+		"/D/Works/yunhuni.com/callcenter/cc-design-docs/docs/index.md",
+		"/D/Works/yunhuni.com/callcenter/cc-design-docs/docs/extension.md",
+		"/D/Works/yunhuni.com/callcenter/cc-design-docs/docs/agent/index.md",
+		"/D/Works/yunhuni.com/callcenter/cc-design-docs/mkdocs.yml",
+		"/D/Works/yunhuni.com/callcenter/cc-design-docs/docs/queue/algorithm.md",
+		"/D/Works/yunhuni.com/callcenter/cc-design-docs/docs/queue/index.md",
+		"/D/Works/yunhuni.com/callcenter/cc-design-docs/docs/img/callcenter-classes.svg",
+		"/D/Works/yunhuni.com/callcenter/cc-design-docs/docs/agent/check_in_out.md",
+		"/D/Works/yunhuni.com/callcenter/cc-design-docs/site/js/highlight.pack.js",
+		"/D/Works/yunhuni.com/callcenter/cc-design-docs/docs/agent/callout.md",
+		"/D/Works/yunhuni.com/callcenter/cc-design-docs/docs/agent/agent_call.md",
+		"/D/Works/yunhuni.com/callcenter/cc-design-docs/docs/agent/set_state.md",
+		"/D/Works/yunhuni.com/callcenter/cc-design-docs/docs/agent/sign_in_out.md",
+		"/D/Works/yunhuni.com/callcenter/cc-design-docs/requirements.txt",
+		"/D/Works/yunhuni.com/callcenter/cc-design-docs/docs/agent/accept_reject_terminate.md",
+		"/D/Works/yunhuni.com/callcenter/cc-design-docs/docs/agent/accept_reject.md",
+		"/D/Works/yunhuni.com/callcenter/cc-design-docs/docs/agent/hangup.md",
+		"/D/Works/yunhuni.com/callcenter/cc-design-docs/docs/agent/answer.md",
+		"/D/Works/yunhuni.com/repos/yunhuni-peer-comm-cti-flow/fabfiles/fabfile.py",
+		"/D/Works/yunhuni.com/callcenter/cc-design-docs/docs/agent.md",
+		"/D/Works/yunhuni.com/callcenter/cc-design-docs/.gitattributes",
+		"/D/Works/yunhuni.com/callcenter/cc-design-docs/cc-design-docs.sublime-project",
+		"/D/Works/yunhuni.com/callcenter/cc-design-docs/.gitignore",
+		"/D/Works/yunhuni.com/callcenter/cc-design-docs/README.md",
+		"/D/Works/yunhuni.com/callcenter/cc-design-docs/CONTRIBTUING.md",
+		"/D/Works/yunhuni.com/repos/yunhuni-peer-comm-cti-flow/fabfiles/docs.py",
+		"/D/Works/yunhuni.com/repos/yunhuni-peer-comm-cti-flow/fabfiles/ipsc.py",
+		"/D/Works/yunhuni.com/repos/yunhuni-server-api-docs/docs/simple_call/duo_callback.md",
+		"/D/Works/yunhuni.com/运维工作/运维文档列表.md",
+		"/D/Works/webrtcresearch/linkrtc-js-helper/.babelrc",
+		"/D/Works/webrtcresearch/exosip2ctypes/setup.py",
+		"/D/Works/yunhuni.com/test.py",
+		"/D/others/py/Lib/site-packages/gsmmodem/modem.py",
+		"/D/Works/yunhuni.com/repos/yunhuni-peer-comm-cti-flow/ipsc_solution/projects/sys/script/utils.fun",
+		"/D/Works/yunhuni.com/repos/yunhuni-peer-comm-cti-flow/ipsc_solution/projects/ext/script/utils.fun",
+		"/D/others/py/Lib/site-packages/gsmmodem/pdu.py",
+		"/D/others/py/Lib/site-packages/gsmmodem/__init__.py",
+		"/D/others/py/Lib/site-packages/gsmmodem/util.py",
+		"/D/others/py/Lib/site-packages/gsmtermlib/posoptparse.py",
+		"/D/others/py/Lib/site-packages/gsmtermlib/atcommands.py",
+		"/D/Works/yunhuni.com/repos/yunhuni-peer-comm-cti-bus-client-c/inc/smartbus.h",
+		"/D/Works/yunhuni.com/repos/yunhuni-peer-comm-cti-flow/ipsc_solution/projects/ext/script/jsonrpc.fun",
+		"/D/others/短信猫/linux下c源码sms1.0/sms1.0/sms.c",
+		"/D/Works/yunhuni.com/repos/yunhuni-peer-comm-cti-flow/ipsc_solution/script/system.fun",
+		"/D/Works/yunhuni.com/repos/yunhuni-peer-comm-cti-flow/ipsc_solution/projects/ext/src/notify_call.xma",
+		"/D/others/短信猫/linux下c源码sms1.0/sms1.0/sms.h",
+		"/D/Works/yunhuni.com/通信线路对接/灵澜电讯-NOC/test.py",
+		"/D/Works/yunhuni.com/test.txt",
+		"/D/Works/yunhuni.com/repos/yunhuni-peer-comm-cti-commander-python/src/starter.py",
+		"/D/Works/yunhuni.com/repos/yunhuni-peer-comm-cti-flow/ipsc_solution/projects/sys/src/call_async_play.xma",
+		"/D/Works/yunhuni.com/prod-scripts/ipsc.py",
+		"/D/Works/yunhuni.com/prod-scripts/fabfile.py",
+		"/D/Works/yunhuni.com/区域机房/机房一期规划/IP地址对照表.md",
+		"/D/Works/yunhuni.com/区域机房/一期规划/README.md",
+		"/D/Works/yunhuni.com/招聘/运维工程师 - 网络.txt",
+		"/D/Works/yunhuni.com/招聘/运维工程师 - 系统.txt",
+		"/D/Works/yunhuni.com/repos/yunhuni-peer-comm-cti-flow/ipsc_solution/projects/ext/script/project.fun",
+		"/D/Works/yunhuni.com/repos/yunhuni-peer-comm-cti-flow/ipsc_solution/projects/sys/script/project.fun",
+		"/D/Works/yunhuni.com/repos/yunhuni-peer-comm-cti-flow/ipsc_solution/projects/sys/script/jsonrpc.fun",
+		"/D/Works/yunhuni.com/repos/yunhuni-peer-comm-cti-flow/logs/ipsc1_20160819_121754s.txt",
+		"/D/Works/yunhuni.com/repos/yunhuni-peer-comm-cti-flow/logs/ipsc0_20160819_121750s.txt",
+		"/C/Program Files/Java/jdk1.8.0_92/include/jni.h",
+		"/D/Works/yunhuni.com/repos/yunhuni-peer-comm-cti-bus-client-java/busnetcli-jni/src/globvars.c",
+		"/D/Works/yunhuni.com/repos/yunhuni-peer-comm-cti-bus-client-java/busnetcli-jni/src/globvars.h",
+		"/D/Works/yunhuni.com/repos/yunhuni-peer-comm-cti-bus-client-java/busnetcli-jni/src/callbacks.h",
+		"/D/Works/yunhuni.com/repos/yunhuni-peer-comm-cti-bus-client-java/busnetcli-jni/src/callbacks.c",
+		"/D/Works/yunhuni.com/repos/yunhuni-peer-comm-cti-bus-client-java/busnetcli-jni/src/Client.c",
+		"/D/Works/yunhuni.com/repos/yunhuni-peer-comm-cti-bus-client-java/busnetcli-jni/projects/cmake/CMakeLists.txt",
+		"/C/Users/tanbr/Documents/Tencent Files/3208998298/FileRecv/smartbus.h",
+		"/C/Users/tanbr/Documents/1.py",
+		"/D/Works/yunhuni.com/logs/ipsc0_20160810_155810s.txt",
+		"/D/Works/yunhuni.com/logs/ipsc1_20160810_155813s.txt",
+		"/D/Works/yunhuni.com/repos/yunhuni-peer-comm-cti-bus-client-java/app-area-agent-cti/src/main/java/com/lsxy/app/area/cti/commander/Client.java",
+		"/D/Works/yunhuni.com/repos/yunhuni-peer-comm-cti-bus-client-java/app-area-agent-cti/pom.xml",
+		"/D/Works/yunhuni.com/repos/yunhuni-peer-comm-cti-bus-client-java/app-area-agent-cti/src/main/java/com/lsxy/app/area/cti/commander/RpcRequest.java",
+		"/D/Works/yunhuni.com/repos/yunhuni-peer-comm-cti-flow/env/Scripts/activate.bat",
+		"/D/Works/yunhuni.com/repos/yunhuni-server-api-docs/package.json",
+		"/D/Works/yunhuni.com/repos/yunhuni-peer-comm-cti-bus-client-c/inc/smartbus_netcli_interface.h",
+		"/C/Users/tanbr/.m2/settings.xml",
+		"/D/Works/yunhuni.com/repos/yunhuni-peer-comm-cti-flow/env/Lib/site-packages/sphinx_rtd_theme/theme.conf",
+		"/D/Works/yunhuni.com/repos/yunhuni-peer-comm-cti-flow/ipsc_solution/projects/ext/src/duo_callback_perform.xma",
+		"/D/Works/yunhuni.com/repos/yunhuni-peer-comm-cti-flow/ipsc_solution/projects/ext/src/duo_callback.xma",
+		"/D/Works/yunhuni.com/repos/yunhuni-peer-comm-cti-flow/ipsc_solution/projects/ext/src/ext.fmprj",
+		"/D/Works/yunhuni.com/repos/yunhuni-peer-comm-cti-flow/ipsc_solution/yunhuni.fmsol",
+		"/D/Works/yunhuni.com/repos/yunhuni-peer-comm-cti-flow/ipsc_solution/obj/solution.xml",
+		"/D/Works/yunhuni.com/repos/yunhuni-peer-comm-cti-flow/docs/.atom-build.yml",
+		"/C/Users/tanbr/AppData/Local/atom/bin/atom.cmd",
+		"/D/Works/yunhuni.com/repos/yunhuni-peer-comm-cti-flow/ipsc_solution/projects/extra/script/jsonrpc.fun",
+		"/D/Works/yunhuni.com/repos/yunhuni-peer-comm-cti-flow/ipsc_solution/projects/extra/script/utils.fun",
+		"/C/Users/tanbr/.npmrc",
+		"/D/Works/yunhuni.com/repos/yunhuni-server-api-docs/README.md",
+		"/D/Works/yunhuni.com/repos/yunhuni-server-api-docs/book.json",
+		"/D/Works/yunhuni.com/repos/yunhuni-server-api-docs/.gitignore",
+		"/D/Works/yunhuni.com/docsite/gitbook/SUMMARY.md",
+		"/D/Works/yunhuni.com/docsite/gitbook/README.md",
+		"/D/Works/yunhuni.com/docsite/gitbook/book.json",
+		"/D/Works/yunhuni.com/docsite/gitbook/node_modules/gitbook-cli/lib/commands.js",
+		"/D/Works/yunhuni.com/docsite/gitbook/node_modules/gitbook-cli/bin/gitbook.js",
+		"/D/Works/yunhuni.com/docsite/gitbook/node_modules/.bin/gitbook.cmd",
+		"/D/Works/yunhuni.com/docsite/gitbook/node_modules/gitbook-cli/lib/config.js",
+		"/D/Works/yunhuni.com/docsite/gitbook/package.json",
+		"/D/Works/yunhuni.com/docsite/gitbook/books.json",
+		"/D/Works/yunhuni.com/SSL Certificates/README.md",
+		"/D/Works/yunhuni.com/docsite/litdoc/example.md",
+		"/D/Works/yunhuni.com/docsite/docbox/api-doc-sample/bundle.js",
+		"/D/Works/yunhuni.com/docsite/docbox/docbox/content/introduction.md",
+		"/D/Works/yunhuni.com/docsite/docbox/docbox/src/custom/content.js",
+		"/D/Works/yunhuni.com/docsite/docbox/docbox/content/example.md",
+		"/D/Works/yunhuni.com/docsite/mkdocs/my-docs/_book/docs/tutorial/lessen_1.html",
+		"/D/Softwares/AxureRP/SN.txt",
+		"/D/Works/IPSC/FlowMaker5/FlowMaker 5/nsis/ipsc-flowmaker-setup.nsi",
+		"/C/Users/tanbr/AppData/Local/Atlassian/SourceTree/gitflow_local/gitflow/git-flow-feature",
+		"/C/Users/tanbr/AppData/Local/Atlassian/SourceTree/gitflow_local/gitflow/git-flow",
+		"/C/Users/tanbr/AppData/Local/Atlassian/SourceTree/gitflow_local/gitflow/Makefile",
+		"/D/Works/IPSC/FlowMaker5/FlowMaker 5/.gitignore",
+		"/D/Works/yunhuni.com/repos/yunhuni-peer-comm-cti-bus-client-python/src/yunhuni/cti/busnetcli/client.py",
+		"/D/Works/yunhuni.com/repos/yunhuni-peer-comm-cti-flow/env/Lib/site-packages/fabvenv.py",
+		"/C/Users/tanbr/Pictures/test.py",
+		"/C/Users/tanbr/Pictures/mysig.html",
+		"/C/Users/tanbr/Pictures/mysig.b64.txt"
+	],
+	"find":
+	{
+		"height": 38.0
+	},
+	"find_in_files":
+	{
+		"height": 102.0,
+		"where_history":
+		[
+			"",
+			"interaction",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"subli",
+			"img",
+			"externsion",
+			"privilege",
+			"intraction",
+			"serving",
+			"CTI",
+			"CSCS",
+			"GSM7_BASIC",
+			"encodeGsm7",
+			"/data/prd/r/0/pub/zh/putonghua/",
+			"GetJavaVM",
+			"TYPE",
+			"extra",
+			"build",
+			"init",
+			"build",
+			"curl",
+			"endpoint",
+			"finish"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"weights",
+			"interaction",
+			"/data/prd/p/0/pub/zh/putonghua/",
+			"ext",
+			"sh"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": ".gitignore",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1163,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								909,
+								913
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 571.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "docs/callcenter/agent.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 46,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								46,
+								46
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/MarkdownEditing/Markdown.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 30.0
+	},
+	"input":
+	{
+		"height": 38.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 142.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "serve",
+	"project": "yunhuni-server-api-docs.sublime-project",
+	"replace":
+	{
+		"height": 56.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 225.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

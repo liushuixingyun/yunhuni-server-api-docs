@@ -11,7 +11,12 @@
     "gitbook-cli": "^2.3.0"
   },
   "devDependencies": {
-    "gitbook-cli": "^2.3.0"
+    "browser-sync": "^2.17.5",
+    "del": "^2.2.2",
+    "gitbook": "^3.2.2",
+    "gitbook-cli": "^2.3.0",
+    "gulp": "^3.9.1",
+    "gulp-sync": "^0.1.4"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
