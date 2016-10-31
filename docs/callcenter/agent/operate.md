@@ -248,8 +248,8 @@ POST {BASE_URL}/callcenter/agent/{agentId}/inviteAgent
 
 `backgroud`:
 
-> - `true`: 邀请时，发起坐席自动保持，听不到排队提示音
-> - `false`: 邀请时，发起坐席状态不变，听到排队提示音
+> - `false`: 邀请时，发起坐席自动保持，听到排队提示音
+> - `true`: 邀请时，发起坐席的交谈模式不变，听不到排队提示音
 
 ## 邀请外线加入交谈
 按照排队规则呼叫目标坐席，连接后加入交谈。
@@ -279,5 +279,5 @@ POST {BASE_URL}/callcenter/agent/{agentId}/inviteOut
 
 `backgroud`:
 
-> - `true`: 邀请时，发起坐席被平台自动保持，听到拨号音、回铃音
-> - `false`: 邀请时，发起坐席状态不变，听不到拨号音、回铃音
+> - `false`: 邀请时，发起坐席自动保持，听到拨号音、回铃音
+> - `true`: 邀请时，发起坐席的交谈模式不变，听不到拨号音、回铃音
