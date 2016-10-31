@@ -9,24 +9,24 @@
         <condition timeout="20" priority="60" data="condition 1">
             <where>
                 <![CDATA[
-                '投诉' in skills and skills['手机'] > 60
+                '投诉' in skills and skills['手机'] > 60.0
                 ]]>
             </where>
             <sort>
                 <![CDATA[
-                (skills['投诉'] * 0.4 + skills['手机'] * 0.6) / 2
+                (skills['投诉'] * 0.4 + skills['手机'] * 0.6) / 2.0
                 ]]>
             </sort>
         </condition>
         <condition timeout="10" priority="50" data="condition 2">
             <where>
                 <![CDATA[
-                (skills['投诉'] > 75) or (skills['投诉'] > 60 and '手机' in skills)
+                (skills['投诉'] > 75.0) or (skills['投诉'] > 60.0 and '手机' in skills)
                 ]]>
             </where>
             <sort>
                 <![CDATA[
-                (skills['投诉'] + skills['手机']) / 2
+                (skills['投诉'] + skills['手机']) / 2.0
                 ]]>
             </sort>
         </condition>
@@ -40,9 +40,9 @@
     <filter data="this is filter 3">
         <condition timeout="10" priority="900" data="condition 4" >
             <where>
-            <![CDATA[
-            id == '9527'
-            ]]>
+                <![CDATA[
+                id == "9527"
+                ]]>
             </where>
         </condition>
     </filter>
@@ -115,7 +115,7 @@ eg 2:
 要求拥有“投诉”技能和“手机”技能，且“手机”技能分数大于60
 
 ```python
-'投诉' in skills and skills['手机'] > 60
+'投诉' in skills and skills['手机'] > 60.0
 ```
 
 eg 3:
@@ -123,7 +123,7 @@ eg 3:
 要求拥有“投诉”技能，且技能分数大于75；或者“投诉”技能技能分数小于75，但是大于等于60，且拥有“手机”技能。
 
 ```python
-skills['投诉'] > 75 or (skills['投诉'] > 60 and '手机' in skills)
+skills['投诉'] > 75.0 or (skills['投诉'] > 60.0 and '手机' in skills)
 ```
 
 eg 4:
@@ -131,7 +131,7 @@ eg 4:
 指定坐席"9527"
 
 ```python
-id == '9527'
+id == "9527"
 ```
 
 ## `sort` 标签
@@ -163,7 +163,7 @@ eg 2:
 按坐席的“投诉”技能和“手机”技能的平均分排序
 
 ```python
-(skills['投诉'] + skills['手机']) / 2
+(skills['投诉'] + skills['手机']) / 2.0
 ```
 
 eg 3:
@@ -171,5 +171,5 @@ eg 3:
 按坐席的“投诉”技能和“手机”技能的加权平均分排序，权值分别是 40% 和 60%
 
 ```python
-(skills['投诉'] * 0.4 + skills['手机'] * 0.6) / 2
+(skills['投诉'] * 0.4 + skills['手机'] * 0.6) / 2.0
 ```
