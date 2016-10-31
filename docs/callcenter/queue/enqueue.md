@@ -4,7 +4,14 @@
 这是一个 [IVR](../../ivr/index.md) 节点！
 
 ```xml
-<enqueue waitPlayFile="music.wav" playAgentNum="true" preAgentNumPlayFile="坐席.wav" postAgentNumPlayFile="为您服务.wav" data="my queue data">
+<enqueue
+    waitPlayFile="music.wav"
+    playAgentNum="true"
+    preAgentNumPlayFile="坐席.wav"
+    postAgentNumPlayFile="为您服务.wav"
+    holdPlayFile="wait.wav"
+    data="my queue data"
+    >
     <filter data="this is filter 1">
         <condition timeout="20" priority="60" data="condition 1">
             <where>
@@ -89,6 +96,9 @@
 
 ### `postAgentNumPlayFile`
 播放工号之后的播放文件
+
+### `holdPlayFile`
+保持时（只有一个呼叫处于“不采集”或者“不采集+不播放”之外的声音IO模式），在交谈中播放这个文件
 
 ## `data`
 `<enqueue>` `<filter>` `<condition>` 3个节点分别拥有各自的用户自定义数据，在排队产生事件通知时，该参数被传给用户服务。
