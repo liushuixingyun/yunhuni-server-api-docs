@@ -1,7 +1,7 @@
 # 坐席操作接口
 <!-- toc -->
 
-# 接受排队任务
+## 接受排队任务
 
 ```
 POST {BASE_URL}/callcenter/agent/accept
@@ -12,7 +12,7 @@ POST {BASE_URL}/callcenter/agent/accept
 `name`                 | 字符/数字字符串       | √    | 坐席的名称
 `queueId`              |                       |      | 
 
-# 拒绝排队任务
+## 拒绝排队任务
 
 ```
 POST {BASE_URL}/callcenter/agent/reject
@@ -23,10 +23,9 @@ POST {BASE_URL}/callcenter/agent/reject
 `name`                 | 字符/数字字符串       | √    | 坐席的名称
 `queueId`              |                       |      | 
 
-# 退出交谈
+## 退出交谈
 坐席退出`conversation`
 
-## URL
 ```
 POST {BASE_URL}/callcenter/agent/exit
 ```
@@ -37,7 +36,7 @@ POST {BASE_URL}/callcenter/agent/exit
 `conversationId`       |                       |      | 
 
 
-# 加入交谈
+## 加入交谈
 坐席退出`conversation`
 
 ```
