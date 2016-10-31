@@ -39,7 +39,11 @@
     </filter>
     <filter data="this is filter 3">
         <condition timeout="10" priority="900" data="condition 4" >
-            <where>id == '9527'</where>
+            <where>
+            <![CDATA[
+            id == '9527'
+            ]]>
+            </where>
         </condition>
     </filter>
 </enqueue>
