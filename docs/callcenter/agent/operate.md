@@ -22,7 +22,7 @@ POST {BASE_URL}/callcenter/agent/{agentId}/reject
 `queueId`              |                       | √    | 
 `data`                 | String                |      | 传回 IVR 的事件参数数据
 
-## 呼出
+## 呼叫外线
 按排队规则呼叫目标电话号码，接通后与当前坐席形成新的交谈。
 
 > - 如果发起坐席的分机没有处于任何`conversation`中（表明分机没有被连接），平台将自动呼叫坐席分机，并等待其接通。
