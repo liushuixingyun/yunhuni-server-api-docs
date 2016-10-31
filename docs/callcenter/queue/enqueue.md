@@ -5,13 +5,14 @@
 
 ```xml
 <enqueue
-    waitPlayFile="music.wav"
-    playAgentNum="true"
-    preAgentNumPlayFile="坐席.wav"
-    postAgentNumPlayFile="为您服务.wav"
-    holdPlayFile="wait.wav"
-    data="my queue data"
-    >
+            waitPlayFile="music.wav"
+            playAgentNum="true"
+            preAgentNumPlayFile="坐席.wav"
+            postAgentNumPlayFile="为您服务.wav"
+            holdPlayFile="wait.wav"
+            conversationTimeout="3600"
+            data="my queue data"
+>
     <filter data="this is filter 1">
         <condition timeout="20" priority="60" data="condition 1">
             <where>
@@ -61,6 +62,21 @@
 
 其子节点标签只能是`filter`，且至少拥有一个`filter`标签。
 
+### `playAgentNum` 属性
+是否播放坐席工号
+
+### `preAgentNumPlayFile` 属性
+播放工号之前的播放文件
+
+### `postAgentNumPlayFile` 属性
+播放工号之后的播放文件
+
+### `holdPlayFile` 属性
+保持时（只有一个呼叫处于“不采集”或者“不采集+不播放”之外的声音IO模式），在交谈中播放这个文件
+
+### `conversationTimeout` 属性
+排队且连接坐席成功后，交谈的最长时间，单位时秒
+
 ## `filter` 标签
 “排队过滤器”
 
@@ -87,18 +103,6 @@
 该 `condition` 排队的最大等待时间长度（秒）。
 
 **`contidiont`** 的最大等待时间是由其包含的`condition`的`timeout`决定的。
-
-### `playAgentNum`
-是否播放坐席工号
-
-### `preAgentNumPlayFile`
-播放工号之前的播放文件
-
-### `postAgentNumPlayFile`
-播放工号之后的播放文件
-
-### `holdPlayFile`
-保持时（只有一个呼叫处于“不采集”或者“不采集+不播放”之外的声音IO模式），在交谈中播放这个文件
 
 ## `data`
 `<enqueue>` `<filter>` `<condition>` 3个节点分别拥有各自的用户自定义数据，在排队产生事件通知时，该参数被传给用户服务。
