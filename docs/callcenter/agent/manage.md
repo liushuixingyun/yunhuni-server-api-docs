@@ -76,12 +76,12 @@ POST {BASE_URL}/callcenter/agent/get
 
 ```json
 {
-    "name": "1001",
+    "id": "1001",
     "num": "1001",
     "state": "away/饮水",
     "skills": [
-        {"name": "投诉", "score": 80, "enabled": true},
-        {"name": "联想笔记本", "score": 90, "enabled": true}
+        {"id": "投诉", "score": 80, "enabled": true},
+        {"id": "联想笔记本", "score": 90, "enabled": true}
     ],
     "extensions": [
         {"id": "fj2m90cuildf", "active": true},
@@ -187,7 +187,7 @@ POST {BASE_URL}/callcenter/agent/setState
 属性名        |       数据类型       | 必填 |  说明
 ------------- | -------------------- | ---- | ---------------
 `opt`         | `Integer`            | √    | 操作类型，`0`表示新增或者修改，`1`表示删除
-`id`        | `String`             | √    | 要操作的技能。当 `opt==1` 时，`id`为空字符串表示删除所有技能。
+`id`          | `String`             | √    | 要操作的技能。当 `opt==1` 时，`id`为空字符串表示删除所有技能。
 `score`       | `Number`             |      | 坐席技能分。仅在 `opt==0` 时有效；如果坐席已经拥有该技能，不填表示不修改，否则分数为0。
 `enabled`     | `Boolean`            |      | 坐席是否启用技能。仅在 `opt==0` 时有效；如果坐席已经拥有该技能，不填表示不修改，否则 `enabled==false`。
 
@@ -196,8 +196,8 @@ eg:
 
 ```js
 skillOpts: [
-    {opt: 0, name: "投诉", score: 95},
-    {opt: 1, name: "洗衣机"},
+    {opt: 0, id: "投诉", score: 95, enabled: true},
+    {opt: 1, id: "洗衣机"},
 ]
 ```
 
@@ -206,7 +206,7 @@ eg:
 
 ```js
 skillOpts: [
-    {opt: 1, name: ""}
+    {opt: 1, id: ""}
 ]
 ```
 
@@ -215,6 +215,6 @@ eg:
 
 ```js
 skillOpts: [
-    {opt: 0, name: "投诉", enabled: false}
+    {opt: 0, id: "投诉", enabled: false}
 ]
 ```
