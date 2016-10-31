@@ -37,7 +37,7 @@ POST {BASE_URL}/callcenter/agent/exit
 
 
 ## 加入交谈
-坐席退出`conversation`
+坐席加入`conversation`
 
 ```
 POST {BASE_URL}/callcenter/agent/enter
