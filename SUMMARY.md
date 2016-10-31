@@ -53,9 +53,6 @@
   - [坐席事件接口](docs/callcenter/agent/event.md)
 - [排队接口](docs/callcenter/queue/index.md)
   - [开始排队](docs/callcenter/queue/enqueue.md)
-- [交谈接口](docs/callcenter/conversation/index.md)
-  - [坐席交谈接口](docs/callcenter/conversation/agent.md)
-  - [外线交谈接口](docs/callcenter/conversation/out.md)
 
 ### 附录
 - [术语表](GLOSSARY.md)
