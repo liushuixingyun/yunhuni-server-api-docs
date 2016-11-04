@@ -9,7 +9,7 @@ POST {BASE_URL}/callcenter/{callcenter_id}/agent/{agent_id}/reject
 
 参数                   | 有效值范围            | 必填 | 说明
 ---------------------- | ----------------------| ---- | ----------------------------------------
-`task_id`              |                       | √    | 排队任务ID
+`queue_task_id`        |                       | √    | 排队任务ID
 `data`                 | String                |      | 传回 IVR 的事件参数数据
 
 坐席也可以直接在分机上执行“拒接”操作，或者不接听。
@@ -19,9 +19,10 @@ POST {BASE_URL}/callcenter/{callcenter_id}/agent/{agent_id}/reject
 按排队规则呼叫目标电话号码，接通后与当前坐席形成新的交谈。
 
 > - 如果发起坐席的分机没有处于任何 `conversation` 中（表明分机没有被连接），平台将自动呼叫坐席分机，并等待其接通。
+> - 如果发起坐席的分机处于某个 `conversation` 中，平台会将该分机在所有的交谈中都置于“不听不说”状态，并在新的交谈中呼叫外线。
 
 ```
-POST {BASE_URL}/callcenter/{callcenter_id}/agent/{agent_id}/callout
+POST {BASE_URL}/callcenter/{callcenter_id}/agent/{agent_id}/call_out
 ```
 
 参数                   | 有效值范围            | 必填 | 说明
@@ -30,32 +31,21 @@ POST {BASE_URL}/callcenter/{callcenter_id}/agent/{agent_id}/callout
 `from`                 | 电话号码              |      | 主叫号码
 `max_dial_seconds`     | 正整数                |      | 最大拨号等待时间
 `max_answer_seconds`   | 正整数                | √    | 最大通话时间
-`backgound`            | Boolean               |      | 后台拨号模式，默认 `false`
-
-`backgound`参数在坐席处于多个`conversation`中时生效。调用该API后：
-
-> - `false`：当前`conversation`(如果有)被自动保持，发起坐席听到拨号音和回铃音；接通后，发起坐席以“可听可说”模式处于新交谈中。
-> - `true`：坐席继续当前`conversation`(如果有)，发起坐席听不到拨号音和回铃音；接通后，发起坐席以“不可听不可说”模式(保持)自动加入新交谈。
 
 ## 呼叫其它坐席
 按排队规则呼叫目标坐席，接通后与当前坐席形成新的交谈。
 
 > - 只有空闲的目标坐席才有可能被排队匹配到
 > - 如果发起坐席的分机没有处于任何`conversation`中（表明分机没有被连接），平台将自动呼叫坐席分机，并等待其接通。
+> - 如果发起坐席的分机处于某个 `conversation` 中，平台会将该分机在所有的交谈中都置于“不听不说”状态，并在新的交谈中排队并呼叫目标坐席的分机。
 
 ```
-POST {BASE_URL}/callcenter/{callcenter_id}/agent/{agent_id}/callagent
+POST {BASE_URL}/callcenter/{callcenter_id}/agent/{agent_id}/call_agent
 ```
 
 参数                   | 有效值范围            | 必填 | 说明
 ---------------------- | ----------------------| ---- | ----------------------------------------
 `enqueue`              | XML 字符串            | √    | 目标坐席选择条件（同排队）
-`backgound`            | Boolean               |      | 后台拨号模式，默认 `false`
-
-`backgound`参数在坐席处于多个`conversation`中时生效。调用该API后：
-
-> - `false`：当前`conversation`(如果有)被自动保持，发起坐席听到排队提示音；接通后，发起坐席以“可听可说”模式处于新交谈中。
-> - `true`：坐席继续当前`conversation`(如果有)，发起坐席听不到排队提示音；接通后，发起坐席以“不可听不可说”模式(保持)自动加入新交谈。
 
 ## 前转到其它坐席
 即`forward`——在排队任务到达坐席之后，接受任务之前，将当前排队转移到别的坐席。
@@ -63,214 +53,74 @@ POST {BASE_URL}/callcenter/{callcenter_id}/agent/{agent_id}/callagent
 这实际上是重新排队！
 
 ```
-POST {BASE_URL}/callcenter/agent/{agentId}/forwardAgent
+POST {BASE_URL}/callcenter/{callcenter_id}/agent/{agent_name}/forward_agent
 ```
 
 参数                   | 有效值范围            | 必填 | 说明
 ---------------------- | ----------------------| ---- | ----------------------------------------
-`queueId`              |                       | √    |
+`queue_task_id`        |                       | √    |
 `enqueue`              | XML 字符串            | √    | 目标坐席选择条件（同排队）
 
 ## 后转到其它坐席
 
-即`transfer`——通话期间，将当前的一对一交谈的另外一方转移到别的坐席。
-
-> 这实际上是重新排队 + 坐席加入对话
-> 
-> 仅适用于一对一对话。
-> 
-> 平台在新的交谈中连接被转接坐席
-> 
-> 一旦调用，交谈中不可加入第三方
+即`transfer`。坐席退出该交谈，并在交谈上排队。
 
 ```
-POST {BASE_URL}/callcenter/agent/{agentId}/xferAgent
+POST {BASE_URL}/callcenter/{callcenter_id}/agent/{agent_name}/xfer_agent
 ```
 
 参数                   | 有效值范围            | 必填 | 默认值     | 说明
 ---------------------- | ----------------------| ---- | ---------- | -----------------------------
-`conversationId`       |                       | √    |            |
+`conversation_id`      |                       | √    |            |
 `queue`                | XML 字符串            | √    |            | 目标坐席选择条件（同排队）
-`release`              | Boolean               |      | `true`     | 是否调用后释放交谈
-
-`release`:
-
-> - `true`: 调用后，发起坐席立刻离开该交谈，该交谈立刻被释放。原交谈中的另一方（被转接方）可以听到排队提示音。
-> - `false`: 调用后，发起坐席和另一方都不离开该交谈，但是双方的状态都变成“不听不说”（保持），双方都听到排队提示音。
->   - 如果转接失败，被转接方的交谈状态还原成“可听可说”。
->   - 如果转接成功，发起坐席自动被平台从原交谈移除，被转接方进入新的交谈。
->   - 如果转接期间如果坐席挂机或者离开会话，则原交谈被释放，被转接方无法在转接失败后回到交谈，将导致IVR的`<enqueue>`结束。
 
 ## 后转到外线
 
-即`transfer`——通话期间，将当前的一对一交谈的另外一方转移到别的外线电话。
-
-> 仅适用于一对一对话。
-> 
-> 平台在新的交谈中连接被转接外线
-> 
-> 一旦调用，交谈中不可加入第三方
+即`transfer`。坐席退出该交谈，并在交谈上呼叫外线。
 
 ```
-POST {BASE_URL}/callcenter/agent/{agentId}/xferOut
+POST {BASE_URL}/callcenter/{callcenter_id}/agent/{agent_name}/xferOut
 ```
 
 参数                   | 有效值范围            | 必填 | 默认值     | 说明
 ---------------------- | ----------------------| ---- | ---------- | -----------------------------
-`conversationId`       |                       | √    |            |
+`conversation_id`      |                       | √    |            |
 `to`                   | 电话号码              | √    |            | 被叫号码
 `from`                 | 电话号码              |      |            | 主叫号码
 `max_dial_seconds`     | 正整数                |      |            | 最大拨号等待时间
 `max_answer_seconds`   | 正整数                | √    |            | 最大通话时间
-`release`              | Boolean               |      | `true`     | 是否调用后释放交谈
-
-`release`:
-
-> - `true`: 调用后，发起坐席立刻离开该交谈，该交谈立刻被释放。原交谈中的另一方（被转接方）可以听到拨号音、回铃音。
-> - `false`: 调用后，发起坐席和另一方都不离开该交谈，但是双方的状态都变成“不听不说”（保持），都可听到拨号音、回铃音。
->   - 如果转接失败，被转接方的交谈状态还原成“可听可说”。
->   - 如果转接成功，发起坐席自动被平台从原交谈移除，被转接方进入新的交谈。
->   - 如果转接期间如果坐席挂机或者离开会话，则原交谈被释放，被转接方无法在转接失败后回到交谈，将导致IVR的`<enqueue>`结束。
 
 ## 保持
-此时，坐席在 `conversation` 的会议资源中处于“不听不说状态”。
-如果此时`conversation`只剩下客户，可播放放音文件。
+将坐席在 `conversation` 中设置于“不听不说”。
+如果此时`conversation`只剩下一个呼叫，平台将在交谈中播放保持音。
+
+注意同一个时间点，坐席的分机呼叫只能在一个交谈中处于非“不听不说”状态。
 
 ```
-POST {BASE_URL}/callcenter/agent/{agentId}/pause
+POST {BASE_URL}/callcenter/{callcenter_id}/agent/{agent_name}/pause
 ```
 
 参数                   | 有效值范围            | 必填 | 默认值     | 说明
 ---------------------- | ----------------------| ---- | ---------- | -----------------------------
-`conversationId`       |                       | √    |            |
+`conversation_id`      |                       | √    |            |
 
-这相当于调用“设置录放音模式”，将模式设置为`4`。
+这相当于调用“设置听/说模式”，将模式设置为`4`。
 
 ## 取消保持
-此时，坐席在 `conversation` 的会议资源中处于“不听不说状态”。
+将坐席在 `conversation` 中设置为非“即听又说”状态。
+
+注意同一个时间点，坐席的分机呼叫只能在一个交谈中处于非“不听不说”状态。
 
 ```
-POST {BASE_URL}/callcenter/agent/{agentId}/resume
+POST {BASE_URL}/callcenter/{callcenter_id}/agent/{agent_name}/resume
 ```
 
 参数                   | 有效值范围            | 必填 | 默认值     | 说明
 ---------------------- | ----------------------| ---- | ---------- | -----------------------------
-`conversationId`       |                       |  √   |           |
-`voiceIoMode`          | Integer               |      | `1`        | 恢复后的录放音模式，不能是不听不说
+`conversation_id`      |                       |  √   |            |
+`mode`                 | Integer               |      | `1`        | 恢复后的听/说模式，不能是不听不说
 
-这相当于调用“设置录放音模式”，将模式设置为`1`。
-
-`voiceIoMode` **必须** 是 1 ~ 3
+`mode` **必须** 是 1 ~ 3
 
 > - 如果坐席处于多个`conversation`中，同时只能有一个处于不是 *不听不说* 状态，该交谈是该坐席当前活动交谈。
 > - 调用该API口，平台自动将该坐席在其它交谈的模式全部变为 *不听不说* 。
-
-## 设置录放音模式
-
-```
-POST {BASE_URL}/callcenter/agent/{agentId}/setVoiceIoMode
-```
-
-参数                   | 有效值范围            | 必填 | 默认值     | 说明
----------------------- | ----------------------| ---- | ---------- | -----------------------------
-`conversationId`       |                       | √    |            |
-`voiceIoMode`          | Integer               |      | `1`        | 录放音模式
-
-`mode`:
-
-值     | 说明
------- | ---------
-`1`    | 放音+收音(默认)
-`2`    | 收音
-`3`    | 放音
-`4`    | 无
-
-设置为4，就相当于保持
-
-## 加入交谈
-坐席主动加入
-
-```
-POST {BASE_URL}/callcenter/agent/{agentId}/join
-```
-
-参数                   | 有效值范围            | 必填 | 默认值     | 说明
----------------------- | ----------------------| ---- | ---------- | -----------------------------
-`conversationId`       |                       | √    |            |
-`voiceIoMode`          | Integer               |      | `0`        |
-
-加入后，如果模式不是 `4` ，且在多个交谈中，其当前交谈（非 `4`）的变为`4`
-
-## 退出交谈
-
-```
-POST {BASE_URL}/callcenter/agent/{agentId}/depart
-```
-
-参数                   | 有效值范围            | 必填 | 默认值     | 说明
----------------------- | ----------------------| ---- | ---------- | -----------------------------
-`conversationId`       |                       | √    |            |
-`data`                 | String                |      | `""`       | 传回 IVR 的事件参数数据
-
-## 邀请坐席加入交谈
-按照排队规则呼叫目标坐席，连接后加入交谈。
-
-```
-POST {BASE_URL}/callcenter/agent/{agentId}/inviteAgent
-```
-
-参数                   | 有效值范围            | 必填 | 说明
----------------------- | ----------------------| ---- | ----------------------------------------
-`conversationId`       | XML 字符串            | √    |
-`enqueue`              | XML 字符串            | √    | 目标坐席选择条件（同排队）
-`backgroud`            | Boolean               |      | 拨打坐席是否采用“背景”模式。默认 `false`
-`voiceIoMode`          | Integer               |      | 加入后的录放音模式
-
-`voiceIoMode`:
-
-值     | 说明
------- | ---------
-`1`    | 放音+收音(默认)
-`2`    | 收音
-`3`    | 放音
-`4`    | 无
-
-设置为4，就相当于保持
-
-> - 只有空闲的目标坐席才有可能被排队匹配到
-
-`backgroud`:
-
-> - `false`: 邀请时，发起坐席自动保持，听到排队提示音
-> - `true`: 邀请时，发起坐席的交谈模式不变，听不到排队提示音
-
-## 邀请外线加入交谈
-按照排队规则呼叫目标坐席，连接后加入交谈。
-
-```
-POST {BASE_URL}/callcenter/agent/{agentId}/inviteOut
-```
-
-参数                   | 有效值范围            | 必填 | 说明
----------------------- | ----------------------| ---- | ----------------------------------------
-`conversationId`       | XML 字符串            | √    |
-`to`                   | 电话号码              | √    | 被叫号码
-`from`                 | 电话号码              |      | 主叫号码
-`max_dial_seconds`     | 正整数                |      | 最大拨号等待时间
-`max_answer_seconds`   | 正整数                | √    | 最大通话时间
-`backgroud`            | Boolean               |      | 拨打坐席是否采用“背景”模式。默认 `false`
-`voiceIoMode`          | Integer               |      | 加入后的录放音模式
-
-`voiceIoMode`:
-
-值     | 说明
------- | ---------
-`1`    | 放音+收音(默认)
-`2`    | 收音
-`3`    | 放音
-`4`    | 无
-
-`backgroud`:
-
-> - `false`: 邀请时，发起坐席自动保持，听到拨号音、回铃音
-> - `true`: 邀请时，发起坐席的交谈模式不变，听不到拨号音、回铃音

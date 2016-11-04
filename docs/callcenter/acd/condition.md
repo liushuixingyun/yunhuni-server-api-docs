@@ -62,7 +62,7 @@ skills['投诉'] > 75.0 or (skills['投诉'] > 60.0 and '手机' in skills)
 
 其内置的变量有：
 
-- `skills`: 坐席的技能列表。参见 [where 表达式](#where 表达式)
+- `skills`: 坐席的技能列表。参见 [where 表达式](#where-表达式)
 
 eg:
 
