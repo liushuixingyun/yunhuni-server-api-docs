@@ -1,34 +1,27 @@
-# 坐席操作接口
+# 坐席操作
 <!-- toc -->
-
-## 接受排队任务
-
-```
-POST {BASE_URL}/callcenter/agent/{agentId}/accept
-```
-
-参数                   | 有效值范围            | 必填 | 说明
----------------------- | ----------------------| ---- | ----------------------------------------
-`queueId`              |                       | √    | 
 
 ## 拒绝排队任务
 
 ```
-POST {BASE_URL}/callcenter/agent/{agentId}/reject
+POST {BASE_URL}/callcenter/{callcenter_id}/agent/{agent_id}/reject
 ```
 
 参数                   | 有效值范围            | 必填 | 说明
 ---------------------- | ----------------------| ---- | ----------------------------------------
-`queueId`              |                       | √    | 
+`task_id`              |                       | √    | 排队任务ID
 `data`                 | String                |      | 传回 IVR 的事件参数数据
+
+坐席也可以直接在分机上执行“拒接”操作，或者不接听。
+该API的不通在于，它可以让拒绝操作带着`data`参数返回 IVR ，便于 IVR 做进一步的处理。
 
 ## 呼叫外线
 按排队规则呼叫目标电话号码，接通后与当前坐席形成新的交谈。
 
-> - 如果发起坐席的分机没有处于任何`conversation`中（表明分机没有被连接），平台将自动呼叫坐席分机，并等待其接通。
+> - 如果发起坐席的分机没有处于任何 `conversation` 中（表明分机没有被连接），平台将自动呼叫坐席分机，并等待其接通。
 
 ```
-POST {BASE_URL}/callcenter/agent/{agentId}/callOut
+POST {BASE_URL}/callcenter/{callcenter_id}/agent/{agent_id}/callout
 ```
 
 参数                   | 有效值范围            | 必填 | 说明
@@ -51,7 +44,7 @@ POST {BASE_URL}/callcenter/agent/{agentId}/callOut
 > - 如果发起坐席的分机没有处于任何`conversation`中（表明分机没有被连接），平台将自动呼叫坐席分机，并等待其接通。
 
 ```
-POST {BASE_URL}/callcenter/agent/{agentId}/callAgent
+POST {BASE_URL}/callcenter/{callcenter_id}/agent/{agent_id}/callagent
 ```
 
 参数                   | 有效值范围            | 必填 | 说明

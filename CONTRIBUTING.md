@@ -16,12 +16,12 @@ npm install gitbook-cli
 ## 4. 升级到最新的 gitbook
 ```sh
 ./node_modules/./bin/gitbook update
-```  
+```
 
 ## 5. 安装 gitbook 的项目依赖
 ```sh
 ./node_modules/./bin/gitbook install
-```  
+```
 
 ## 6. 启动Web开发服务器，查看文档
 ```sh
