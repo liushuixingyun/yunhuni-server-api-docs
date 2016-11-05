@@ -68,6 +68,20 @@ POST {BASE_URL}/callcenter/{callcenter_id}/channel/{channel_name}/conversation/{
 * 退出后，如果 `conversation` 人数少于2，将自动解散
 * 退出后，如果坐席所在的 `conversation` 少于1，将自动挂断分机
 
+## 设置坐席听说模式
+
+### URL
+
+```
+POST {BASE_URL}/callcenter/{callcenter_id}/channel/{channel_name}/conversation/{conversation_id}/agent/{agent_name}/mode
+```
+
+### 请求参数
+
+参数                   | 有效值范围            | 必填 | 说明
+---------------------- | ----------------------| ---- | ----------------------------------------
+`mode`                 | 1~4                   | √    | 
+
 `mode`:
 
 值     | 说明
@@ -77,6 +91,28 @@ POST {BASE_URL}/callcenter/{callcenter_id}/channel/{channel_name}/conversation/{
 `3`    | 放音
 `4`    | 无
 
+## 设置外线听说模式
+
+### URL
+
+```
+POST {BASE_URL}/callcenter/{callcenter_id}/channel/{channel_name}/conversation/{conversation_id}/out/{call_id}/mode
+```
+
+### 请求参数
+
+参数                   | 有效值范围            | 必填 | 说明
+---------------------- | ----------------------| ---- | ----------------------------------------
+`mode`                 | 1~4                   | √    | 
+
+`mode`:
+
+值     | 说明
+------ | ---------
+`1`    | 放音+收音(默认)
+`2`    | 收音
+`3`    | 放音
+`4`    | 无
 
 ## 坐席邀请加入
 按照排队规则呼叫目标坐席，连接后加入交谈。
@@ -144,12 +180,11 @@ POST {BASE_URL}/callcenter/{callcenter_id}/channel/{channel_name}/conversation/{
     id: "vm308mjvy3oiu6o3jn45",
     begin_time: "YYYY-MM-DD HH:MI:SS",
     agents:[
-        {name: "agent-001", externsion_id: "2c-sdfi80-sigsds", call_id: "fx20mudfsdfsdf", mode: 1, begin_time: "YYYY-MM-DD HH:MI:SS"},
-        {name: "agent-002", externsion_id: "xf20s9f0w5234234", call_id: "a7ccx93mcjjlee", mode: 2, begin_time: "YYYY-MM-DD HH:MI:SS"},
+        {name: "agent-001", extension_id: "2c-sdfi80-sigsds", call_id: "fx20mudfsdfsdf", mode: 1, begin_time: "YYYY-MM-DD HH:MI:SS"},
+        {name: "agent-002", extension_id: "xf20s9f0w5234234", call_id: "a7ccx93mcjjlee", mode: 2, begin_time: "YYYY-MM-DD HH:MI:SS"},
     ],
     outs: [
-        {call_id: "xjm93cetgerjtgowe", mode: 1, begin_time: "YYYY-MM-DD HH:MI:SS"},
-        {call_id: "c34ico345o34ui503", mode: 1, begin_time: "YYYY-MM-DD HH:MI:SS"},
+        {call_id: "xjm93cetgerjtgowe", mode: 1, begin_time: "YYYY-MM-DD HH:MI:SS"}
     ]
 }
 ```
