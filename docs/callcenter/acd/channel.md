@@ -4,49 +4,105 @@
 
 TODO: 工作通道是什么？ blabla...
 
+## 对象格式
+其属性有：
+
+参数                   | 有效值范围            | 说明
+---------------------- | --------------------- | ----------------------------------------
+`id`                   | UUID                  | ID
+`max_agent`            | 正整数                | 该工作通道所容纳的最大坐席数量
+`max_skill`            | 正整数                | 该工作通道所容纳的最大技能数量
+`max_condition`        | 正整数                | 该工作通道所容纳的最大排队条件设置数量
+`max_queue`            | 正整数                | 该工作通道所容纳的最大排队任务数量
+`remark`               | 字符串                | 备注信息
+
+用类 JSON 形式表示该对象的属性：
+
+```js
+{
+    id: "fg0234mujosijdfsdf",
+    max_agent: 100,
+    max_skill: 500,
+    max_condition: 10,
+    max_queue: 100,
+    remark: "默认工作通道"
+}
+```
+
 ## 新建
 
 ### URL
 ```
-POST {BASE_URL}/callcenter/{callcenter_id}/channel
+POST {BASE_URL}/callcenter/channel
 ```
 
 ### 请求参数列表
 
 参数                   | 有效值范围            | 必填 | 说明
----------------------- | ----------------------| ---- | ----------------------------------------
-`name`                 | 字符/数字字符串       | √    | 工作通道的名称，应用内唯一
-`max_agent`            | `Integer`             | √    | 该工作通道所容纳的最大坐席数量
-`max_queue_condition`  | `Integer`             | √    | 该工作通道所容纳的最大排队条件设置数量
-`max_queue_task`       | `Integer`             | √    | 该工作通道所容纳的最大排队任务数量
+---------------------- | --------------------- | ---- | ----------------------------------------
+`max_agent`            | 正整数                | √    | 该工作通道所容纳的最大坐席数量
+`max_skill`            | 正整数                | √    | 该工作通道所容纳的最大技能数量
+`max_condition`        | 正整数                | √    | 该工作通道所容纳的最大排队条件设置数量
+`max_queue`            | 正整数                | √    | 该工作通道所容纳的最大排队任务数量
+`remark`               | 字符串                |      | 备注信息
 
-### 返回参数
-TODO: 补充
+### 返回参数列表
+
+参数                   | 有效值范围            | 必填 | 说明
+---------------------- | --------------------- | ---- | ----------------------------------------
+`id`                   | uuid                  | √    | 工作通道的ID
 
 ## 删除
 
 ### URL
 ```
-DELETE {BASE_URL}/callcenter/{callcenter_id}/channel/{channel_name}
+DELETE {BASE_URL}/callcenter/channel/{channel_id}
 ```
+
+注意：
+
+> - 通道内所有的坐席都不在线时，才可以删除通道。
+> - 删除通道，通道内所有的 [排队条件定义](condition.md) 也会被一同删除！
+> - 一旦删除通道，这个通道上正在进行的排队会将无法排到坐席，直到超时。
+> - 删除通道后，不要在IVR中继续使用这个通道排队。
+
 
 ## 修改
 
 ### URL
 ```
-POST {BASE_URL}/callcenter/{callcenter_id}/channel/{channel_name}
+POST {BASE_URL}/callcenter/channel/{channel_id}
 ```
 
-## 获取列表
+### 请求参数列表
+与 [新建](#新建) 的参数相同
+
+## 获取多条记录
 
 ### URL
 ```
-GET {BASE_URL}/callcenter/{callcenter_id}/channel
+GET {BASE_URL}/callcenter/channel
 ```
+
+### 返回参数列表
+
+参数                   | 有效值范围            | 必填 | 说明
+---------------------- | --------------------- | ---- | ----------------------------------------
+`result`               | 数组                  | √    | 工作通道的列表
+
+其列表元素是一个 JSON 对象，该对象的属性见 [对象格式](#对象格式)
 
 ## 获取单条记录
 
 ### URL
 ```
-GET {BASE_URL}/callcenter/{callcenter_id}/channel/{channel_name}
+GET {BASE_URL}/callcenter/channel/{channel_id}
 ```
+
+### 返回参数列表
+
+参数                   | 有效值范围            | 必填 | 说明
+---------------------- | --------------------- | ---- | ----------------------------------------
+`result`               | 对象                  | √    | 单个工作通道对象
+
+`result` 对象的属性定义见 [对象格式](#对象格式)

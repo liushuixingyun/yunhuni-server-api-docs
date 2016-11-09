@@ -4,24 +4,59 @@
 
 TODO: 排队条件是什么？ blabla...
 
+## 对象格式
+其属性有：
+
+参数                   | 有效值范围            | 说明
+---------------------- | --------------------- | ----------------------------------------
+`id`                   | UUID                  | ID
+`channel`              | ID字符串              | 条件所属的工作通道ID
+`where`                | 条件选择表达式        | 条件选择表达式 
+`sort`                 | 排序表达式            | 排序表达式
+`priority`             | 0~99 整数             | 优先级
+`queue_timeout`        | 正整数                | 该条件的排队等待超时时间
+`fetch_timeout`        | 正整数                | 该条件的坐席分机接听超时时间
+`remark`               | 字符串                | 备注
+
+用类 JSON 形式表示该对象的属性：
+
+```js
+{
+    id: "fg0234mujosijdfsdf",
+    channel: "cf3049ujogvelujrtg",
+    where: "1==1",
+    sort: null,
+    priority: 100,
+    queue_timeout: 15,
+    fetch_timeout: 
+    remark: "全部坐席排队"
+}
+```
+
 ## 新建
 
 ### URL
 ```
-POST {BASE_URL}/callcenter/{callcenter_id}/channel/{channel_name}/condition
+POST {BASE_URL}/callcenter/condition
 ```
 
 ### 请求参数
 
+参数                   | 有效值范围            | 必填 | 默认值          | 说明
+---------------------- | --------------------- | ---- | --------------  | ----------------------------------------
+`channel`              | ID字符串              | √    |                 | 条件所属的工作通道ID
+`where`                | 条件选择表达式        | √    |                 |
+`sort`                 | 排序表达式            |      | `null`          | 默认不排序，所有的坐席权值相同。
+`priority`             | 0~99 整数             |      | `0`             | 数值大的优先级高。默认值是 `0`。
+`queue_timeout`        | 0或者正整数           |      | `null`          | 该条件的排队等待超时时间(秒)。默认`null`表示一直等待直到呼叫结束。`0`表示找不到坐席就立即超时。
+`fetch_timeout`        | 0或者正整数           |      | `null`          | 该条件的坐席分机接听超时时间(秒)。默认`null`表示一直等待直到呼叫结束。
+`remark`               | 字符串                |      | `null`          | 备注
+
+### 返回参数
+
 参数                   | 有效值范围            | 必填 | 说明
----------------------- | ----------------------| ---- | ----------------------------------------
-`name`                 | 字符/数字字符串       | √    | 排队条件的名称，工作通道内唯一
-`where`                | 条件选择表达式        | √    |
-`sort`                 | 排序表达式            |      |
-`priority`             | `Integer`             |      | 数值大的优先级高。默认值是 `0`
-`timeout`              | 正整数                |      | 该条件的排队等待+坐席分机接听的总超时时间,不填表示超时值是无穷大
-`queue_timeout`        | 正整数                |      | 该条件的排队等待超时时间,不填表示超时值是无穷大
-`fetch_timeout`        | 正整数                |      | 该条件的坐席分机接听超时时间,不填表示超时值是无穷大
+---------------------- | --------------------- | ---- | ----------------------------------------
+`id`                   | uuid                  | √    | 条件的ID
 
 #### where 表达式
 该参数应提供一条表达式，表达式的结果应能够转换为布尔型。
@@ -92,26 +127,45 @@ skills['投诉']
 
 ### URL
 ```
-DELETE {BASE_URL}/callcenter/{callcenter_id}/channel/{channel_name}/condition/{condition_name}
+DELETE {BASE_URL}/callcenter/condition/{condition_id}
 ```
 
 ## 修改
 
 ### URL
 ```
-POST {BASE_URL}/callcenter/{callcenter_id}/channel/{channel_name}/condition/{condition_name}
+POST {BASE_URL}/callcenter/condition/{condition_id}
 ```
 
-## 获取列表
+### 请求参数
+与 [新建](#新建) 相同
+
+## 获取多条记录
 
 ### URL
 ```
-GET {BASE_URL}/callcenter/{callcenter_id}/channel/{channel_name}/condition
+GET {BASE_URL}/callcenter/channel/{channel_id}/condition
 ```
+
+### 返回参数列表
+
+参数                   | 有效值范围            | 必填 | 说明
+---------------------- | --------------------- | ---- | ----------------------------------------
+`result`               | 数组                  | √    | 条件列表
+
+其列表元素是一个 JSON 对象，该对象的属性见 [对象格式](#对象格式)
 
 ## 获取单条记录
 
 ### URL
 ```
-GET {BASE_URL}/callcenter/{callcenter_id}/channel/{channel_name}/condition/{condition_name}
+GET {BASE_URL}/callcenter/condition/{condition_id}
 ```
+
+### 返回参数列表
+
+参数                   | 有效值范围            | 必填 | 说明
+---------------------- | --------------------- | ---- | ----------------------------------------
+`result`               | 对象                  | √    | 单个条件对象
+
+`result` 对象的属性定义见 [对象格式](#对象格式)

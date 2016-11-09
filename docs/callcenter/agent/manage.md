@@ -16,10 +16,7 @@
         {name: "投诉", score: 80, enabled: true},
         {name: "联想笔记本", score: 90, enabled: true}
     ],
-    extensions: [ // 坐席所使用的分机
-        {id: "fj2m90cuildf", active: true},
-        {id: "9MUGJoSDY9sd", active: false}
-    ]
+    extension: "fj2m90cuildf" // 坐席的分机
 }
 ```
 
@@ -29,19 +26,19 @@
 
 ### URL
 ```
-POST {BASE_URL}/callcenter/{callcenter_id}/agent
+POST {BASE_URL}/callcenter/agent
 ```
 
-#### 请求参数列表
+#### 请求参数
 
 参数                   | 有效值范围            | 必填 | 说明
 ---------------------- | ----------------------| ---- | ----------------------------------------
 `name`                 | 字符/数字字符串       | √    | 该坐席的唯一标识，应用内必须唯一
-`channel`              | 字符串                | √    | 坐席所在 [工作通道](../acd/channel.md) 的 `name`
+`channel`              | 字符串                | √    | 坐席所在 [工作通道](../acd/channel.md) 的 `id`
 `num`                  | 数字字符串            |      | 该坐席的工号，如果不填，就无法播报工号
 `state`                | 状态字符串            |      | 登录后的初始状态
 `skills`               | 技能数组              |      | 登录后的初始技能
-`extensions`           | 分机数组              |      | 登录后初始绑定分机
+`extensions`           | 分机数组              | √    | 登录后初始绑定分机
 
 - `id` 参数：
     一个应用中的坐席`id`必须唯一
@@ -55,10 +52,10 @@ POST {BASE_URL}/callcenter/{callcenter_id}/agent
 - `skill` 参数
     详见 _技能设置_ 一节。
 
--  `extensions` 参数
+-  `extension` 参数
     详见 _分机设置_ 一节。
 
-### 回复参数列表
+### 返回参数
 
 TODO: 补充！
 
@@ -66,16 +63,16 @@ TODO: 补充！
 
 ### URL
 ```
-DELETE {BASE_URL}/callcenter/{callcenter_id}/agent/{agent_name}
+DELETE {BASE_URL}/callcenter/agent/{agent_name}
 ```
 
-### 请求参数列表
+### 请求参数
 
 参数                   | 有效值范围            | 必填 | 说明
 ---------------------- | ----------------------| ---- | ----------------------------------------
 `name`                 | 字符/数字字符串       | √    | 该坐席的名称
 
-### 回复参数列表
+### 返回参数
 
 TODO: 补充！
 
@@ -84,10 +81,10 @@ TODO: 补充！
 
 ## URL
 ```
-GET {BASE_URL}/callcenter/{callcenter_id}/agent/{agent_name}/keepalive
+GET {BASE_URL}/callcenter/agent/{agent_name}/keepalive
 ```
 
-### 请求参数列表
+### 请求参数
 
 参数                   | 有效值范围            | 必填 | 说明
 ---------------------- | ----------------------| ---- | ----------------------------------------
@@ -97,56 +94,46 @@ GET {BASE_URL}/callcenter/{callcenter_id}/agent/{agent_name}/keepalive
 
 ## URL
 ```
-GET {BASE_URL}/callcenter/{callcenter_id}/agent[/{agent_name}]
+GET {BASE_URL}/callcenter/agent[/{agent_name}]
 ```
 
 URL 不包含 `{agent_name}` 参数，则获取坐席列表，否则获取具体的某个坐席的信息。
 
-### 请求参数列表
+### 请求参数
 无
 
-### 回复参数列表
+### 返回参数
 坐席或者坐席列表
 
 TODO: 补充！
 
 
-## 分机设置
+## 设置分机
 
 ### URL
 ```
-POST {BASE_URL}/callcenter/{callcenter_id}/agent/{agent_name}/extensions
+POST {BASE_URL}/callcenter/agent/{agent_name}/extension
 ```
 
-### 请求参数列表
+### 请求参数
 
 参数                   | 有效值范围            | 必填 | 说明
 ---------------------- | ----------------------| ---- | ----------------------------------------
-`extensions`           | 分机列表              | √    | 分机列表
+`id`                   | 分机ID                | √    | 分机列表
 
-分机列表的元素是分机对象，其属性有：
+> - 坐席必须要一个分机才能正常使用话务功能。
 
-属性名        |       数据类型       | 必填 |  说明
-------------- | -------------------- | ---- | ---------------
-`id`          | `String`             | √    | 分机的 Id
-`active`      | `Boolean`            | √    | 分机是否激活
-
-> - 坐席同一时间最多只能有一个激活的分机。 
-> - 正在使用的分机不能修改所属坐席，或者从一个坐席删除。
-> - 分机不能重复设置到多个不同的坐席。
-> - 坐席至少要一个活动分机才能正常使用话务功能。
-
-### 回复参数列表
+### 返回参数
 TODO: 补充！
 
 ## 状态设置
 
 ### URL
 ```
-POST {BASE_URL}/callcenter/{callcenter_id}/agent/{agent_name}/state
+POST {BASE_URL}/callcenter/agent/{agent_name}/state
 ```
 
-### 请求参数列表
+### 请求参数
 
 参数                   | 有效值范围            | 必填 | 说明
 ---------------------- | ----------------------| ---- | ----------------------------------------
@@ -190,17 +177,17 @@ away     | √      | 离开
 
 ![坐席状态](../../../images/agent-state.svg)
 
-### 回复参数列表
+### 返回参数
 TODO: 补充！
 
 ## 技能设置
 
 ### URL
 ```
-POST {BASE_URL}/callcenter/{callcenter_id}/agent/{agent_name}/skills
+POST {BASE_URL}/callcenter/agent/{agent_name}/skills
 ```
 
-### 请求参数列表
+### 请求参数
 
 参数                   | 有效值范围            | 必填 | 说明
 ---------------------- | ----------------------| ---- | ----------------------------------------
@@ -256,5 +243,5 @@ opts: [
 ]
 ```
 
-### 回复参数列表
+### 返回参数
 TODO: 补充！

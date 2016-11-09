@@ -4,12 +4,12 @@
 ## 拒绝排队任务
 
 ```
-POST {BASE_URL}/callcenter/{callcenter_id}/agent/{agent_id}/reject
+POST {BASE_URL}/callcenter/agent/{agent_name}/reject
 ```
 
 参数                   | 有效值范围            | 必填 | 说明
 ---------------------- | ----------------------| ---- | ----------------------------------------
-`queue_task_id`        |                       | √    | 排队任务ID
+`queue_id`             |                       | √    | 排队任务ID
 `data`                 | String                |      | 传回 IVR 的事件参数数据
 
 坐席也可以直接在分机上执行“拒接”操作，或者不接听。
@@ -22,7 +22,7 @@ POST {BASE_URL}/callcenter/{callcenter_id}/agent/{agent_id}/reject
 > - 如果发起坐席的分机处于某个 `conversation` 中，平台会将该分机在所有的交谈中都置于“不听不说”状态，并在新的交谈中呼叫外线。
 
 ```
-POST {BASE_URL}/callcenter/{callcenter_id}/agent/{agent_id}/call_out
+POST {BASE_URL}/callcenter/agent/{agent_name}/call_out
 ```
 
 参数                   | 有效值范围            | 必填 | 说明
@@ -40,7 +40,7 @@ POST {BASE_URL}/callcenter/{callcenter_id}/agent/{agent_id}/call_out
 > - 如果发起坐席的分机处于某个 `conversation` 中，平台会将该分机在所有的交谈中都置于“不听不说”状态，并在新的交谈中排队并呼叫目标坐席的分机。
 
 ```
-POST {BASE_URL}/callcenter/{callcenter_id}/agent/{agent_id}/call_agent
+POST {BASE_URL}/callcenter/agent/{agent_name}/call_agent
 ```
 
 参数                   | 有效值范围            | 必填 | 说明
@@ -53,7 +53,7 @@ POST {BASE_URL}/callcenter/{callcenter_id}/agent/{agent_id}/call_agent
 这实际上是重新排队！
 
 ```
-POST {BASE_URL}/callcenter/{callcenter_id}/agent/{agent_name}/forward_agent
+POST {BASE_URL}/callcenter/agent/{agent_name}/fwd_agent
 ```
 
 参数                   | 有效值范围            | 必填 | 说明
@@ -66,7 +66,7 @@ POST {BASE_URL}/callcenter/{callcenter_id}/agent/{agent_name}/forward_agent
 即`transfer`。坐席退出该交谈，并在交谈上排队。
 
 ```
-POST {BASE_URL}/callcenter/{callcenter_id}/agent/{agent_name}/xfer_agent
+POST {BASE_URL}/callcenter/agent/{agent_name}/xfer_agent
 ```
 
 参数                   | 有效值范围            | 必填 | 默认值     | 说明
@@ -79,7 +79,7 @@ POST {BASE_URL}/callcenter/{callcenter_id}/agent/{agent_name}/xfer_agent
 即`transfer`。坐席退出该交谈，并在交谈上呼叫外线。
 
 ```
-POST {BASE_URL}/callcenter/{callcenter_id}/agent/{agent_name}/xferOut
+POST {BASE_URL}/callcenter/agent/{agent_name}/xfer_out
 ```
 
 参数                   | 有效值范围            | 必填 | 默认值     | 说明
@@ -90,37 +90,100 @@ POST {BASE_URL}/callcenter/{callcenter_id}/agent/{agent_name}/xferOut
 `max_dial_seconds`     | 正整数                |      |            | 最大拨号等待时间
 `max_answer_seconds`   | 正整数                | √    |            | 最大通话时间
 
-## 保持
-将坐席在 `conversation` 中设置于“不听不说”。
-如果此时`conversation`只剩下一个呼叫，平台将在交谈中播放保持音。
+## 设置听说模式
+设置坐席在 `conversation` 中的听/说模式(Listen/Speak Mode)。
 
-注意同一个时间点，坐席的分机呼叫只能在一个交谈中处于非“不听不说”状态。
+注意同一个时间点，坐席的分机呼叫只能在一个交谈中处于非保持状态。
 
 ```
-POST {BASE_URL}/callcenter/{callcenter_id}/agent/{agent_name}/pause
+POST {BASE_URL}/callcenter/agent/{agent_name}/lsm
 ```
 
 参数                   | 有效值范围            | 必填 | 默认值     | 说明
 ---------------------- | ----------------------| ---- | ---------- | -----------------------------
 `conversation_id`      |                       | √    |            |
+`mode`                 | Integer               |      | `1`        | 恢复后的听/说模式，不能是不听不说
 
-这相当于调用“设置听/说模式”，将模式设置为`4`。
+`mode` **必须** 是 1 ~ 4
 
-## 取消保持
-将坐席在 `conversation` 中设置为非“即听又说”状态。
+> - 如果坐席处于多个 conversation 中，同时只能有一个处于不是 *不听不说* 状态，该交谈是该坐席当前活动交谈
+> - 如果在某交谈中设置坐席mode为1~3，平台自动将该坐席在其它交谈的模式全部变为4
+> - 如果某 conversation 只剩下了一个模式非`4`的呼叫，应在该 conversation 中播放保持声音
 
-注意同一个时间点，坐席的分机呼叫只能在一个交谈中处于非“不听不说”状态。
+`mode`:
+
+值     | 说明
+------ | ---------
+`1`    | 且听且说(默认)
+`2`    | 仅听
+`3`    | 仅说
+`4`    | 不听不说
+
+## 坐席加入交谈
+
+### URL
 
 ```
-POST {BASE_URL}/callcenter/{callcenter_id}/agent/{agent_name}/resume
+POST {BASE_URL}/callcenter/agent/{agent_name}/enter
 ```
+
+### 请求参数
+
+参数                   | 有效值范围            | 必填 | 默认值 | 说明
+---------------------- | ----------------------| ---- | ------ | ----------------------------------
+`conversation_id`      | 坐席ID                | √    |        |
+`mode`                 | 1~4                   |      | 1      | 加入新交谈后的听说模式
+`holding`              | `true` `false`        |      | `true` | 如果`mode`不是4，且坐席分机已处于其它交谈中，在加入信的交谈后，是：原交谈模式自动变为4；否：退出原交谈
+
+* 如果发起坐席的分机没有处于任何 `conversation` 中（表明分机没有被连接），平台将自动呼叫坐席分机，并等待其接通。
+
+`mode`:
+
+值     | 说明
+------ | --------------
+`1`    | 且听且说(默认)
+`2`    | 仅听
+`3`    | 仅说
+`4`    | 不听不说
+
+## 坐席加入交谈
+
+### URL
+
+```
+POST {BASE_URL}/callcenter/agent/{agent_name}/exit
+```
+
+参数                   | 有效值范围            | 必填 | 默认值 说明
+---------------------- | ----------------------| ---- | ------ | ----------------------------------
+`conversation_id`      | 交谈ID                | √    |        |
+
+## 合并交谈
+
+### URL
+
+```
+POST {BASE_URL}/callcenter/agent/{agent_name}merge
+```
+
+将目标交谈合并到源头交谈，目标交谈在合并后解散
+
+发起坐席的分机呼叫必须同时处于两个交谈中。
 
 参数                   | 有效值范围            | 必填 | 默认值     | 说明
 ---------------------- | ----------------------| ---- | ---------- | -----------------------------
-`conversation_id`      |                       |  √   |            |
-`mode`                 | Integer               |      | `1`        | 恢复后的听/说模式，不能是不听不说
+`src_conversation_id`  |                       | √    |            | 被合并的源头交谈
+`dst_conversation_id`  |                       | √    |            | 被合并的目标交谈
+`mode`                 | 1~4                   |      | `1`        | 被合并各方进入源头交谈后的听说模式
 
-`mode` **必须** 是 1 ~ 3
+## 获取坐席所在交谈列表
 
-> - 如果坐席处于多个`conversation`中，同时只能有一个处于不是 *不听不说* 状态，该交谈是该坐席当前活动交谈。
-> - 调用该API口，平台自动将该坐席在其它交谈的模式全部变为 *不听不说* 。
+### URL
+
+```
+GET {BASE_URL}/callcenter/agent/{agent_name}/conversation
+```
+
+### 返回参数
+
+conversation 列表

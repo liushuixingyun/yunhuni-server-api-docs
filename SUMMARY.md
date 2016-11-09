@@ -6,7 +6,7 @@
 - [事件回调](docs/intro/callback.md)
 - [IVR回调](docs/intro/ivr.md)
 
-### 呼叫、会议与IVR
+### 呼叫、会议与IVR (尚未开放)
 - [简单呼出](docs/simple_call/index.md)
   - [语音回拨](docs/simple_call/duo_callback.md)
   - [语音通知](docs/simple_call/notify_call.md)
@@ -44,7 +44,7 @@
   - [会议事件](docs/evt/conf/index.md)
   - [IVR 事件](docs/evt/ivr/index.md)
 
-### 呼叫中心
+### 呼叫中心 (尚未开放)
 - [呼叫中心介绍](docs/callcenter/index.md)
 - [分机管理](docs/callcenter/extension.md)
 - [ACD排队](docs/callcenter/acd/index.md)
@@ -54,8 +54,11 @@
 - [坐席](docs/callcenter/agent/index.md)
   - [坐席管理](docs/callcenter/agent/manage.md)
   - [坐席操作](docs/callcenter/agent/operate.md)
-  - [坐席事件](docs/callcenter/agent/event.md)
 - [交谈](docs/callcenter/conversation.md)
+- [事件]
+  + [ACD排队事件](docs/callcenter/event/acd.md)
+  + [坐席事件](docs/callcenter/event/agent.md)
+  + [交谈事件](docs/callcenter/event/conversation.md)
 
 ### 附录
 - [术语表](GLOSSARY.md)

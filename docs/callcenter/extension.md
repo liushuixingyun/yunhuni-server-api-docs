@@ -3,15 +3,13 @@
 
 ## 新建分机
 
-### 请求
-
-#### URL
+### URL
 
 ```
-POST {BASE_URL}/callcenter/{callcenter_id}/extension
+POST {BASE_URL}/callcenter/extension
 ```
 
-#### 请求参数列表
+### 请求参数
 
 参数                  | 有效值范围            | 必填   | 说明
 --------------------- | --------------------- | ------ | ----------------------------------------
@@ -21,9 +19,8 @@ POST {BASE_URL}/callcenter/{callcenter_id}/extension
 `ipaddr`              | `<ip>[:port]`         |        | SIP 网关IP地址与端口，默认5060，仅用于 `type==2`的情况
 `telnum`              | 电话号码              |        | 仅用于 `type==3` 的情况
 
-#### 参数详解
-
-##### 分机类型
+#### `type`参数
+分机类型
 
  枚举值 | 说明
 ------- | --------------
@@ -34,9 +31,7 @@ POST {BASE_URL}/callcenter/{callcenter_id}/extension
 !!! warning
   目前仅仅支持 `1`
 
-### 回复
-
-#### 回复参数列表
+### 回复参数
 
 参数     | 有效值范围   | 说明                           
 -------- | ------------ | -----------------------------
@@ -44,9 +39,7 @@ POST {BASE_URL}/callcenter/{callcenter_id}/extension
 `msg`    | 文本         | 返回情况说明
 `data`   | JSON 对象    | 返回数据对象，参见[data对象属性列表](#data对象属性列表)
 
-#### 参数详解
-
-##### data对象属性列表
+#### data对象属性列表
 
 属性     | 有效值范围      | 说明
 -------- | --------------- | --------
@@ -59,7 +52,7 @@ POST {BASE_URL}/callcenter/{callcenter_id}/extension
 #### URL
 
 ```
-DELETE {BASE_URL}/callcenter/{callcenter_id}/extension/{extension_id}
+DELETE {BASE_URL}/callcenter/extension/{extension_id}
 ```
 
 #### 请求参数列表
@@ -91,7 +84,7 @@ DELETE {BASE_URL}/callcenter/{callcenter_id}/extension/{extension_id}
 #### URL
 
 ```
-GET {BASE_URL}/callcenter/{callcenter_id}/extension/{extension_id}
+GET {BASE_URL}/callcenter/extension/{extension_id}
 ```
 
 #### 请求参数列表
