@@ -1,6 +1,6 @@
-# 发送码（尚未开放）
+# 收码（尚未开放）
 
-## 节点
+## get 节点
 
 ```
 get
@@ -25,6 +25,7 @@ get
 
 ## 嵌套
 [`playlist`](play.md), [`play`](play.md)
+
 **NOTE** 此时 [`playlist`](play.md) 或 [`play`](play.md) 的参数无效
 
 ## 示例
@@ -33,22 +34,14 @@ get
 <response>
     <get valid_keys="0123456789#" finish_keys="#">
       <playlist>
-        <play>please.wav<play>
-        <play>input.wav<play>
-      <playlist>
+        <play>please.wav</play>
+        <play>input.wav</play>
+      </playlist>
     </get>
     <next>http://yourhost/nextstep</next>
 </response>
 ```
 
-```xml
-<response>
-    <get valid_keys="0123456789#" finish_keys="#">
-      <play>please_input.wav<play>
-    </get>
-    <next>http://yourhost/nextstep</next>
-</response>
-```
 
 ## 事件
 见 [IVR 事件](../evt/ivr/index.md)

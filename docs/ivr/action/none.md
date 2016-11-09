@@ -7,13 +7,19 @@ none
 ```
 
 ## 属性
-
-无
+    无
 
 ## 内容
-
-无
+    无
 
 ## 嵌套
+    无
+    
+## 示例
 
-无
+```xml
+<response>
+    <none></none>
+</response>
+```    
+    

@@ -38,11 +38,11 @@ join_conf
 ##示例
 
 ```xml
-<respons>
+<response>
     <join_conf conf_id="44001" call_id="52342323452">
       <play>somebody_joined.wav</play>
     </join_conf>
-</respons>
+</response>
 ```
 
 ## 事件

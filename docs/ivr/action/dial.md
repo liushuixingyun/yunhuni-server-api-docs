@@ -10,7 +10,6 @@ dial
 
 | 参数                  | 说明                                      |
 | --------------------- |  ---------------------------------------- |
-| `callback_url`        | 事件通知地址                   |
 | `from`                | 主叫号码                          |
 | `max_call_duration`   | 最大接通时间（秒）                 |
 | `max_dial_duration`   | 最大拨号等待时间（秒）                         |
@@ -35,7 +34,7 @@ dial
     <number>415-123-4567</number>
     <play>ringtone.wav</play>
     <connect schedule_play_time="1470293585">
-      <play repeat=3>warning.wav</play>
+      <play repeat="3">warning.wav</play>
     </connect>
    </dial>
    <next>http://yourhost/nextstep</next>

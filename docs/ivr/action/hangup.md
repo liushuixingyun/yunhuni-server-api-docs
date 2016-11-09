@@ -1,6 +1,6 @@
 # 挂断（尚未开放）
 
-## hangup 挂断
+## hangup节点
 
 ```
 hangup
@@ -14,3 +14,13 @@ hangup
 
 ## 嵌套
     无
+    
+## 示例
+
+```xml
+<response>
+    <hangup></hangup>
+</response>
+```
+## 事件
+见 [IVR 事件](../evt/ivr/index.md)
