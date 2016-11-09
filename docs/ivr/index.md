@@ -6,13 +6,19 @@
 ## URL
 
 ```
-GET ${call_back}/yunhuni/ivr/start
+GET ${NOTIFY_URL}
 ```
 
 ## 请求
 
-### 请求参数列表
-	无
+### 参数列表
+
+| 参数                     | 有效值范围                | 说明                                       |
+| ---------------------- | -------------------- | ---------------------------------------- |
+| `action`            | 字符串|事件标志：event_notify。 |
+| `call_id`              | UUID HEX 字符串          | 呼叫的`ID`                                |
+
+
 
 ## 响应
 	ivr动作指令
@@ -21,9 +27,7 @@ GET ${call_back}/yunhuni/ivr/start
 
 ```xml
 <response>
-    <play callback_url="http://userhost/callback.php?event=play" finish_keys="#">
-      welcome.wav
-      <next>http://yourhost/nextstep</next>
-    <play>
-<response>
+    <play finish_keys="#">welcome.wav</play>
+    <next>http://yourhost/nextstep</next>
+</response>
 ```
