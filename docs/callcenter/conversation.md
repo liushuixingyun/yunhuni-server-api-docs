@@ -1,12 +1,36 @@
+# 交谈
+
 <!-- toc -->
 
-交谈的记录形如：
+## 属性
+交谈的属性有：
+
+参数                      | 有效值范围                                | 说明
+----------------------    | ----------------------------------------- | ----------------------------------------
+`id`                      | ID                                        | 交谈 ID
+`type`                    | ID                                        | 交谈的产生类型
+`state`                   | 字符串                                    | 状态
+`queue_id`                | ID                                        | 如果交谈由排队产生，该属性记录排队的ID；否则为空
+`channel_id`              | ID                                        | 如果交谈由排队产生，该属性记录排队的通道ID；否则为空
+`begin_time`              | 时间戳                                    | 排队开始时间
+`end_time`                | 时间戳                                    | 整个交谈过程的结束时间
+`end_reason`              | 字符串                                    | 结束原因
+`agent_call_id`           | ID                                        | 如果交谈由坐席外呼产生，该属性坐席呼叫的ID；否则为空
+`agents`                  | 列表                                      | 交谈中的坐席
+`calls`                   | 列表                                      | 交谈中的外线
+
+用类 JSON 表示形如：
 
 ```js
 {
     id: "vm308mjvy3oiu6o3jn45",
+    type: "call_out",
+    state: "running",
     channel: "cm03ogejdrljgdjgljd",
+    end_reason: null,
+    queue_id: null,
     begin_time: "YYYY-MM-DD HH:MI:SS",
+    end_time: null,
     agents:[
         {name: "agent-001", extension_id: "2c-sdfi80-sigsds", call_id: "fx20mudfsdfsdf", mode: 1, begin_time: "YYYY-MM-DD HH:MI:SS", end_time: null},
         {name: "agent-002", extension_id: "xf20s9f0w5234234", call_id: "a7ccx93mcjjlee", mode: 2, begin_time: "YYYY-MM-DD HH:MI:SS", end_time: null},
@@ -16,6 +40,21 @@
     ]
 }
 ```
+
+### `type`
+
+值                    | 说明
+--------------------- | --------------
+`queue`               | 排队产生
+`call_out`            | 坐席外呼产生
+`call_agent`          | 坐席呼叫其它坐席产生
+
+### `state`
+
+值              | 说明
+--------------- | --------------
+`running`       | 正在进行
+`completed`     | 已经结束
 
 ## 解散交谈
 

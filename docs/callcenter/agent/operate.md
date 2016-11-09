@@ -163,7 +163,7 @@ POST {BASE_URL}/callcenter/agent/{agent_name}/exit
 ### URL
 
 ```
-POST {BASE_URL}/callcenter/agent/{agent_name}merge
+POST {BASE_URL}/callcenter/agent/{agent_name}/merge
 ```
 
 将目标交谈合并到源头交谈，目标交谈在合并后解散
