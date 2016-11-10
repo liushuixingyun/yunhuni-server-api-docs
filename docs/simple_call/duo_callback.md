@@ -153,7 +153,7 @@ POST {BASE_URL}/call/duo_callback_cancel
 
 请求:
 ```http
-POST {BASE_URL}/account/{account_id}/call/duo_callback HTTP/1.1
+POST {BASE_URL}/call/duo_callback HTTP/1.1
 Host: api.yunhuni.com
 Content-Type: application/json
 Accept-Type: application/json

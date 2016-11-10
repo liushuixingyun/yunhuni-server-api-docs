@@ -54,7 +54,7 @@ POST {BASE_URL}/call/verify_call
 请求：
 
 ```http
-POST {BASE_URL}/account/{account_id}/call/verify_call HTTP/1.1
+POST {BASE_URL}/call/verify_call HTTP/1.1
 Host: api.yunhuni.com
 Content-Type: application/json
 Accept-Type: application/json
