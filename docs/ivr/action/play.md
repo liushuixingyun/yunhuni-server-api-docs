@@ -26,7 +26,7 @@ play
 <response>
     <play finish_keys="#">
       welcome.wav
-    <play>
+    </play>
     <next>http://yourhost/nextstep</next>
 </response>
 ```
@@ -41,12 +41,12 @@ playlist
 
 | 参数                  | 说明                                      |
 | --------------------- |  ---------------------------------------- |
-| `callback_url`        | 事件通知地址                                    |
 | `finish_keys`         | 中断码                                    |
 | `repeat`              | 重复播放次数                              |
 
 ## 嵌套
 `play`
+
 **NOTE** 覆盖 `play` 的属性
 
 ## 示例

@@ -12,7 +12,6 @@ connect
 
 | 参数                  | 说明                                      |
 | --------------------- |  ---------------------------------------- |
-| `callback_url`        | 事件通知地址                   |
 | `max_duration`        | 最大连接时间（秒）                        |
 | `mode`                | 连接模式 。参见[连接模式列表](#连接模式列表)               |
 | `recording`           | 最大拨号等待时间（秒）                         |
@@ -40,30 +39,16 @@ connect
 
 ```xml
 <response>
-  <connect schedule_play_time="1470293585">
-    <play repeat=3>warning.wav</play>
-  </connect>
+    <dial from="4001546646464">
+        <number>415-123-4567</number>
+        <connect max_duration="50">
+            <play repeat="3">warning.wav</play>
+        </connect>
+    </dial>
+    <next>http://yourhost/nextstep</next>   
 </response>
 ```
 
 ## 事件
 
-### 连接建立
-
-- `URL`: `{prefix}/sa{callback_url}`
-- 参数：
-
-  - `type`: `connect_begin`
-  - `call_id`
-
-### 连接结束
-
-- `URL`: `{prefix}/{callback_url}`
-
-- 参数：
-
-  - `type`: `connect_end`
-  - `call_id`
-  - `connected`: 是否连接上了？
-  - `error`
-  - `duration`: 时长
+见 [IVR 事件](../evt/ivr/index.md)

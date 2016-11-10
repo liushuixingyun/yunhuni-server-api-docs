@@ -8,7 +8,10 @@ pause
 
 ## 属性
 
-- `duration` 暂停时长
+| 参数                  | 说明                                      |
+| --------------------- |  ---------------------------------------- |
+| `duration_keys`          | 暂停时长（秒）                  |
+
 
 ## 内容
 
@@ -20,4 +23,10 @@ pause
 
 ## 示例
 
-
+```xml
+<response>
+    <pause duration="30"></pause>
+    <next>http://yourhost/nextstep</next>
+</response>
+```    
+    

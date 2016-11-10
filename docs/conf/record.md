@@ -1,5 +1,7 @@
 # 会议录音（尚未开放）
+
 <!-- toc -->
+
 # 开始录音
 
 ## 请求
@@ -7,7 +9,7 @@
 ### URL
 
 ```
-POST {BASE_URL}/conf/{conf_id}/start_record
+POST {BASE_URL}/conf/start_record/{conf_id}
 ```
 
 ### 请求参数列表
@@ -33,7 +35,7 @@ POST {BASE_URL}/conf/{conf_id}/start_record
 
 请求:
 ```http
-POST {BASE_URL}/conf/{conf_id}/start_play HTTP/1.1
+POST {BASE_URL}/conf/start_record/{conf_id} HTTP/1.1
 Host: api.yunhuni.com
 Content-Type: application/json
 Accept-Type: application/json
@@ -64,7 +66,7 @@ Content-Length: xxx
 ### URL
 
 ```
-POST {BASE_URL}/conf/{conf_id}/stop_record
+POST {BASE_URL}/conf/stop_record/{conf_id}
 ```
 
 ### 请求参数列表
@@ -87,7 +89,7 @@ POST {BASE_URL}/conf/{conf_id}/stop_record
 
 请求:
 ```http
-POST {BASE_URL}/conf/{conf_id}/start_play HTTP/1.1
+POST {BASE_URL}/conf/stop_record/{conf_id} HTTP/1.1
 Host: api.yunhuni.com
 ```
 
