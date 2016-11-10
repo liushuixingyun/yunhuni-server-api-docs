@@ -101,7 +101,6 @@ public static String calculateHMAC(String secret, String data) {
  */
 function getSign($method, $payload, $contentType, $timestamp, $appId, $apiUri)
 {
-    //是否 有post 或者 put  body
     $hasConent = $method ? true : false;
     $contentMd5 = isset($hasConent) ? md5($payload) : '';
     $contentType = isset($hasConent) ? $contentType : '';
@@ -138,7 +137,11 @@ function calculateHMAC($secret, $data)
 ## 响应
 
 ### 成功响应
-```json
+```http 
+HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Length: xxx
+
 {
     "code": "000000",
     "msg": "请求成功",
@@ -151,6 +154,20 @@ function calculateHMAC($secret, $data)
 
 ### 失败响应
 
+
 ```http
-response result = HTTP Status 401 - Bad credentials
+HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Length: xxx
+
+{
+    "code": "010001",
+    "msg": "应用没上线",
+    "data": null
+}
+```
+
+鉴权失败响应
+```http
+HTTP Status 401 - Bad credentials
 ```

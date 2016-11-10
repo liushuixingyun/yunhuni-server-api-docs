@@ -1,12 +1,15 @@
-# IVR 外呼
-
-## URL
-
-```
-POST ${prefix}/account/{account_id}/call/ivr_call
-```
+# IVR 呼出
+<!-- toc -->
 
 ## 请求
+
+### URL
+
+```
+POST ${BASE_URL}/call/ivr_call
+```
+
+## 请求参数列表
 | 参数                | 是否必须 | 说明                           |
 | ----------------- | ---- | ---------------------------- |
 | from              | 否    | 主叫号码，只能填租用的号码，不填平台会自动选择一个可用的 |
@@ -16,9 +19,36 @@ POST ${prefix}/account/{account_id}/call/ivr_call
 | user_data         | 否    | 用户数据,最大128个字符                |
 
 
-#### 示例
 
-```json
+## 响应
+
+| 参数     | 有效值范围   | 说明                            |
+| ------ | ------- | ----------------------------- |
+| `code` | 数字文本    | 状态码，全0表示正确                    |
+| `msg`  | 文本      | 返回情况说明                        |
+| `data` | JSON 对象 | 返回数据对象，参见[data对象属性列表](#data对象属性列表)|
+
+
+### 参数详解
+
+#### data对象属性列表
+
+| 属性       | 有效值范围        | 说明       |
+| -------- | ------------ | -------- |
+| `callId` | UUID HEX 字符串 | 此次呼叫的 ID |
+
+
+
+## 示例
+
+请求:
+```http
+POST {BASE_URL}/call/ivr_call HTTP/1.1
+Host: api.yunhuni.com
+Content-Type: application/json
+Accept-Type: application/json
+Content-Length: xxx
+
 {
 	"from":"400-xxxxxx",
 	"to":"13692206627",
@@ -28,18 +58,17 @@ POST ${prefix}/account/{account_id}/call/ivr_call
 }
 ```
 
-## 响应
-- `code` 错误码， 000000表示正常
-- `msg` 错误信息
-- `data.callId` 呼叫id
+响应:
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Length: xxx
 
-#### 示例
-```json
 {
   "code": "000000",
   "msg": "请求成功",
   "data": {
-    "callId": "89d716b2fc23ebff7a0086482bda8942"
+    "callId": "2e2597d4849211e681c7803f5d09b29d"
   }
 }
 ```
