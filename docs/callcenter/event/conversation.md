@@ -11,6 +11,8 @@
 `type`                    | ID                                        | 交谈的产生类型
 `previous_state`          | 字符串                                    | 上次状态（变化之前的状态）
 `latest_state`            | 字符串                                    | 最新状态（变化之后的状态）
+`record_file`             | 文件ID                                    | 录音文件
+`record_duration`         | 正整数                                    | 录音事件长度（秒）
 `queue_id`                | ID                                        | 如果交谈由排队产生，该属性记录排队的ID；否则为空
 `channel_id`              | ID                                        | 如果交谈由排队产生，该属性记录排队的通道ID；否则为空
 `begin_time`              | 时间戳                                    | 排队开始时间
