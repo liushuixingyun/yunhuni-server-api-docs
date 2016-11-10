@@ -15,3 +15,5 @@
 `previous_state`          | 字符串                              | 上次状态（变化之前的状态）
 `latest_state`            | 字符串                              | 最新状态（变化之后的状态）
 `current_time`            | 时间戳                              | 当前时间
+
+坐席状态见 [坐席状态设置](../agent/manage.md#状态设置) API
