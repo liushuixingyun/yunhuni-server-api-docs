@@ -85,7 +85,7 @@ DELETE {BASE_URL}/callcenter/agent/{agent_name}
 TODO: 补充！
 
 ## 报到
-如果[云呼你平台][yunhuni]长时间收不到坐席的报到，就认为该坐席离线(`offine`)。
+如果[壹云平台][yunhuni]长时间收不到坐席的报到，就认为该坐席离线(`offine`)。
 
 ## URL
 ```
@@ -211,7 +211,7 @@ POST {BASE_URL}/callcenter/agent/{agent_name}/skills
 `score`       | `Number`             |      | 坐席技能分。仅在 `opt==0` 时有效；如果坐席已经拥有该技能，不填表示不修改，否则分数为0。
 `enabled`     | `Boolean`            |      | 坐席是否启用技能。仅在 `opt==0` 时有效；如果坐席已经拥有该技能，不填表示不修改，否则 `enabled==false`。
 
-[云呼你平台][yunhuni]按照顺序执行 `skillopts` 中定义的操作
+[壹云平台][yunhuni]按照顺序执行 `skillopts` 中定义的操作
 eg:
 “投诉”技能分数调整为95，然后删除“洗衣机”技能
 
