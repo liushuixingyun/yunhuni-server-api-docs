@@ -34,7 +34,7 @@ dial
     <number>415-123-4567</number>
     <play>ringtone.wav</play>
     <connect schedule_play_time="1470293585">
-      <play repeat="3">warning.wav</play>
+      <play>warning.wav</play>
     </connect>
    </dial>
    <next>http://yourhost/nextstep</next>

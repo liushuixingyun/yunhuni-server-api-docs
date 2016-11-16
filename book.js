@@ -1,7 +1,7 @@
 var pkg = require('./package.json')
 
 module.exports = {
-	title: "云呼你 REST API 参考文档",
+	title: "壹云 REST API 参考文档",
 	language: "zh",
 	gitbook: '3.1.1',
 	plugins: [{
