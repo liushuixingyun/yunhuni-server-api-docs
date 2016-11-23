@@ -1,4 +1,4 @@
-# 创建会议（尚未开放）
+# 创建会议 (developing)
 
 ## create_conf 节点
 

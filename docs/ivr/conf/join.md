@@ -1,4 +1,4 @@
-# 加入会议（尚未开放）
+# 加入会议 (developing)
 
 ## join_conf 节点
 
