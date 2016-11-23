@@ -10,7 +10,7 @@ https://api.yunhuni.com/v1/account/{鉴权账号}/
 
 本文的 API URL 说明省略基础部分，在代码例子中，用 {BASE_URL} 表示URL的公共基础部分。
 
-云呼你的 REST API 只接受 HTTPS 连接，以保证安全。
+壹耘的 REST API 只接受 HTTPS 连接，以保证安全。
 
 用户可以从`管理控制台`首页中的`开发者账号`模块的`接口API`获取。
 
