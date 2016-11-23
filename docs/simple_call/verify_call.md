@@ -1,6 +1,6 @@
 # 语音验证码
 
-用户应用调用该接口后， [yunhuni.com](http://yunhuni.com/) 向被叫方发起呼叫；
+用户应用调用该接口后， [oneyun.com](http://oneyun.com/) 向被叫方发起呼叫；
 在接听后，播放提示语音和验证码内容。
 
 <!-- toc -->

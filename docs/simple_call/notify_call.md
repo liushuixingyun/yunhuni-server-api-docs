@@ -1,6 +1,6 @@
 # 语音通知
 
-用户应用调用该接口后， [yunhuni.com](http://yunhuni.com/) 向被叫方发起呼叫；
+用户应用调用该接口后， [oneyun.com](http://oneyun.com/) 向被叫方发起呼叫；
 在接听后，接通电话后播放指定语音 。
 
 <!-- toc -->
