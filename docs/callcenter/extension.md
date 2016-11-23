@@ -20,7 +20,7 @@ POST {BASE_URL}/callcenter/extension
 `telnum`              | 电话号码              |        | 仅用于 `type==3` 的情况
 `uri`                 | SIP 地址              |        | 仅用于 `type==4` 的情况
 
-### `user`参数
+#### `user`参数
 注册用户名。
 
 云呼你平台中， SIP 分机的注册用户名只能是数字，这个数字被成为号码。
