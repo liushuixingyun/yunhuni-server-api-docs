@@ -15,6 +15,8 @@
 - [IVR 回调(beta/developing)](docs/ivr/index.md)
   - [IVR 呼入回调(beta)](docs/ivr/incoming.md)
   - [IVR 动作(beta)](docs/ivr/action/index.md)
+    - [接听](docs/ivr/action/accept.md)
+    - [拒接](docs/ivr/action/refuse.md)
     - [放音](docs/ivr/action/play.md)
     - [录音](docs/ivr/action/record.md)
     - [发码](docs/ivr/action/put.md)
