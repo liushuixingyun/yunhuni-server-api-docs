@@ -21,8 +21,8 @@ GET ${NOTIFY_URL}?from={mobile}
 
 用户应用服务程序只能使用以下两个 IVR 动作来回应这个事件回调：
 
-- [接听(`<accept>`)](../action/accept.md)
-- [拒接(`<refuse>`)](../action/refuse.md)
+- [接听(`<accept>`)](action/accept.md)
+- [拒接(`<refuse>`)](action/refuse.md)
 
 如果平台收不到 IVR 回应，该呼入将得不到响应，直到超时。
 
