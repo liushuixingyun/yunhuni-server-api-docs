@@ -8,13 +8,13 @@ hangup
 ```
 
 ## 属性
-    无
+无
 
 ## 内容
-    无
+无
 
 ## 嵌套
-    无
+无
     
 ## 示例
 
@@ -23,5 +23,6 @@ hangup
     <hangup></hangup>
 </response>
 ```
+
 ## 事件
 见 [IVR 事件](../evt/ivr/index.md)
