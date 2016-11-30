@@ -23,6 +23,8 @@
     - [拨号](docs/ivr/action/dial.md)
     - [连接](docs/ivr/action/connect.md)
     - [后续](docs/ivr/action/next.md)
+    - [暂停](docs/ivr/action/pause.md)
+  - [号码(beta)](docs/ivr/number.md)
   - [会议 IVR(developing)](docs/ivr/conf/index.md)
     - [建立会议](docs/ivr/conf/create.md)
     - [加入会议](docs/ivr/conf/join.md)

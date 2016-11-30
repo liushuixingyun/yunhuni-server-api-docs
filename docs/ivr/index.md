@@ -19,10 +19,8 @@ GET ${NOTIFY_URL}
 `action`            | **ivr_start**        |执行第一步的IVR动作标志：ivr_start
 `call_id`           | UUID HEX 字符串      | 呼叫的`ID`
 
-
-
 ## 响应
-	ivr动作指令
+IVR 动作的 XML 格式内容。
 
 ## 示例
 
