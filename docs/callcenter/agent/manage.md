@@ -53,10 +53,16 @@ POST {BASE_URL}/callcenter/agent
     详见 _状态设置_ 一节。
 
 - `skills` 参数
-    详见 _技能设置_ 一节。
+
+    属性名        |       数据类型       | 必填 |  说明
+    ------------- | -------------------- | ---- | ---------------
+    `name`        | `String`             | √    | 技能名称
+    `score`       | `int`             |      | 技能分数
+    `enabled`     | `Boolean`            |      | 是否启用技能
+
 
 -  `extension` 参数
-    详见 _分机设置_ 一节。
+    分机的ID。
 
 ### 返回参数
 
@@ -422,7 +428,7 @@ POST {BASE_URL}/callcenter/agent/{agent_name}/skills
 
 参数                   | 有效值范围            | 必填 | 说明
 ---------------------- | ----------------------| ---- | ----------------------------------------
-`opts[]`                 | 技能操作列表          | √    | 技能操作列表
+`opts`                 | 技能操作列表          | √    | 技能操作列表
 
 #### `opts` 参数
 技能操作列表用于表示如何修改坐席的技能，该列表的元素是 `opts` 技能操作对象，该对象的属性定义是：
@@ -439,28 +445,34 @@ eg:
 “投诉”技能分数调整为95，然后删除“洗衣机”技能，请求内容为
 
 ```js
- [
-    {opt: 1, name: "投诉", score: 95, enabled: true},
-    {opt: 2, name: "洗衣机"},
-]
+ {
+     opts:[
+        {opt: 1, name: "投诉", score: 95, enabled: true},
+        {opt: 2, name: "洗衣机"},
+    ]
+}
 ```
 
 eg:
 删除所有技能，请求内容为
 
 ```js
- [
-    {opt: 0}
-]
+ {
+     opts:[
+        {opt: 0}
+    ]
+}
 ```
 
 eg:
 禁用“投诉”技能，请求内容为
 
 ```js
-[
-    {opt: 1, name: "投诉", enabled: false}
-]
+ {
+     opts:[
+        {opt: 1, name: "投诉", enabled: false}
+    ]
+}
 ```
 
 eg:
@@ -468,10 +480,12 @@ eg:
 
 ```js
 
- [
-    {opt: 0},
-    {opt: 1, name: "投诉", score: 60, enabled: true}
-]
+ {
+     opts:[
+        {opt: 0},
+        {opt: 1, name: "投诉", score: 60, enabled: true}
+    ]
+}
 ```
 
 ### 返回参数
@@ -486,10 +500,12 @@ POST {BASE_URL}/callcenter/agent/1001/skills HTTP/1.1
 Content-Type: application/json
 Accept-Type: application/json
 
-[
-    {"opt": 2, "name": "手机"},
-    {"opt": 1, "name": "投诉","score":50, "enabled": true}
-]
+{
+    opts:[
+        {"opt": 2, "name": "手机"},
+        {"opt": 1, "name": "投诉","score":50, "enabled": true}
+    ]
+}
 ```
 
 响应:
