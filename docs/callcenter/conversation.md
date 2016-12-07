@@ -10,8 +10,9 @@
 `id`                      | ID                                        | 交谈 ID
 `type`                    | ID                                        | 交谈的产生类型
 `state`                   | 字符串                                    | 状态
-`queue_id`                | ID                                        | 如果交谈由排队产生，该属性记录排队的ID；否则为空
 `channel_id`              | ID                                        | 如果交谈由排队产生，该属性记录排队的通道ID；否则为空
+`queue_id`                | ID                                        | 如果交谈由排队产生，该属性记录排队的ID；否则为空
+`condition_id`            | ID                                        | 如果交谈由排队产生，该属性记录所满足的排队条件的ID；否则为空
 `begin_time`              | 时间戳                                    | 排队开始时间
 `end_time`                | 时间戳                                    | 整个交谈过程的结束时间
 `end_reason`              | 字符串                                    | 结束原因

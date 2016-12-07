@@ -1,33 +1,38 @@
 # 暂停
 <!-- toc -->
 
-## pause 节点
+暂停IVR，直到超时。
 
+## pause 节点
 ```
 pause
 ```
 
 ## 属性
-
-| 参数                  | 说明                                      |
-| --------------------- |  ---------------------------------------- |
-| `duration_keys`          | 暂停时长（秒）                  |
-
+参数            | 说明                   
+--------------- | -----------------------
+`timeout`       | 暂停的时间（秒）
 
 ## 内容
-
 无
 
-## 嵌套
+## 输出参数
+参数            | 说明                   
+--------------- | -----------------------
+`type`          | 同一个 IVR Response 中，动作节点的标签名称
+`error`         | 向 [`<next>`](./next.md) 所定义的 URL 进行请求时，附带此次 IVR 执行错误信息（如果没有错误，则不提供该参数）
 
-`next`
+## 嵌套
+可嵌套 [`<play>`](./play.md)
 
 ## 示例
 
 ```xml
 <response>
-    <pause duration="30"></pause>
-    <next>http://yourhost/nextstep</next>
+    <pause timeout="5">
+        <play repeat="3">please_wait_5s.wav</play>
+    </pause>
+    <next>http://xxx.com/xxx</next>
 </response>
 ```    
-    
+

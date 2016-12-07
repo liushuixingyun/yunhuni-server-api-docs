@@ -14,7 +14,7 @@ POST {BASE_URL}/callcenter/extension
 参数                  | 有效值范围            | 必填   | 说明
 --------------------- | --------------------- | ------ | ----------------------------------------
 `type`                | 整数，分机类型枚举值  | √      | 分机类型
-`user`                | 6~12字母数字位字符串  |        | SIP 注册用户名，仅用于 `type==1`的情况
+`user`                | 6~12数字  |        | SIP 注册用户名，仅用于 `type==1`的情况
 `password`            | 6~12字母数字位字符串  |        | SIP 注册用密码，仅用于 `type==1`的情况
 `ipaddr`              | `<ip>[:port]`         |        | SIP 网关IP地址与端口，默认5060，仅用于 `type==2`的情况
 `telnum`              | 电话号码              |        | 仅用于 `type==3` 的情况
@@ -44,6 +44,11 @@ POST {BASE_URL}/callcenter/extension
 属性     | 有效值范围      | 说明
 -------- | --------------- | --------
 `id`     | UUID HEX 字符串 | 新建的分机的 ID
+`type`     | 见分机类型 | 分机类型
+`user`     | SIP 注册用户名| 注：注册成功的user是：应用的编号做为前缀+用户传的user参数
+`user`     | 6~12字母数字位字符串 | SIP 注册用密码
+`ipaddr`    | `<ip>[:port]`  | SIP 网关IP地址与端口，默认5060
+`telnum`       | 电话号码   | 电话号码
 
 
 ## 新建分机示例
@@ -55,7 +60,7 @@ Content-Type: application/json
 Accept-Type: application/json
 
 {
-    "user":"hahaha2345637",
+    "user":"78541",
     "password":"123456",
     "type":1
 }
@@ -70,7 +75,14 @@ Content-Length: xxx
 {
   "code": "000000",
   "msg": "请求成功",
-  "data": "40288aca5886052a0158863f63d60000"
+  "data": {
+    "id": "8a2bc67258d1c8720158d1f85aec000b",
+    "type": "1",
+    "user": "1000178541",
+    "password": "123456",
+    "ipaddr": null,
+    "telnum": null
+  }
 }
 ```
 
