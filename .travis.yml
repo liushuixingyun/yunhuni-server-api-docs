@@ -1,0 +1,22 @@
+sudo: false
+
+language: node_js
+node_js:
+  - "node"
+
+install:
+  - npm install
+  - node_modules/.bin/gitbook install
+  - npm install ali-oss
+
+script:
+  - npm run build
+
+before-deploy:
+  - chmod ug+x .travis/deploy.sh
+
+deploy:
+  provider: script
+  script: .travis/deploy.sh
+  on:
+    branch: develop
