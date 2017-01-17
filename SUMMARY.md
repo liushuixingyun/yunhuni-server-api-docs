@@ -27,7 +27,6 @@
   - [号码(beta)](docs/ivr/number.md)
   - [会议 IVR(developing)](docs/ivr/conf/index.md)
     - [建立会议](docs/ivr/conf/create.md)
-    - [加入会议](docs/ivr/conf/join.md)
 - [会议(beta/developing)](docs/conf/index.md)
   - [创建会议(beta)](docs/conf/create.md)
   - [解散会议(beta)](docs/conf/dismiss.md)
