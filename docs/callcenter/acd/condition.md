@@ -66,6 +66,11 @@ POST {BASE_URL}/callcenter/condition
 DELETE {BASE_URL}/callcenter/condition/{condition_id}
 ```
 
+注意：
+
+> - 一旦删除条件，这个条件上正在进行的排队会将无法排到坐席，直到超时。
+> - 删除条件后，不要在IVR中继续使用这个条件排队。
+
 ## 修改
 
 ### URL
@@ -157,7 +162,7 @@ GET {BASE_URL}/callcenter/condition/{condition_id}
 
 ```
 get("技能1") > 60 && get("技能2") > 50;
-(get("技能1") + get("技能2")) >=100
+(get("技能1") + get("技能2")) >=100;
 ```
 
 sort表达式为数值表达式，例如
