@@ -28,7 +28,7 @@
     sort: null,
     priority: 100,
     queue_timeout: 15,
-    fetch_timeout:
+    fetch_timeout:45,
     remark: "全部坐席排队"
 }
 ```
@@ -48,8 +48,8 @@ POST {BASE_URL}/callcenter/condition
 `where`                | 条件选择表达式        | √    |                 |
 `sort`                 | 排序表达式            |      | `null`          | 默认不排序，所有的坐席权值相同。
 `priority`             | 0~99 整数             |      | `0`             | 数值大的优先级高。默认值是 `0`。
-`queue_timeout`        | 0或者正整数           |      | `null`          | 该条件的排队等待超时时间(秒)。默认`null`表示一直等待直到呼叫结束。`0`表示找不到坐席就立即超时。
-`fetch_timeout`        | 0或者正整数           |      | `null`          | 该条件的坐席分机接听超时时间(秒)。默认`null`表示一直等待直到呼叫结束。
+`queue_timeout`        | 1-1000           	   |√     |                 | 该条件的排队等待超时时间(秒)。
+`fetch_timeout`        | 1-60		           |      | 45	            | 该条件的坐席分机接听超时时间(秒)。
 `remark`               | 字符串                |      | `null`          | 备注
 
 ### 返回参数
