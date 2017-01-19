@@ -17,7 +17,6 @@ POST {BASE_URL}/conf/invite_call/{conf_id}
 | `to`                  | 电话号码字符串     |  **必填 **          | 被叫号码                        |
 | `max_duration`        | 正整数     |  **必填 **     | 最大会议时间（秒）                |
 | `max_dial_duration`   | 布尔值     |  选填，默认`false` | 最大拨号等待时间（秒），默认50秒                  |
-| `dial_voice_stop_cond`| 布尔值     |  选填，默认`false` | 自定义拨号音停止播放条件。0：振铃停止；1：接听或者挂断停止。                  |
 | `play_file`           | 文件名字符串     |  选填   | 加入后在会议播放这个文件       |
 | `voice_mode`          | 正整数     |选填，默认`1`  | 加入后的声音模式。参见[声音模式列表](#声音模式列表)                   |
 
@@ -68,7 +67,6 @@ Content-Length: xxx
 	"to":"13692206627",
 	"max_duration":1800,
 	"max_dial_duration":60,
-	"dial_voice_stop_cond":1,
 	"play_file":"file1",
 	"voice_mode":1
 }

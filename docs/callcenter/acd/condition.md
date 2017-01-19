@@ -28,7 +28,7 @@
     sort: null,
     priority: 100,
     queue_timeout: 15,
-    fetch_timeout:
+    fetch_timeout:45,
     remark: "全部坐席排队"
 }
 ```
@@ -48,8 +48,8 @@ POST {BASE_URL}/callcenter/condition
 `where`                | 条件选择表达式        | √    |                 |
 `sort`                 | 排序表达式            |      | `null`          | 默认不排序，所有的坐席权值相同。
 `priority`             | 0~99 整数             |      | `0`             | 数值大的优先级高。默认值是 `0`。
-`queue_timeout`        | 0或者正整数           |      | `null`          | 该条件的排队等待超时时间(秒)。默认`null`表示一直等待直到呼叫结束。`0`表示找不到坐席就立即超时。
-`fetch_timeout`        | 0或者正整数           |      | `null`          | 该条件的坐席分机接听超时时间(秒)。默认`null`表示一直等待直到呼叫结束。
+`queue_timeout`        | 1-1000           	   |√     |                 | 该条件的排队等待超时时间(秒)。
+`fetch_timeout`        | 1-60		           |      | 45	            | 该条件的坐席分机接听超时时间(秒)。
 `remark`               | 字符串                |      | `null`          | 备注
 
 ### 返回参数
@@ -58,12 +58,6 @@ POST {BASE_URL}/callcenter/condition
 ---------------------- | --------------------- | ---- | ----------------------------------------
 `id`                   | uuid                  | √    | 条件的ID
 
-#### 超时参数
-`timeout` `queue_timeout` `fetch_timeout` 三项中：
-
-- 如果 `timeout` 不为空，排队等待和坐席分机接听超时之和不可大于它，无论这两个参数值时多少
-- `queue_timeout` 过大时，平台可能会在这个时间到达之前就呼叫超时失败
-- 即使超时值是无穷大，用户等待不耐烦也会挂断通话
 
 ## 删除
 
@@ -71,6 +65,11 @@ POST {BASE_URL}/callcenter/condition
 ```
 DELETE {BASE_URL}/callcenter/condition/{condition_id}
 ```
+
+注意：
+
+> - 一旦删除条件，这个条件上正在进行的排队会将无法排到坐席，直到超时。
+> - 删除条件后，不要在IVR中继续使用这个条件排队。
 
 ## 修改
 
@@ -163,7 +162,7 @@ GET {BASE_URL}/callcenter/condition/{condition_id}
 
 ```
 get("技能1") > 60 && get("技能2") > 50;
-(get("技能1") + get("技能2")) >=100
+(get("技能1") + get("技能2")) >=100;
 ```
 
 sort表达式为数值表达式，例如
