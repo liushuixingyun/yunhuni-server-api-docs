@@ -146,7 +146,7 @@ POST {BASE_URL}/callcenter/agent/{agent_name}/enter
 `3`    | 仅说
 `4`    | 不听不说
 
-## 坐席加入交谈
+## 坐席退出交谈
 
 ### URL
 
