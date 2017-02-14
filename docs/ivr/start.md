@@ -7,14 +7,15 @@
 ##回调URL
     
 ```
-GET ${NOTIFY_URL}?from={mobile}
+POST ${NOTIFY_URL}?from={mobile}
 ```
 
 ### 参数列表
 | 参数                  | 有效值范围       |  说明                                   |
 | --------------------- | ---------------- | --------------------------------------- |
 | `action`              | `"ivr_start"`    | 事件标志：ivr_start                     |
-| `from`                | 号码字符串       | 来电号码                                |
+| `call_id`             | `UUID`           | 呼叫id                                   |
+| `from`                | 号码字符串        | 来电号码                                |
 
 ##响应
 

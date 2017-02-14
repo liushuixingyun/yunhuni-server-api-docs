@@ -5,7 +5,7 @@
 本文中所有 REST API 的 URL 均有以下基础部分：
 
 ```
-https://api.yunhuni.com/v1/account/{鉴权账号}/
+https://api.yunhuni.com/v1/account/{鉴权主账号}/
 ```
 
 本文的 API URL 说明省略基础部分，在代码例子中，用 {BASE_URL} 表示URL的公共基础部分。
@@ -31,6 +31,9 @@ https://api.yunhuni.com/v1/account/{鉴权账号}/
  HttpPost.setEntity(new StringEntity(payload, Charset.forName("UTF-8")));
 ```
 
+## 鉴权账号
+    鉴权主账号:用户可以从`管理控制台`首页中的`开发者账号`模块的`鉴权账号`获取
+    鉴权子账号:用户可以从`应用详情`下面的`子账号列表`的`鉴权账号`获取
 ## 鉴权
 
 API网关鉴权使用`鉴权账号`和`密钥`配合完成。
