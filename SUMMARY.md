@@ -7,8 +7,8 @@
 - [事件回调](docs/intro/callback.md)
 
 ### 管理API
-- 号码
-- 子账号
+- [号码](docs/management/telnum.md)
+- [子账号](docs/management/subaccount.md)
 
 ### 语音API
 - 简单呼出

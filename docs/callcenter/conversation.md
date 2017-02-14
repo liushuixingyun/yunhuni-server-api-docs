@@ -9,7 +9,6 @@
 ----------------------    | ----------------------------------------- | ----------------------------------------
 `id`                      | ID                                        | 交谈 ID
 `type`                    | ID                                        | 交谈的产生类型
-`state`                   | 字符串                                    | 状态
 `channel_id`              | ID                                        | 如果交谈由排队产生，该属性记录排队的通道ID；否则为空
 `queue_id`                | ID                                        | 如果交谈由排队产生，该属性记录排队的ID；否则为空
 `condition_id`            | ID                                        | 如果交谈由排队产生，该属性记录所满足的排队条件的ID；否则为空
@@ -25,7 +24,6 @@
 {
     id: "vm308mjvy3oiu6o3jn45",
     type: "call_out",
-    state: "running",
     channel: "cm03ogejdrljgdjgljd",
     end_reason: null,
     queue_id: null,
@@ -48,11 +46,6 @@
 `call_agent`          | 坐席呼叫其它坐席产生
 
 ### `state`
-
-值              | 说明
---------------- | --------------
-`running`       | 正在进行
-`completed`     | 已经结束
 
 ## 解散交谈
 
