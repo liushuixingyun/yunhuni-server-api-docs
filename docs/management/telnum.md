@@ -14,7 +14,7 @@ GET ${BASE_URL}/management/telnum
 
 | 参数                   | 有效值范围               | 说明                                       |
 | ---------------------- | ------------------------ | ---------------------------------------- |
-| `used`                | *0/1*                     |used=1返回已被绑定的号码,used=0返回未绑定的号码。（默认null，查询所有） |
+| `used`                | *0/1*                     |used=1返回已被绑定的号码,used=0返回未绑定的号码。（默认为空，查询所有） |
 | `pageNo`              | *正整数*                   |页数，默认1|
 | `pageSize`            | *1-1000*                   |每页数据条数，默认10|
 
@@ -40,8 +40,8 @@ GET ${BASE_URL}/management/telnum
 | `currentPageNo` | 整数 | 当前页 |
 | `result` | Array | 列表数据 |
 | `result.id` | UUID | 号码资源id |
-| `result.appId` | UUID | 绑定的应用id，为null代表未被应用绑定 |
-| `result.subaccount` | UUID | 绑定的子账号id，为null代表未被子账号绑定 |
+| `result.appId` | UUID | 绑定的应用id，为空代表未被应用绑定 |
+| `result.subaccount` | UUID | 绑定的子账号id，为空代表未被子账号绑定 |
 | `result.telnum` | String | 号码 |
 
 
@@ -99,7 +99,7 @@ POST ${BASE_URL}/management/telnum/{id}/subaccount
 
 | 参数                   | 有效值范围               | 说明                                       |
 | ---------------------- | ------------------------ | ---------------------------------------- |
-| `subaccountId`         | UUID                    |子账号Id,不能为null|
+| `subaccountId`         | UUID                    |子账号Id,不能为空|
 
 
 ### 响应参数列表
@@ -151,7 +151,7 @@ DELETE ${BASE_URL}/management/telnum/{id}/subaccount
 
 | 参数                   | 有效值范围               | 说明                                       |
 | ---------------------- | ------------------------ | ---------------------------------------- |
-| `subaccountId`         | UUID                    |子账号Id,不能为null|
+| `subaccountId`         | UUID                    |子账号Id,不能为空|
 
 
 ### 响应参数列表

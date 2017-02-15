@@ -19,9 +19,9 @@ POST ${BASE_URL}/management/subaccount
 | ---------------------- | ------------------------ | ---------------------------------------- |
 | `callbackUrl`          | *http url*                |用于子账号接收平台事件的url,必填|
 | `remark`              | *字符串*                |备注，例如：备注您的客户的名称|
-| `quotas`              | Array                  |配额数组,默认null不限制配额|
+| `quotas`              | Array                  |配额数组,默认为空不限制配额|
 | `quotas.type`         | 字符串                  |配额类型,默认不限制配额|
-| `quotas.sum`          | 整数                    |默认-1代表无限制|
+| `quotas.value`          | 整数                    |默认-1代表无限制|
 
 
 ### 响应参数列表
@@ -59,8 +59,8 @@ Content-Length: xxx
    "callbackUrl":"http://api.yoururl.com/callback",
    "remark":"客户1",
    "quotas":[
-       {"type":"1",sum:1000},
-       {"type":"2",sum:2000}
+       {"type":"1",value:1000},
+       {"type":"2",value:2000}
       ]
 }
 ```
@@ -218,14 +218,14 @@ PUT ${BASE_URL}/management/subaccount/{id}/quotas
 | ---------------------- | ------------------------ | ---------------------------------------- |
 | `quotas`          | Array                |配额数组,必填|
 | `quotas.type`          | 字符串                |配额类型,必填|
-| `quotas.sum`          | 整数                |默认-1代表无限制|
+| `quotas.value`          | 整数                |默认-1代表无限制|
 
 #### 示例
 ```json
 {
    "quotas":[
-    {"type":"1",sum:1000},
-    {"type":"2",sum:2000}
+    {"type":"1",value:1000},
+    {"type":"2",value:2000}
    ]
 }
 ```
@@ -248,8 +248,8 @@ Accept-Type: application/json
 Content-Length: xxx
 {
    "quotas":[
-    {"type":"1",sum:1000},
-    {"type":"2",sum:2000}
+    {"type":"1",value:1000},
+    {"type":"2",value:2000}
    ]
 }
 ```
