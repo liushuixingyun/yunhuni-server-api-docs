@@ -20,8 +20,8 @@ POST ${BASE_URL}/management/subaccount
 | `callbackUrl`          | *http url*                |用于子账号接收平台事件的url,必填|
 | `remark`              | *字符串*                |备注，例如：备注您的客户的名称|
 | `quotas`              | Array                  |配额数组,默认为空不限制配额|
-| `quotas.type`         | 字符串                  |配额类型,默认不限制配额|
-| `quotas.value`          | 整数                    |默认-1代表无限制|
+| `quotas.type`         | 字符串                  |[配额类型](#子账号配额类型),默认不限制配额|
+| `quotas.value`          | 整数                  |默认-1代表无限制|
 
 
 ### 响应参数列表
@@ -59,8 +59,7 @@ Content-Length: xxx
    "callbackUrl":"http://api.yoururl.com/callback",
    "remark":"客户1",
    "quotas":[
-       {"type":"1",value:1000},
-       {"type":"2",value:2000}
+       {"type":"CallQuota",value:1000}
       ]
 }
 ```
@@ -217,15 +216,14 @@ PUT ${BASE_URL}/management/subaccount/{id}/quotas
 | 参数                   | 有效值范围               | 说明                                       |
 | ---------------------- | ------------------------ | ---------------------------------------- |
 | `quotas`          | Array                |配额数组,必填|
-| `quotas.type`          | 字符串                |配额类型,必填|
+| `quotas.type`          | 字符串                |[配额类型](#子账号配额类型),必填|
 | `quotas.value`          | 整数                |默认-1代表无限制|
 
 #### 示例
 ```json
 {
    "quotas":[
-    {"type":"1",value:1000},
-    {"type":"2",value:2000}
+    {"type":"AgentQuota",value:1000}
    ]
 }
 ```
@@ -248,8 +246,7 @@ Accept-Type: application/json
 Content-Length: xxx
 {
    "quotas":[
-    {"type":"1",value:1000},
-    {"type":"2",value:2000}
+    {"type":"AgentQuota",value:1000}
    ]
 }
 ```
@@ -270,3 +267,8 @@ Content-Length: xxx
 
 
 
+## 子账号配额类型
+| 名称     | 说明                            |
+| ------ | ----------------------------- |
+| `CallQuota` | 通话时长配额，单位：秒                    |
+| `AgentQuota`  | 呼叫中心坐席配额，单位：个               |
