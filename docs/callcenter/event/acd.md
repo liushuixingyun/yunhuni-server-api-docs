@@ -19,6 +19,7 @@
 `agent_call_id`           | ID                                  | 呼叫坐席分机的呼叫ID
 `data`                    | 字符串                              | 用户数据
 
+
 ### `type`
 排队类型
 
