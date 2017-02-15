@@ -58,7 +58,7 @@ Content-Length: xxx
 {
    "callbackUrl":"http://api.yoururl.com/callback",
    "remark":"客户1",
-   quotas:[
+   "quotas":[
        {"type":"1",sum:1000},
        {"type":"2",sum:2000}
       ]
@@ -223,7 +223,7 @@ PUT ${BASE_URL}/management/subaccount/{id}/quotas
 #### 示例
 ```json
 {
-   quotas:[
+   "quotas":[
     {"type":"1",sum:1000},
     {"type":"2",sum:2000}
    ]
@@ -247,7 +247,7 @@ Content-Type: application/json
 Accept-Type: application/json
 Content-Length: xxx
 {
-   quotas:[
+   "quotas":[
     {"type":"1",sum:1000},
     {"type":"2",sum:2000}
    ]
