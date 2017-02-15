@@ -2,13 +2,13 @@
 - [自述](README.md)
 
 ### 入门准备
-- [创建应用](docs/intro/app.md)
 - [主动调用](docs/intro/call.md)
 - [事件回调](docs/intro/callback.md)
 
 ### 管理API
-- [号码](docs/management/telnum.md)
-- [子账号](docs/management/subaccount.md)
+- [管理API](docs/management/index.md)
+    - [号码](docs/management/telnum.md)
+    - [子账号](docs/management/subaccount.md)
 
 ### 语音API
 - [简单呼出](docs/simple_call/index.md)
@@ -34,8 +34,8 @@
             - [号码(beta)](docs/ivr/number.md)
         - [暂停](docs/ivr/action/pause.md)
         - [后续](docs/ivr/action/next.md)
-       - [会议IVR(developing)](docs/ivr/conf/index.md)
-         - [建立会议](docs/ivr/conf/create.md)
+        - [会议IVR(developing)](docs/ivr/conf/index.md)
+            - [建立会议](docs/ivr/conf/create.md)
     - [IVR事件(beta/developing)](docs/evt/ivr/index.md)
 
 - [会议(beta/developing)](docs/conf/index.md)
