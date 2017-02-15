@@ -7,8 +7,8 @@
 
 ### 管理API
 - [管理API](docs/management/index.md)
-    - [号码](docs/management/telnum.md)
-    - [子账号](docs/management/subaccount.md)
+    - [号码管理](docs/management/telnum.md)
+    - [子账号管理](docs/management/subaccount.md)
 
 ### 语音API
 - [简单呼出](docs/simple_call/index.md)

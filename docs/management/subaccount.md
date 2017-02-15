@@ -19,6 +19,9 @@ POST ${BASE_URL}/management/subaccount
 | ---------------------- | ------------------------ | ---------------------------------------- |
 | `callbackUrl`          | *http url*                |用于子账号接收平台事件的url,必填|
 | `remark`              | *字符串*                |备注，例如：备注您的客户的名称|
+| `quotas`              | Array                  |配额数组,默认null不限制配额|
+| `quotas.type`         | 字符串                  |配额类型,默认不限制配额|
+| `quotas.sum`          | 整数                    |默认-1代表无限制|
 
 
 ### 响应参数列表
@@ -54,7 +57,11 @@ Accept-Type: application/json
 Content-Length: xxx
 {
    "callbackUrl":"http://api.yoururl.com/callback",
-   "remark":"客户1"
+   "remark":"客户1",
+   quotas:[
+       {"type":"1",sum:1000},
+       {"type":"2",sum:2000}
+      ]
 }
 ```
 
@@ -193,3 +200,73 @@ Content-Length: xxx
   "data": true
 }
 ```
+
+
+## 设置子账号配额
+
+    `配额是会员提供给其客户使用服务的额度`
+
+### 请求URL
+
+```
+PUT ${BASE_URL}/management/subaccount/{id}/quotas
+```
+
+### 请求参数列表
+
+| 参数                   | 有效值范围               | 说明                                       |
+| ---------------------- | ------------------------ | ---------------------------------------- |
+| `quotas`          | Array                |配额数组,必填|
+| `quotas.type`          | 字符串                |配额类型,必填|
+| `quotas.sum`          | 整数                |默认-1代表无限制|
+
+#### 示例
+```json
+{
+   quotas:[
+    {"type":"1",sum:1000},
+    {"type":"2",sum:2000}
+   ]
+}
+```
+### 响应参数列表
+
+| 参数     | 有效值范围   | 说明                            |
+| ------ | ------- | ----------------------------- |
+| `code` | 数字文本    | 状态码，全0表示正确                    |
+| `msg`  | 文本        | 返回情况说明                        |
+| `data` | boolean   | 成功true,失败false|
+
+#### 示例
+
+请求:
+```http
+PUT ${BASE_URL}/management/subaccount/rhreherherhgwgweg1304561/quotas HTTP/1.1
+Host: api.yunhuni.com
+Content-Type: application/json
+Accept-Type: application/json
+Content-Length: xxx
+{
+   quotas:[
+    {"type":"1",sum:1000},
+    {"type":"2",sum:2000}
+   ]
+}
+```
+
+响应:
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Length: xxx
+
+{
+  "code": "000000",
+  "msg": "请求成功",
+  "data": true
+}
+```
+
+
+
+
