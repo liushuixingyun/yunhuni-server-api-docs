@@ -32,7 +32,7 @@
     members:[
         {name: "agent-001", extension_id: "2c-sdfi80-sigsds", call_id: "fx20mudfsdfsdf", mode: 1, begin_time: "YYYY-MM-DD HH:MI:SS", end_time: null},
         {name: "agent-002", extension_id: "xf20s9f0w5234234", call_id: "a7ccx93mcjjlee", mode: 2, begin_time: "YYYY-MM-DD HH:MI:SS", end_time: null},
-        {call_id: "xjm93cetgerjtgowe", mode: 1, begin_time: "YYYY-MM-DD HH:MI:SS", end_time: null}
+        {telnumber:"13698806658",call_id: "xjm93cetgerjtgowe", mode: 1, begin_time: "YYYY-MM-DD HH:MI:SS", end_time: null}
     ]
 }
 ```

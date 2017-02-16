@@ -47,7 +47,7 @@ GET ${BASE_URL}/management/telnum
 
 请求:
 ```http
-GET {BASE_URL}/management/telnum?used=1&pageNo=1&pageSize=10 HTTP/1.1
+GET {BASE_URL}/management/telnum?pageNo=1&pageSize=10 HTTP/1.1
 Host: api.yunhuni.com
 Content-Type: application/json
 Accept-Type: application/json
