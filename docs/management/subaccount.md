@@ -44,7 +44,7 @@ POST ${BASE_URL}/management/subaccount
 | `appId` | UUID | 关联的应用Id |
 | `parentId` | UUID | 主账号Id |
 | `callbackUrl` | http url | 子账号回调地址 |
-| `enabled` | boolean | 是否启用，默认启用 |
+| `enabled` | int | 是否启用，默认启用,1启用，0禁用 |
 | `remark` | 字符串 | 备注 |
 
 #### 示例
@@ -81,7 +81,7 @@ Content-Length: xxx
     "appId":"gwegwegwehwherherh",
     "parentId":"41586tytymtyrth",
     "callbackUrl":"http://api.yoururl.com/callback",
-    "enabled":true,
+    "enabled":1,
     "remark":"客户1"
   }
 }
@@ -100,7 +100,7 @@ PUT ${BASE_URL}/management/subaccount/{id}
 | 参数                   | 有效值范围               | 说明                                       |
 | ---------------------- | ------------------------ | ---------------------------------------- |
 | `callbackUrl`          | *http url*                |用于子账号接收平台事件的url,必填|
-| `enabled`          | boolean                |是否启用，默认true,必填|
+| `enabled`          | int                |是否启用，默认1,1启用，0禁用,必填|
 | `remark`              | *字符串*                |备注，例如：备注您的客户的名称|
 
 
@@ -124,7 +124,7 @@ PUT ${BASE_URL}/management/subaccount/{id}
 | `appId` | UUID | 关联的应用Id |
 | `parentId` | UUID | 主账号Id |
 | `callbackUrl` | http url | 子账号回调地址 |
-| `enabled` | boolean | 是否启用，默认启用 |
+| `enabled` | int | 是否启用，默认启用,1启用，0禁用 |
 | `remark` | 字符串 | 备注 |
 
 #### 示例
@@ -158,7 +158,7 @@ Content-Length: xxx
     "appId":"gwegwegwehwherherh",
     "parentId":"41586tytymtyrth",
     "callbackUrl":"http://api.yoururl.com/callback",
-    "enabled":true,
+    "enabled":1,
     "remark":"客户1"
   }
 }
