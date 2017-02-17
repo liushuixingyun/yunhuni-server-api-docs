@@ -16,10 +16,6 @@
 >
     <route>
         <condition id="condition1"/>
-        <condition id="condition2"/>
-    </route>
-    <route>
-        <condition id="condition3"/>
     </route>
     <route>
         <agents queue_timeou="5" choice="lru">
@@ -28,6 +24,22 @@
             <agent name="1008" />
             <agent name="2019" />
         </agents>
+    </route>
+</enqueue>
+```
+或者:
+```xml
+<enqueue
+        channel="channel1"
+        wait_voice="wait.wav"
+        ring_mode="1"
+        play_num="true"
+        pre_num_voice="坐席.wav"
+        post_num_voice="为您服务.wav"
+        data="your data whatever here!"
+>
+    <route>
+        <agent name="2019" priority="11" queue_timeou="60" fetch_timeout="50"></agent>
     </route>
 </enqueue>
 ```
@@ -102,9 +114,9 @@ IVR 使用该节点表明使用哪个 [排队条件](condition.md) ，这些条�
 ---------------------- | --------------------- | ---- | ------------ | ----------------------------
 `id`                   | 排队条件ID            | √    |              | 这个排队条件所在的工作通道(`channel`) **必须** 和`<enqueue>`的`channel`属性一致！
 
-## `<agents>`节点
+## `<agent>`节点
 用于直接定位到坐席。
-其父亲节点必须是`<route>`，其孩子节点必须是`<agent>`
+其父亲节点必须是`<route>`
 
 属性名称               | 有效值范围            | 必填 |   默认值     | 说明
 ---------------------- | --------------------- | ---- | ------------ | ----------------------------
@@ -120,4 +132,4 @@ IVR 使用该节点表明使用哪个 [排队条件](condition.md) ，这些条�
 目前的排队功能不甚完善，注意使用时有所限制：
 
 > - 一个 `<enqueue>` 节点只能且必须使用一个，不可出现多个！
-> - `<route>` 内只能有一个 `<conditions>` 或者一个 `<agents>` ，两者不可混合使用，也不可出现多个 `<condition>`或`<agents>`
+> - `<route>` 内只能有一个 `<condition>` 或者一个 `<agent>` ，两者不可混合使用
