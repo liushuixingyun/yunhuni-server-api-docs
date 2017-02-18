@@ -11,7 +11,6 @@
 `event`                   | **callcenter.queue.select**         | 据此字段识别不同事件
 `id`                      | ID                                  | 排队任务的ID
 `type`                    | 字符串                              | 排队类型（见 [`type` 参数定义](#type)）
-`channel_id`              | ID                                  | 排队通道ID（见 [工作通道](../acd/channel.md)）
 `condition_id`            | ID                                  | 选中的条件（如果指定Agent，则该参数为空）
 `agent_name`              | 坐席名称                            | 选中的坐席
 `origin_call_id`          | ID                                  | 在IVR引发的排队中，此属性记录IVR呼叫的`ID`。API引发的排队中，此参数为空
@@ -39,7 +38,6 @@
 `event`                   | **callcenter.queue.success**        | 据此字段识别不同事件
 `id`                      | ID                                  | 排队任务的ID
 `type`                    | 字符串                              | 排队类型（见 [`type` 参数定义](#type)）
-`channel_id`              | ID                                  | 排队通道ID（见 [工作通道](../acd/channel.md)）
 `condition_id`            | ID                                  | 选中的条件（如果指定Agent，则该参数为空）
 `agent_name`              | 坐席名称                            | 选中的坐席
 `origin_call_id`          | ID                                  | 在IVR引发的排队中，此属性记录IVR呼叫的`ID`。API引发的排队中，此参数为空
@@ -55,7 +53,6 @@
 `event`                   | **callcenter.queue.fail**           | 据此字段识别不同事件
 `id`                      | ID                                  | 排队任务的ID
 `type`                    | 字符串                              | 排队类型（见 [`type` 参数定义](#type)）
-`channel_id`              | ID                                  | 排队通道ID（见 [工作通道](../acd/channel.md)）
 `condition_id`            | ID                                  | 选中的条件（如果指定Agent，则该参数为空）
 `agent_name`              | 坐席名称                            | 选中的坐席
 `cause`                   | 字符串                              | 排队失败原因

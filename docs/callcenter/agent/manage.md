@@ -9,7 +9,6 @@
 ```js
 {
     name: "1001",   // 坐席名称，应用服务指定，应用内唯一
-    channel: "channel-01", // 坐席所在工作通道
     num: "1001",  // 坐席工号，用于播报工号
     state: "away/drinking", // 坐席状态
     skills: [ // 坐席所拥有的技能，和技能分数
@@ -34,7 +33,6 @@ POST {BASE_URL}/callcenter/agent
 参数                   | 有效值范围            | 必填 | 说明
 ---------------------- | ----------------------| ---- | ----------------------------------------
 `name`                 | 字符/数字字符串       | √    | 该坐席的唯一标识，应用内必须唯一
-`channel`              | 字符串                | √    | 坐席所在 [工作通道](../acd/channel.md) 的 `id`
 `num`                  | 数字字符串            |      | 该坐席的工号，如果不填，就无法播报工号
 `state`                | 状态字符串            |      | 登录后的初始状态
 `skills`               | 技能数组              |      | 登录后的初始技能
@@ -42,9 +40,6 @@ POST {BASE_URL}/callcenter/agent
 
 - `name` 参数：
     一个应用中的坐席`name`，坐席名称必须在应用内唯一，不得超过32字符长度，只能由基本字母、数字、下划线构成
-
-- `channel` 参数：
-    座席所属通道的ID
 
 - `num` 参数:
     报工号时使用。
@@ -79,7 +74,6 @@ Accept-Type: application/json
 
 {
     "name": "1004",
-    "channel": "40288ae2587542150158754240b00000",
     "num": "1002",
     "state": "away/drinking",
     "skills": [
@@ -218,7 +212,6 @@ Content-Length: xxx
   "msg": "请求成功",
   "data": {
     "name": "1001",
-    "channel": "40288ae2587542150158754240b00000",
     "num": "1002",
     "state": null,
     "extension": null,
@@ -254,7 +247,6 @@ Content-Length: xxx
     "result": [
       {
         "name": "1003",
-        "channel": "40288ae2587542150158754240b00000",
         "num": "1002",
         "state": null,
         "extension": null,
@@ -265,7 +257,6 @@ Content-Length: xxx
       },
       {
         "name": "1002",
-        "channel": "40288ae2587542150158754240b00000",
         "num": "1002",
         "state": null,
         "extension": null,
@@ -276,7 +267,6 @@ Content-Length: xxx
       },
       {
         "name": "1001",
-        "channel": "40288ae2587542150158754240b00000",
         "num": "1002",
         "state": null,
         "extension": null,

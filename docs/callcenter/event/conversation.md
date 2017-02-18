@@ -10,7 +10,6 @@
 `id`                      | ID                                        | 交谈 ID
 `type`                    | ID                                        | 交谈的产生类型
 `queue_id`                | ID                                        | 如果交谈由排队产生，该属性记录排队的ID；否则为空
-`channel_id`              | ID                                        | 如果交谈由排队产生，该属性记录排队的通道ID；否则为空
 `agent_call_id`           | ID                                        | 如果交谈由坐席外呼或坐席呼叫其它坐席产生，该属性坐席呼叫的ID；否则为空
 
 ### `type`
@@ -33,7 +32,6 @@
 `end_time`                | 时间戳                                    | 整个交谈过程的结束时间
 `record_file`             | 文件ID                                    | 录音文件
 `queue_id`                | ID                                        | 如果交谈由排队产生，该属性记录排队的ID；否则为空
-`channel_id`              | ID                                        | 如果交谈由排队产生，该属性记录排队的通道ID；否则为空
 `end_reason`              | 字符串                                    | 结束原因
 `agent_call_id`           | ID                                        | 如果交谈由坐席外呼产生，该属性坐席呼叫的ID；否则为空
 

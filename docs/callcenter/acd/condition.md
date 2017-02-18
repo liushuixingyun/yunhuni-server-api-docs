@@ -10,7 +10,6 @@
 参数                   | 有效值范围            | 说明
 ---------------------- | --------------------- | ----------------------------------------
 `id`                   | UUID                  | ID
-`channel`              | ID字符串              | 条件所属的工作通道ID
 `where`                | 条件选择表达式        | 条件选择表达式
 `sort`                 | 排序表达式            | 排序表达式
 `priority`             | 0~99 整数             | 优先级
@@ -23,7 +22,6 @@
 ```js
 {
     id: "fg0234mujosijdfsdf",
-    channel: "cf3049ujogvelujrtg",
     where: "1==1",
     sort: null,
     priority: 100,
@@ -44,7 +42,6 @@ POST {BASE_URL}/callcenter/condition
 
 参数                   | 有效值范围            | 必填 | 默认值          | 说明
 ---------------------- | --------------------- | ---- | --------------  | ----------------------------------------
-`channel`              | ID字符串              | √    |                 | 条件所属的工作通道ID
 `where`                | 条件选择表达式        | √    |                 |
 `sort`                 | 排序表达式            |      | `null`          | 默认不排序，所有的坐席权值相同。
 `priority`             | 0~99 整数             |      | `0`             | 数值大的优先级高。默认值是 `0`。
@@ -85,7 +82,7 @@ POST {BASE_URL}/callcenter/condition/{condition_id}
 
 ### URL
 ```
-GET {BASE_URL}/callcenter/channel/{channel_id}/condition
+GET {BASE_URL}/callcenter/condition
 ```
 
 ### 返回参数列表

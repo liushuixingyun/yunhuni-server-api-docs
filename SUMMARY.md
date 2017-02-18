@@ -52,7 +52,6 @@
 - [呼叫中心(developing)](docs/callcenter/index.md)
     - [分机管理](docs/callcenter/extension.md)
     - [ACD排队](docs/callcenter/acd/index.md)
-      - [工作通道](docs/callcenter/acd/channel.md)
       - [排队条件](docs/callcenter/acd/condition.md)
       - [从IVR进入排队](docs/callcenter/acd/enqueue.md)
     - [坐席](docs/callcenter/agent/index.md)
