@@ -14,8 +14,10 @@ POST ${NOTIFY_URL}?from={mobile}
 | 参数                  | 有效值范围       |  说明                                   |
 | --------------------- | ---------------- | --------------------------------------- |
 | `action`              | `"ivr_start"`    | 事件标志：ivr_start                     |
+| `type`              | `"ivr_call"`或者`"ivr_incoming"`    | ivr类型，ivr_call代表是平台呼给用户，ivr_incoming表示用户呼入                    |
 | `call_id`             | `UUID`           | 呼叫id                                   |
 | `from`                | 号码字符串        | 来电号码                                |
+| `user_data`                | 字符串最多128个字符        | 用户数据                                |
 
 ##响应
 
