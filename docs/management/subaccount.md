@@ -17,7 +17,7 @@ POST ${BASE_URL}/management/subaccount
 
 | 参数                   | 有效值范围               | 说明                                       |
 | ---------------------- | ------------------------ | ---------------------------------------- |
-| `callbackUrl`          | *http url*                |用于子账号接收平台事件的url,必填|
+| `callbackUrl`          | *http url*                |用于子账号接收平台事件的url,如果为空，事件回调会发给应用的回调url|
 | `remark`              | *字符串*                |备注，例如：备注您的客户的名称|
 | `quotas`              | Array                  |配额数组,默认为空不限制配额|
 | `quotas.type`         | 字符串                  |[配额类型](#子账号配额类型),默认不限制配额|
@@ -43,7 +43,7 @@ POST ${BASE_URL}/management/subaccount
 | `secretKey` | 字符串 | 鉴权密钥 |
 | `appId` | UUID | 关联的应用Id |
 | `parentId` | UUID | 主账号Id |
-| `callbackUrl` | http url | 子账号回调地址 |
+| `callbackUrl` | http url | 子账号回调地址,如果为空，事件回调会发给应用的回调url |
 | `enabled` | int | 是否启用，默认启用,1启用，0禁用 |
 | `remark` | 字符串 | 备注 |
 
@@ -99,7 +99,7 @@ PUT ${BASE_URL}/management/subaccount/{id}
 
 | 参数                   | 有效值范围               | 说明                                       |
 | ---------------------- | ------------------------ | ---------------------------------------- |
-| `callbackUrl`          | *http url*                |用于子账号接收平台事件的url,必填|
+| `callbackUrl`          | *http url*                |用于子账号接收平台事件的url,如果为空，事件回调会发给应用的回调url|
 | `enabled`          | int                |是否启用，默认1,1启用，0禁用,必填|
 | `remark`              | *字符串*                |备注，例如：备注您的客户的名称|
 
@@ -123,7 +123,7 @@ PUT ${BASE_URL}/management/subaccount/{id}
 | `secretKey` | 字符串 | 鉴权密钥 |
 | `appId` | UUID | 关联的应用Id |
 | `parentId` | UUID | 主账号Id |
-| `callbackUrl` | http url | 子账号回调地址 |
+| `callbackUrl` | http url | 子账号回调地址,如果为空，事件回调会发给应用的回调url |
 | `enabled` | int | 是否启用，默认启用,1启用，0禁用 |
 | `remark` | 字符串 | 备注 |
 
