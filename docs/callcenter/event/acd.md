@@ -18,7 +18,7 @@
 |`origin_call_id`          | ID                                  | 在IVR引发的排队中，此属性记录IVR呼叫的`ID`。API引发的排队中，此参数为空
 |`agent_extension_id`      | ID                                  | 坐席分机ID
 |`agent_call_id`           | ID                                  | 呼叫坐席分机的呼叫ID
-|`data`                    | 字符串                              | 用户数据
+|`user_data`                    | 字符串                              | 用户数据
 
 
 ### `type`
@@ -47,7 +47,7 @@
 |`origin_call_id`          | ID                                  | 在IVR引发的排队中，此属性记录IVR呼叫的`ID`。API引发的排队中，此参数为空
 |`agent_extension_id`      | ID                                  | 坐席分机ID
 |`agent_call_id`           | ID                                  | 呼叫坐席分机的呼叫ID
-|`data`                    | 字符串                              | 用户数据
+|`user_data`                    | 字符串                              | 用户数据
 
 ## 排队失败
 排队任务未选中坐席，或者在选中坐席后未成功的与这个坐席的分机建立通话。
@@ -65,7 +65,7 @@
 |`origin_call_id`          | ID                                  | 在IVR引发的排队中，此属性记录IVR呼叫的`ID`。API引发的排队中，此参数为空
 |`agent_extension_id`      | ID                                  | 坐席分机ID（如果没有排到坐席，则为空）
 |`agent_call_id`           | ID                                  | 呼叫坐席分机的呼叫ID（如果没有排到坐席，则为空）
-|`data`                    | 字符串                              | 用户数据
+|`user_data`                    | 字符串                              | 用户数据
 
 ### `cause`
 排队失败原因

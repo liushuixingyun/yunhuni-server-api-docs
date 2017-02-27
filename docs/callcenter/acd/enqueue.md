@@ -11,7 +11,7 @@
         play_num="true"
         pre_num_voice="坐席.wav"
         post_num_voice="为您服务.wav"
-        data="your data whatever here!"
+        user_data="your data whatever here!"
 >
     <route>
         <condition id="condition1"/>
@@ -34,7 +34,7 @@
         play_num="true"
         pre_num_voice="坐席.wav"
         post_num_voice="为您服务.wav"
-        data="your data whatever here!"
+        user_data="your data whatever here!"
 >
     <route>
         <agent name="2019" priority="11" queue_timeou="60" fetch_timeout="50"></agent>
@@ -72,7 +72,7 @@
 `play_num`             | `true`, `false`       |      | `false`      | 是否在接通坐席分机后播放该坐席的工号
 `pre_num_voice`        | 录音文件名            |      | 空字符串     | 播放工号前播放的声音文件
 `post_num_voice`       | 录音文件名            |      | 空字符串     | 播放工号后播放的声音文件
-`data`                 | 任意字符串            |      | 空字符串     | 用户数据，当排队状态发生变化时，平台向用户应用服务发起的事件通知或IVR请求将带有该参数
+`user_data`                 | 任意字符串            |      | 空字符串     | 用户数据，当排队状态发生变化时，平台向用户应用服务发起的事件通知或IVR请求将带有该参数
 
 ### `choice`属性
 
