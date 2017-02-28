@@ -57,7 +57,7 @@ Content-Length: xxx
 #### 请求URL
 
 ```
-POST ${BASE_URL}/msg/sms/add/task
+POST ${BASE_URL}/msg/sms/mass/task
 ```
 
 ### 请求参数列表
