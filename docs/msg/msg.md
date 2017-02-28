@@ -82,7 +82,7 @@ POST ${BASE_URL}/msg/sms/mass/task
 
 请求:
 ```http
-POST ${BASE_URL}/msg/sms/add/task HTTP/1.1
+POST ${BASE_URL}/msg/sms/mass/task HTTP/1.1
 Host: api.yunhuni.com
 Content-Type: application/json
 Accept-Type: application/json

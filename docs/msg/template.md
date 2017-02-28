@@ -59,7 +59,7 @@ Content-Length: xxx
   "code": "000000",
   "msg": "请求成功",
   "data": {
-              "content":"10001",
+              "templateId":"10001",
               "content":"天猫双11全球狂欢节，全球好货不只5折。",
               "status":1,
               "remark":"双11模板"
