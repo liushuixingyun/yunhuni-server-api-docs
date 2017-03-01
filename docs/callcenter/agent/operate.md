@@ -31,6 +31,7 @@ POST {BASE_URL}/callcenter/agent/{agent_name}/call_out
 `from`                 | 电话号码              |      | 主叫号码
 `max_dial_seconds`     | 正整数                |      | 最大拨号等待时间
 `max_answer_seconds`   | 正整数                | √    | 最大通话时间
+`user_data`   | 字符串                |      | 用户数据
 
 ## 呼叫其它坐席
 按排队规则呼叫目标坐席，接通后与当前坐席形成新的交谈。
