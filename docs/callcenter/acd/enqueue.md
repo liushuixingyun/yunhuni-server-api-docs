@@ -17,7 +17,7 @@
         <condition id="condition1"/>
     </route>
     <route>
-        <agents queue_timeou="5" choice="lru">
+        <agents queue_timeout="5" choice="lru">
             <agent name="1001" />
             <agent name="1003" />
             <agent name="1008" />
@@ -37,7 +37,7 @@
         user_data="your data whatever here!"
 >
     <route>
-        <agent name="2019" priority="11" queue_timeou="60" fetch_timeout="50"></agent>
+        <agent name="2019" priority="11" queue_timeout="60" fetch_timeout="50"></agent>
     </route>
 </enqueue>
 ```
