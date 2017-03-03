@@ -6,28 +6,38 @@
 该 IVR 形如：
 ```xml
 <enqueue
-        channel="channel1"
         wait_voice="wait.wav"
         ring_mode="1"
         play_num="true"
         pre_num_voice="坐席.wav"
         post_num_voice="为您服务.wav"
-        data="your data whatever here!"
+        user_data="your data whatever here!"
 >
     <route>
         <condition id="condition1"/>
-        <condition id="condition2"/>
     </route>
     <route>
-        <condition id="condition3"/>
-    </route>
-    <route>
-        <agents queue_timeou="5" choice="lru">
+        <agents queue_timeout="5" choice="lru">
             <agent name="1001" />
             <agent name="1003" />
             <agent name="1008" />
             <agent name="2019" />
         </agents>
+    </route>
+</enqueue>
+```
+或者:
+```xml
+<enqueue
+        wait_voice="wait.wav"
+        ring_mode="1"
+        play_num="true"
+        pre_num_voice="坐席.wav"
+        post_num_voice="为您服务.wav"
+        user_data="your data whatever here!"
+>
+    <route>
+        <agent name="2019" priority="11" queue_timeout="60" fetch_timeout="50"></agent>
     </route>
 </enqueue>
 ```
@@ -50,7 +60,6 @@
 
 属性名称               | 有效值范围            | 必填 |   默认值     | 说明
 ---------------------- | --------------------- | ---- | ------------ | ----------------------------
-`channel`              | 工作通道ID            | √    |              | 在该通道排队，必须使用这个通道上的坐席、排队条件
 `conversation_level`   | `1`, `2`              |      | `2`          | 该排队成功并建立交谈后，此次交谈的级别。级别`1`无法形成3方通话。（目前只支持`2`模式！）
 `conversation_timeout` | 正整数                |      |              | 该排队成功并建立交谈后，此次交谈的最大允许持续时间（秒）。默认`null`表示系统默认最大交谈时间。
 `choice`               | 字符串                |      | `"random`    | 选择规则：如果排队时多个满足条件的坐席排序也相同，按照该规则从中选择一个坐席。
@@ -63,7 +72,7 @@
 `play_num`             | `true`, `false`       |      | `false`      | 是否在接通坐席分机后播放该坐席的工号
 `pre_num_voice`        | 录音文件名            |      | 空字符串     | 播放工号前播放的声音文件
 `post_num_voice`       | 录音文件名            |      | 空字符串     | 播放工号后播放的声音文件
-`data`                 | 任意字符串            |      | 空字符串     | 用户数据，当排队状态发生变化时，平台向用户应用服务发起的事件通知或IVR请求将带有该参数
+`user_data`                 | 任意字符串            |      | 空字符串     | 用户数据，当排队状态发生变化时，平台向用户应用服务发起的事件通知或IVR请求将带有该参数
 
 ### `choice`属性
 
@@ -100,19 +109,18 @@ IVR 使用该节点表明使用哪个 [排队条件](condition.md) ，这些条�
 
 属性名称               | 有效值范围            | 必填 |   默认值     | 说明
 ---------------------- | --------------------- | ---- | ------------ | ----------------------------
-`id`                   | 排队条件ID            | √    |              | 这个排队条件所在的工作通道(`channel`) **必须** 和`<enqueue>`的`channel`属性一致！
+`id`                   | 排队条件ID            | √    |              |
 
-## `<agents>`节点
+## `<agent>`节点
 用于直接定位到坐席。
-其父亲节点必须是`<route>`，其孩子节点必须是`<agent>`
+其父亲节点必须是`<route>`
 
 属性名称               | 有效值范围            | 必填 |   默认值     | 说明
 ---------------------- | --------------------- | ---- | ------------ | ----------------------------
-`name`                 | 坐席名称              | √    |              | 该所在的工作通道(`channel`) **必须** 和`<enqueue>`的`channel`属性一致！
+`name`                 | 坐席名称              | √    |              |
 `priority`             | 整数                  |      | `0`          | 排队优先级
 `queue_timeout`        | 正整数                |      | `null`       | 该条件的排队等待超时时间。默认`null`表示一直等待直到呼叫结束。`0`表示找不到坐席就立即超时。
-`fetch_timeout`        | 正整数                |      | `null`       | 该条件的坐席分机接听超时时间。默认`null`表示一直等待直到呼叫结束。
-`choice`               | 字符串                |      | `"random`    | 选择规则：如果排队时多个满足条件的坐席排序也相同，按照该规则从中选择一个坐席。(见 [`choice`属性](choice 属性))
+`fetch_timeout`        | 正整数                |      | `50`       | 该条件的坐席分机接听超时时间。默认50s。
 
 ----
 
@@ -121,4 +129,4 @@ IVR 使用该节点表明使用哪个 [排队条件](condition.md) ，这些条�
 目前的排队功能不甚完善，注意使用时有所限制：
 
 > - 一个 `<enqueue>` 节点只能且必须使用一个，不可出现多个！
-> - `<route>` 内只能有一个 `<conditions>` 或者一个 `<agents>` ，两者不可混合使用，也不可出现多个 `<condition>`或`<agents>`
+> - `<route>` 内只能有一个 `<condition>` 或者一个 `<agent>` ，两者不可混合使用

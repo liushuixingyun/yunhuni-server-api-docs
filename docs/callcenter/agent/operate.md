@@ -10,10 +10,10 @@ POST {BASE_URL}/callcenter/agent/{agent_name}/reject
 参数                   | 有效值范围            | 必填 | 说明
 ---------------------- | ----------------------| ---- | ----------------------------------------
 `queue_id`             |                       | √    | 排队任务ID
-`data`                 | String                |      | 传回 IVR 的事件参数数据
+`user_data`                 | String                |      | 传回 IVR 的事件参数数据
 
 坐席也可以直接在分机上执行“拒接”操作，或者不接听。
-该API的不通在于，它可以让拒绝操作带着`data`参数返回 IVR ，便于 IVR 做进一步的处理。
+该API的不通在于，它可以让拒绝操作带着`user_data`参数返回 IVR ，便于 IVR 做进一步的处理。
 
 ## 呼叫外线
 按排队规则呼叫目标电话号码，接通后与当前坐席形成新的交谈。
@@ -31,6 +31,7 @@ POST {BASE_URL}/callcenter/agent/{agent_name}/call_out
 `from`                 | 电话号码              |      | 主叫号码
 `max_dial_seconds`     | 正整数                |      | 最大拨号等待时间
 `max_answer_seconds`   | 正整数                | √    | 最大通话时间
+`user_data`   | 字符串                |      | 用户数据
 
 ## 呼叫其它坐席
 按排队规则呼叫目标坐席，接通后与当前坐席形成新的交谈。
@@ -146,7 +147,7 @@ POST {BASE_URL}/callcenter/agent/{agent_name}/enter
 `3`    | 仅说
 `4`    | 不听不说
 
-## 坐席加入交谈
+## 坐席退出交谈
 
 ### URL
 

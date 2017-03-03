@@ -8,13 +8,16 @@
 
 应用服务主动调用的登录、注销、示忙、示闲等不会触发该事件。
 
-参数                      | 有效值范围                          | 说明
+|参数                      | 有效值范围                          | 说明
 ----------------------    | ----------------------------------- | ----------------------------------------
-`event`                   | **callcenter.agent.state_changed**  | 据此字段识别不同事件
-`name`                    | 坐席名称                            | 发生状态变化的坐席
-`previous_state`          | 字符串                              | 上次状态（变化之前的状态）
-`latest_state`            | 字符串                              | 最新状态（变化之后的状态）
-`current_time`            | 时间戳                              | 当前时间
+| `action`               | **event_notify**         |事件标志：event_notify。 |
+|`event`                   | **callcenter.agent.state_changed**  | 据此字段识别不同事件
+|`name`                    | 坐席名称                            | 发生状态变化的坐席
+| `subaccount_id`       | `UUID`           | 子账号id，事件所属子账号，如果为空表示是主账号的事件|
+|`previous_state`          | 字符串                              | 上次状态（变化之前的状态）
+|`latest_state`            | 字符串                              | 最新状态（变化之后的状态）
+|`current_time`            | 时间戳                              | 当前时间
+|`user_data`            | 字符串                              | 用户数据
 
 坐席状态见 [坐席状态设置](../agent/manage.md#状态设置) API
 
@@ -29,10 +32,13 @@
 
 ## 坐席进入或退出交谈
 
-参数                      | 有效值范围                                       | 说明
+|参数                      | 有效值范围                                       | 说明
 ----------------------    | ------------------------------------------------ | ----------------------------------------
-`event`                   | **callcenter.agent.conversation_changed**        | 据此字段识别不同事件
-`name`                    | 坐席名称                                         | 发生状态变化的坐席
-`type`                    | `"enter"` `"exit"`                               | 退出还是加入
-`conversation_id`         | ID                                               | 交谈的ID
-`current_time`            | 时间戳                                           | 当前时间
+| `action`               | **event_notify**         |事件标志：event_notify。 |
+|`event`                   | **callcenter.agent.conversation_changed**        | 据此字段识别不同事件
+|`name`                    | 坐席名称                                         | 发生状态变化的坐席
+| `subaccount_id`       | `UUID`           | 子账号id，事件所属子账号，如果为空表示是主账号的事件|
+|`type`                    | `"enter"` `"exit"`                               | 退出还是加入
+|`conversation_id`         | ID                                               | 交谈的ID
+|`current_time`            | 时间戳                                           | 当前时间
+|`user_data`            | 字符串                              | 用户数据

@@ -9,16 +9,13 @@
 ----------------------    | ----------------------------------------- | ----------------------------------------
 `id`                      | ID                                        | 交谈 ID
 `type`                    | ID                                        | 交谈的产生类型
-`state`                   | 字符串                                    | 状态
-`channel_id`              | ID                                        | 如果交谈由排队产生，该属性记录排队的通道ID；否则为空
 `queue_id`                | ID                                        | 如果交谈由排队产生，该属性记录排队的ID；否则为空
 `condition_id`            | ID                                        | 如果交谈由排队产生，该属性记录所满足的排队条件的ID；否则为空
 `begin_time`              | 时间戳                                    | 排队开始时间
 `end_time`                | 时间戳                                    | 整个交谈过程的结束时间
 `end_reason`              | 字符串                                    | 结束原因
 `agent_call_id`           | ID                                        | 如果交谈由坐席外呼产生，该属性坐席呼叫的ID；否则为空
-`agents`                  | 列表                                      | 交谈中的坐席
-`calls`                   | 列表                                      | 交谈中的外线
+`members`                  | 列表                                      | 交谈成员
 
 用类 JSON 表示形如：
 
@@ -26,18 +23,14 @@
 {
     id: "vm308mjvy3oiu6o3jn45",
     type: "call_out",
-    state: "running",
-    channel: "cm03ogejdrljgdjgljd",
     end_reason: null,
     queue_id: null,
-    begin_time: "YYYY-MM-DD HH:MI:SS",
+    begin_time: 147771534568,
     end_time: null,
-    agents:[
+    members:[
         {name: "agent-001", extension_id: "2c-sdfi80-sigsds", call_id: "fx20mudfsdfsdf", mode: 1, begin_time: "YYYY-MM-DD HH:MI:SS", end_time: null},
         {name: "agent-002", extension_id: "xf20s9f0w5234234", call_id: "a7ccx93mcjjlee", mode: 2, begin_time: "YYYY-MM-DD HH:MI:SS", end_time: null},
-    ],
-    outs: [
-        {call_id: "xjm93cetgerjtgowe", mode: 1, begin_time: "YYYY-MM-DD HH:MI:SS", end_time: null}
+        {telnumber:"13698806658",call_id: "xjm93cetgerjtgowe", mode: 1, begin_time: "YYYY-MM-DD HH:MI:SS", end_time: null}
     ]
 }
 ```
@@ -52,11 +45,6 @@
 
 ### `state`
 
-值              | 说明
---------------- | --------------
-`running`       | 正在进行
-`completed`     | 已经结束
-
 ## 解散交谈
 
 ### URL
@@ -65,23 +53,15 @@
 DELETE {BASE_URL}/callcenter/conversation/{conversation_id}
 ```
 
-### 请求参数
 
-参数                   | 有效值范围            | 必填 | 说明
----------------------- | ----------------------| ---- | ----------------------------------------
-`agent_name`           | 坐席ID                | √    |
-`data`                 |                       |      |
 
-* 退出后，如果 `conversation` 人数少于2，将自动解散
-* 退出后，如果坐席所在的 `conversation` 少于1，将自动挂断分机
-
-## 设置呼叫听说模式
+## 设置坐席听说模式
 设置交谈中，某个呼叫的听/说模式(Listen/Speak Mode) ，仅仅针对外线呼叫。
 
 ### URL
 
 ```
-POST {BASE_URL}/callcenter/conversation/{conversation_id}/call/{call_id}/lsm
+POST {BASE_URL}/callcenter/conversation/{conversation_id}/agent/{name}/lsm
 ```
 
 ### 请求参数
@@ -168,5 +148,5 @@ GET {BASE_URL}/callcenter/conversation/{conversation_id}
 ### URL
 
 ```
-GET {BASE_URL}/callcenter/channel/{channel_id}/conversation
+GET {BASE_URL}/callcenter/conversation
 ```

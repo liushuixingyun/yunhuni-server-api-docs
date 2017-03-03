@@ -11,7 +11,7 @@ pause
 ## 属性
 参数            | 说明                   
 --------------- | -----------------------
-`timeout`       | 暂停的时间（秒）
+`duration`       | 暂停的时间（秒）
 
 ## 内容
 无
@@ -23,15 +23,13 @@ pause
 `error`         | 向 [`<next>`](./next.md) 所定义的 URL 进行请求时，附带此次 IVR 执行错误信息（如果没有错误，则不提供该参数）
 
 ## 嵌套
-可嵌套 [`<play>`](./play.md)
+不可嵌套
 
 ## 示例
 
 ```xml
 <response>
-    <pause timeout="5">
-        <play repeat="3">please_wait_5s.wav</play>
-    </pause>
+    <pause duration="5"></pause>
     <next>http://xxx.com/xxx</next>
 </response>
 ```    
