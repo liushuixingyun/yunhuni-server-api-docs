@@ -32,9 +32,7 @@ record
 
 ```xml
 <response>
-    <record finish_keys="0123456789*#">
-      <max_duration>30</max_duration>
-      <beeping>true</beeping>
+    <record finish_keys="0123456789*#" max_duration="30" beeping="true" finish_keys="#">
     </record>
      <next>http://yourhost/nextstep</next>
 </response>

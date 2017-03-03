@@ -41,3 +41,4 @@
 |`type`                    | `"enter"` `"exit"`                               | 退出还是加入
 |`conversation_id`         | ID                                               | 交谈的ID
 |`current_time`            | 时间戳                                           | 当前时间
+|`user_data`            | 字符串                              | 用户数据
