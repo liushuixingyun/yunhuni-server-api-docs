@@ -52,7 +52,6 @@
 - [呼叫中心(developing)](docs/callcenter/index.md)
     - [分机管理](docs/callcenter/extension.md)
     - [ACD排队](docs/callcenter/acd/index.md)
-      - [工作通道](docs/callcenter/acd/channel.md)
       - [排队条件](docs/callcenter/acd/condition.md)
       - [从IVR进入排队](docs/callcenter/acd/enqueue.md)
     - [坐席](docs/callcenter/agent/index.md)
@@ -63,6 +62,12 @@
       + [ACD排队事件](docs/callcenter/event/acd.md)
       + [坐席事件](docs/callcenter/event/agent.md)
       + [交谈事件](docs/callcenter/event/conversation.md)
+
+### 消息API
+- [消息API](docs/msg/index.md)
+    - [模板管理](docs/msg/template.md)
+    - [闪印](docs/msg/ussd.md)
+    - [短信](docs/msg/sms.md)
 
 ### 附录
 - [术语表](GLOSSARY.md)

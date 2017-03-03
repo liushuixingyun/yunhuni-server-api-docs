@@ -4,45 +4,50 @@
 
 ## 交谈开始
 
-参数                      | 有效值范围                                | 说明
+|参数                      | 有效值范围                                | 说明
 ----------------------    | ----------------------------------------- | ----------------------------------------
-`event`                   | **callcenter.conversation.begin**         | 据此字段识别不同事件
-`id`                      | ID                                        | 交谈 ID
-`type`                    | ID                                        | 交谈的产生类型
-`queue_id`                | ID                                        | 如果交谈由排队产生，该属性记录排队的ID；否则为空
-`channel_id`              | ID                                        | 如果交谈由排队产生，该属性记录排队的通道ID；否则为空
-`agent_call_id`           | ID                                        | 如果交谈由坐席外呼或坐席呼叫其它坐席产生，该属性坐席呼叫的ID；否则为空
+| `action`               | **event_notify**         |事件标志：event_notify。 |
+|`event`                   | **callcenter.conversation.begin**         | 据此字段识别不同事件
+|`id`                      | ID                                        | 交谈 ID
+| `subaccount_id`       | `UUID`           | 子账号id，事件所属子账号，如果为空表示是主账号的事件|
+|`type`                    | ID                                        | 交谈的产生类型
+|`queue_id`                | ID                                        | 如果交谈由排队产生，该属性记录排队的ID；否则为空
+|`agent_call_id`           | ID                                        | 如果交谈由坐席外呼或坐席呼叫其它坐席产生，该属性坐席呼叫的ID；否则为空
+|`user_data`            | 字符串                              | 用户数据
 
 ### `type`
 交谈的产生类型：
 
-值                    | 说明
+|值                    | 说明
 --------------------- | --------------
-`queue`               | 排队产生
-`call_out`            | 坐席外呼产生
-`call_agent`          | 坐席呼叫其它坐席产生
+|`queue`               | 排队产生
+|`call_out`            | 坐席外呼产生
+|`call_agent`          | 坐席呼叫其它坐席产生
 
 ## 交谈结束
 
-参数                      | 有效值范围                                | 说明
+|参数                      | 有效值范围                                | 说明
 ----------------------    | ----------------------------------------- | ----------------------------------------
-`event`                   | **callcenter.conversation.end**           | 据此字段识别不同事件
-`id`                      | ID                                        | 交谈 ID
-`type`                    | ID                                        | 交谈的产生类型
-`begin_time`              | 时间戳                                    | 交谈开始时间
-`end_time`                | 时间戳                                    | 整个交谈过程的结束时间
-`record_file`             | 文件ID                                    | 录音文件
-`queue_id`                | ID                                        | 如果交谈由排队产生，该属性记录排队的ID；否则为空
-`channel_id`              | ID                                        | 如果交谈由排队产生，该属性记录排队的通道ID；否则为空
-`end_reason`              | 字符串                                    | 结束原因
-`agent_call_id`           | ID                                        | 如果交谈由坐席外呼产生，该属性坐席呼叫的ID；否则为空
+| `action`               | **event_notify**         |事件标志：event_notify。 |
+|`event`                   | **callcenter.conversation.end**           | 据此字段识别不同事件
+|`id`                      | ID                                        | 交谈 ID
+| `subaccount_id`       | `UUID`           | 子账号id，事件所属子账号，如果为空表示是主账号的事件|
+|`type`                    | ID                                        | 交谈的产生类型
+|`begin_time`              | 时间戳                                    | 交谈开始时间
+|`end_time`                | 时间戳                                    | 整个交谈过程的结束时间
+|`record_file`             | 文件ID                                    | 录音文件
+|`queue_id`                | ID                                        | 如果交谈由排队产生，该属性记录排队的ID；否则为空
+|`end_reason`              | 字符串                                    | 结束原因
+|`agent_call_id`           | ID                                        | 如果交谈由坐席外呼产生，该属性坐席呼叫的ID；否则为空
+|`user_data`            | 字符串                              | 用户数据
 
 
 ## 交谈中参与者发生变化
 
-参数                      | 有效值范围                                | 说明
+|参数                      | 有效值范围                                | 说明
 ----------------------    | ----------------------------------------- | ----------------------------------------
-`event`                   | **callcenter.conversation.parts_changed** | 据此字段识别不同事件
-`id`                      | ID                                        | 交谈 ID
+|`event`                   | **callcenter.conversation.parts_changed** | 据此字段识别不同事件
+|`id`                      | ID                                        | 交谈 ID
+|`user_data`            | 字符串                              | 用户数据
 
 开发者需要调用 [获取交谈单条记录](../conversation.md#获取交谈单条记录) 接口获得参与者列表。
