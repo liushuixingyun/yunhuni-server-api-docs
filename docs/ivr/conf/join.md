@@ -1,4 +1,4 @@
-# 加入会议 (developing)
+# 加入会议 (beta)
 
 ## join_conf 节点
 
