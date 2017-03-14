@@ -36,8 +36,8 @@
         - [后续](docs/ivr/action/next.md)
         - [会议IVR(beta)](docs/ivr/conf/index.md)
             - [建立会议](docs/ivr/conf/create.md)
-            - [建立会议](docs/ivr/conf/join.md)
-    - [IVR事件(beta/developing)](docs/evt/ivr/index.md)
+            - [加入会议](docs/ivr/conf/join.md)
+    - [IVR事件(beta)](docs/evt/ivr/index.md)
 
 - [会议](docs/conf/index.md)
     - [创建会议](docs/conf/create.md)
