@@ -137,12 +137,15 @@ Content-Length: xxx
 #### 请求URL
 
 ```
-GET ${BASE_URL}/msg/ussd/{msgKey}
+GET ${BASE_URL}/msg/ussd[/{msgKey}]
 ```
-
+URL 不包含 {msgKey} 参数，则获取列表，否则获取具体的某个发送的ussd信息。
 ### 请求参数列表
 
-无
+参数                   | 有效值范围            | 必填 | 默认值  | 说明
+---------------------- | ----------------------| ---- | ------- | ----------------------------------------
+`pageNo`                | 数字        |   否   | 1 | 当获取列表时有效，第几页
+`pageSize`                | 小于1000        |   否   | 20 | 当获取列表时有效，每一页的记录数（上限1000）
 
 ### 响应参数列表
 
@@ -174,7 +177,7 @@ GET ${BASE_URL}/msg/ussd/{msgKey}
 
 #### 示例
 
-请求:
+请求单个:
 ```http
 GET ${BASE_URL}/msg/ussd/40288ac9580a67f501580a6a42a40001 HTTP/1.1
 ```
@@ -194,13 +197,82 @@ Content-Length: xxx
     "tempId":"tempId",
     "tempArgs":"参数值1;参数值2",
     "sendTime":"2017-02-12 10:25:45",
-    "sendType":"1",
+    "sendType":"msg_ussd",
     "isMass":true,
     "sumNum":"10000",
     "state":"1",
     "succNum":"7000",
     "failNum":"2000",
     "pendingNum":"1000"
+  }
+}
+```
+
+
+请求多个:
+```http
+GET ${BASE_URL}/msg/ussd?pageNo=1&pageSize=10 HTTP/1.1
+```
+
+响应:
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Length: xxx
+
+{
+  "code": "000000",
+  "msg": "请求成功",
+  "data": {
+    "pageSize": 10, //每一页的记录数
+    "startIndex": 1, //从第几条开始
+    "totalCount": 3, //总记录数
+    "totalPageCount": 1, //总页数
+    "currentPageNo": 1, //当前页数
+    "result": [
+      {
+        "msgKey":"40288ac9580a67f501580a6a42a40001",
+        "taskName":"2017双11促销",
+        "tempId":"tempId",
+        "tempArgs":"参数值1;参数值2",
+        "sendTime":"2017-02-12 10:25:45",
+        "sendType":"msg_ussd",
+        "isMass":true,
+        "sumNum":"10000",
+        "state":"1",
+        "succNum":"7000",
+        "failNum":"2000",
+        "pendingNum":"1000"
+      },
+      {
+         "msgKey":"40288ac9580a67f501580a6a42a40002",
+         "taskName":"2017双11促销",
+         "tempId":"tempId",
+         "tempArgs":"参数值1;参数值2",
+         "sendTime":"2017-02-12 10:25:45",
+         "sendType":"msg_ussd",
+         "isMass":true,
+         "sumNum":"10000",
+         "state":"1",
+         "succNum":"7000",
+         "failNum":"2000",
+         "pendingNum":"1000"
+      },
+      {
+        "msgKey":"40288ac9580a67f501580a6a42a40003",
+        "taskName":"2017双11促销",
+        "tempId":"tempId",
+        "tempArgs":"参数值1;参数值2",
+        "sendTime":"2017-02-12 10:25:45",
+        "sendType":"msg_ussd",
+        "isMass":true,
+        "sumNum":"10000",
+        "state":"1",
+        "succNum":"7000",
+        "failNum":"2000",
+        "pendingNum":"1000"
+      }
+    ]
   }
 }
 ```
