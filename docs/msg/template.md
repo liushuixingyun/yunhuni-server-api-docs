@@ -33,7 +33,7 @@ POST ${BASE_URL}/msg/template
 | -------- | ------------ | -------- |
 | `name` | 字符串  | 名称 |
 | `type` | 字符串  | 类型 |
-| `templateId` | 字符串  | 模板ID |
+| `tempId` | 字符串  | 模板ID |
 | `content` | 字符串 | 模板内容 |
 | `status` | int | 状态 |
 | `remark` | 字符串 | 备注 |
@@ -67,7 +67,7 @@ Content-Length: xxx
   "data": {
               "name":"双11打折",
               "type":"msg_sms",
-              "templateId":"10001",
+              "tempId":"10001",
               "content":"天猫双11全球狂欢节，全球好货不只5折。",
               "status":1,
               "remark":"双11模板"
@@ -80,7 +80,7 @@ Content-Length: xxx
 #### 请求URL
 
 ```
-POST ${BASE_URL}/msg/template/{templateId}
+POST ${BASE_URL}/msg/template/{tempId}
 ```
 
 ### 请求参数列表
@@ -130,7 +130,7 @@ Content-Length: xxx
   "data": {
               "name":"双11打折",
               "type":"msg_sms",
-              "templateId":"10001",
+              "tempId":"10001",
               "content":"天猫双11全球狂欢节，全球好货不只5折。",
               "status":1,
               "remark":"双11模板"
@@ -142,7 +142,7 @@ Content-Length: xxx
 #### 请求URL
 
 ```
-DELETE ${BASE_URL}/msg/template/{templateId}
+DELETE ${BASE_URL}/msg/template/{tempId}
 ```
 
 ### 请求参数列表
@@ -190,9 +190,9 @@ Content-Length: xxx
 #### 请求URL
 
 ```
-GET ${BASE_URL}/msg/template[/{templateId}]
+GET ${BASE_URL}/msg/template[/{tempId}]
 ```
-URL 不包含 `{templateId}` 参数，则获取模板列表，否则获取具体的某个模板的信息。
+URL 不包含 `{tempId}` 参数，则获取模板列表，否则获取具体的某个模板的信息。
 
 
 ### 请求参数
@@ -229,7 +229,7 @@ Content-Length: xxx
   "data": {
               "name":"双11打折",
               "type":"msg_sms",
-              "templateId":"10001",
+              "tempId":"10001",
               "content":"天猫双11全球狂欢节，全球好货不只5折。",
               "status":1,
               "remark":"双11模板"
@@ -262,7 +262,7 @@ Content-Length: xxx
       {
         "name":"双11打折",
         "type":"msg_sms",
-        "templateId":"10002",
+        "tempId":"10002",
         "content":"天猫双11全球狂欢节，全球好货不只5折。",
         "status":1,
         "remark":"双11模板1"
@@ -270,7 +270,7 @@ Content-Length: xxx
       {
          "name":"双11打折",
          "type":"msg_sms",
-         "templateId":"10003",
+         "tempId":"10003",
          "content":"天猫双11全球狂欢节，全球好货不只6折。",
          "status":1,
          "remark":"双11模板2"
@@ -278,7 +278,7 @@ Content-Length: xxx
       {
         "name":"双11打折",
         "type":"msg_sms",
-        "templateId":"10004",
+        "tempId":"10004",
         "content":"天猫双11全球狂欢节，全球好货不只7折。",
         "status":1,
         "remark":"双11模板3"
