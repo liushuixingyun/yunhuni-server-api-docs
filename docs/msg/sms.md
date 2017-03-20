@@ -161,11 +161,11 @@ URL 不包含 {msgKey} 参数，则获取列表，否则获取具体的某个发
 | `sendTime` | 字符串  | 发送时间 |
 | `sendType` | 字符串  | 发送类型 |
 | `isMass` | boolean  | 是否是群发 |
-| `sumNum` | 字符串  | 发送总数量 |
-| `state` | 字符串  | 发送状态 |
-| `succNum` | 字符串  | 发送成功数量 |
-| `failNum` | 字符串  | 发送失败数量 |
-| `pendingNum` | 字符串  | 待发送数量 |
+| `sumNum` | int  | 发送总数量 |
+| `state` | int  | 发送状态 |
+| `succNum` | int  | 发送成功数量 |
+| `failNum` | int | 发送失败数量 |
+| `pendingNum` | int  | 待发送数量 |
 
 #### 示例
 
