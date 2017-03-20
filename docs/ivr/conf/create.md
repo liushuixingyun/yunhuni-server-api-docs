@@ -1,4 +1,4 @@
-# 创建会议 (beta)
+# 创建会议
 
 ## create_conf 节点
 

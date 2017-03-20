@@ -1,2 +1,2 @@
-# IVR 动作 (beta)
+# IVR 动作
 <!-- toc -->

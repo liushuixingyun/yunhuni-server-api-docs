@@ -1,4 +1,4 @@
-# 拨号(beta)
+# 拨号
 <!-- toc -->
 
 ## dial 节点
@@ -27,13 +27,13 @@ dial
 
 ## 嵌套
 
-[`<play>`](./play.md),  [`<connect>`](./connect.md) 
+[`<play>`](./play.md),  [`<connect>`](./connect.md)
 
 **NTOE**
 
 > 最多只能嵌套一个 [`<play>`](./play.md) 节点，用于播放拨号提示音。
 > 嵌套在 [`<dial>`](./dial.md) 中的 [`<play>`](./play.md) 所指定的录音文件将在拨号时循环播放，其重复播放等参数无效。
-> 
+>
 > 如果不嵌套 [`<dial>`](./dial.md) ，拨号时，原呼叫会听到被叫的原始拨号音。
 
 **ATTENTION** 目前，必须和 [`<connect>`](./connect.md) 配合使用！

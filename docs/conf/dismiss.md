@@ -1,4 +1,4 @@
-# 解散会议（beta）
+# 解散会议
 
 <!--toc-->
 
@@ -49,4 +49,3 @@ Content-Length: xxx
   "data": true
 }
 ```
-
