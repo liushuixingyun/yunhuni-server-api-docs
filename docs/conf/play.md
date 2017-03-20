@@ -1,4 +1,4 @@
-# 会议放音 (beta)
+# 会议放音
 <!--toc-->
 
 # 开始放音
@@ -111,5 +111,3 @@ Content-Length: xxx
     "data": true
 }
 ```
-
-
