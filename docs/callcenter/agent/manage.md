@@ -61,7 +61,7 @@ POST {BASE_URL}/callcenter/agent
 
 ### 返回参数
 
-TODO: 补充！
+暂无说明
 
 
 ## 登录示例
@@ -116,7 +116,7 @@ DELETE {BASE_URL}/callcenter/agent/{agent_name}
 
 ### 返回参数
 
-TODO: 补充！
+暂无说明
 
 ## 注销示例
 
@@ -191,7 +191,7 @@ URL 不包含 `{agent_name}` 参数，则获取坐席列表，否则获取具体
 ### 返回参数
 坐席或者坐席列表
 
-TODO: 补充！
+暂无说明
 
 
 ## 获取座席信息示例
@@ -297,7 +297,7 @@ POST {BASE_URL}/callcenter/agent/{agent_name}/extension
 > - 坐席必须要一个分机才能正常使用话务功能。
 
 ### 返回参数
-TODO: 补充！
+暂无说明
 
 ## 设置分机示例
 
@@ -376,7 +376,7 @@ away     | √      | 离开
 ![坐席状态](../../../images/agent-state.svg)
 
 ### 返回参数
-TODO: 补充！
+暂无说明
 
 ## 状态设置示例
 
@@ -477,7 +477,7 @@ eg:
 ```
 
 ### 返回参数
-TODO: 补充！
+暂无说明
 
 
 ## 技能设置示例
