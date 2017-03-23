@@ -69,6 +69,9 @@
     - [模板管理](docs/msg/template.md)
     - [闪印](docs/msg/ussd.md)
     - [短信](docs/msg/sms.md)
+    - [消息事件](docs/msg/event/index.md)
+        + [消息发送结果事件](docs/msg/event/msg-send-result.md)
+        + [模板审核结果事件](docs/msg/event/template-audit-result.md)
 
 ### 附录
 - [术语表](GLOSSARY.md)

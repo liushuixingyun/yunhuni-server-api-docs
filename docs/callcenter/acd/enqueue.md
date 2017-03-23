@@ -16,14 +16,6 @@
     <route>
         <condition id="condition1"/>
     </route>
-    <route>
-        <agents queue_timeout="5" choice="lru">
-            <agent name="1001" />
-            <agent name="1003" />
-            <agent name="1008" />
-            <agent name="2019" />
-        </agents>
-    </route>
 </enqueue>
 ```
 或者:
