@@ -15,7 +15,7 @@ POST {NOTIFY_URL}
 | 参数          | 有效值范围               | 说明                     |
 | ----------- | ------------------- | ---------------------- |
 | `action`    | **event_notify**    | **事件标志：event_notify ** |
-| `event`     | **msg.send.result** | 据此字段识别不同事件             |
+| `event`     | **msg.sending_complete** | 据此字段识别不同事件             |
 | `msg_key`   | msg_key             | 消息任务标识                 |
 | `state`     | 数值                  | 状态0表示成功1失败             |
 | `failMobiles` | string                | 以 ","号分隔各个号码                  |
