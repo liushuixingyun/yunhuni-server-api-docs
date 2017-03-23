@@ -10,7 +10,7 @@
 | `event`     | **msg.send.result** | 据此字段识别不同事件             |
 | `msg_key`   | msg_key             | 消息任务标识                 |
 | `state`     | 数值                  | 状态0表示成功1失败             |
-| `failPhoen` | json                | 失败号码                   |
+| `failMobiles` | string                | 以 ","号分隔各个号码                  |
 | `type`      | 数值                  | 0表示单发1表示群发             |
 
 
