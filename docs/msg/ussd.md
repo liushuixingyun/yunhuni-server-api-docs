@@ -33,6 +33,8 @@ POST ${BASE_URL}/msg/ussd/send
 | 属性       | 有效值范围        | 说明       |
 | -------- | ------------ | -------- |
 | `msgKey` | 字符串  | 消息任务标识，用于查询消息发送结果 |
+| `state` | int  | 1成功，0失败 |
+| `invalidMobiles` | 数组  | 群发时有号码失败则有该字段，失败的号码 |
 
 #### 示例
 
@@ -60,7 +62,8 @@ Content-Length: xxx
   "code": "000000",
   "msg": "请求成功",
   "data": {
-      "msgKey":"40288ac9580a67f501580a6a42a40001"
+      "msgKey":"40288ac9580a67f501580a6a42a40001",
+      "state":1，
     }
 }
 ```
@@ -125,7 +128,9 @@ Content-Length: xxx
   "code": "000000",
   "msg": "请求成功",
   "data": {
-      "msgKey":"40288ac9580a67f501580a6a42a40001"
+      "msgKey":"40288ac9580a67f501580a6a42a40001",
+      "state":1，
+      "invalidMobiles":["13750012158"]，
     }
 }
 ```
