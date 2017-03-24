@@ -1,4 +1,4 @@
-# 从会议退出 (beta)
+# 从会议退出
 
 <!-- toc -->
 
@@ -57,5 +57,3 @@ Content-Length: xxx
     "data": true
 }
 ```
-
-
