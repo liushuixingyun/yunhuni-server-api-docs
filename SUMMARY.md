@@ -64,6 +64,10 @@
       + [坐席事件](docs/callcenter/event/agent.md)
       + [交谈事件](docs/callcenter/event/conversation.md)
 
+- [录音文件](docs/recording_file/index.md)
+    - [录音文件](docs/recording_file/download.md)
+
+
 ### 消息API(beta)
 - [消息API](docs/msg/index.md)
     - [模板管理](docs/msg/template.md)
