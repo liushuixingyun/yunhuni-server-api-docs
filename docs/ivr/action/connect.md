@@ -46,7 +46,7 @@ connect
 ```xml
 <response>
     <dial from="4001546646464">
-        <number>415-123-4567</number>
+        <number>13692208888</number>
         <connect max_duration="50">
             <play repeat="3">warning.wav</play>
         </connect>
