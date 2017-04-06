@@ -64,11 +64,18 @@
       + [坐席事件](docs/callcenter/event/agent.md)
       + [交谈事件](docs/callcenter/event/conversation.md)
 
+- [录音文件](docs/recording_file/index.md)
+    - [录音文件](docs/recording_file/download.md)
+
+
 ### 消息API(beta)
 - [消息API](docs/msg/index.md)
     - [模板管理](docs/msg/template.md)
     - [闪印](docs/msg/ussd.md)
     - [短信](docs/msg/sms.md)
+    - [消息事件](docs/msg/event/index.md)
+        + [消息发送结果事件](docs/msg/event/msg-send-result.md)
+        + [模板审核结果事件](docs/msg/event/template-audit-result.md)
 
 ### 附录
 - [术语表](GLOSSARY.md)
